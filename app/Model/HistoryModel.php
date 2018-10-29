@@ -4,11 +4,13 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ImageModel extends Model
+class HistoryModel extends Model
 {
-    protected $table = 'image';
+    protected $table = 'history';
 
-    public function houses() {
+    public function houses()
+    {
         return $this->belongsTo('App\Model\HousesModel', 'id_house');
     }
+
 }
