@@ -13,7 +13,7 @@ use App\Model\PostModel;
 use App\Model\StatisicalModel;
 use Illuminate\Http\Request;
 
-abstract class RetrieveSllDataController extends Controller
+abstract class RetrievesllDataController extends Controller
 {
     public function houses() {
         $houses = HousesModel::all();
