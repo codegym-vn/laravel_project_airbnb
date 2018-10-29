@@ -93,7 +93,7 @@
                         </div>
                         <div class="post-field">
                             <label class="first">Tên Căn Nhà</label>
-                            <input name="name" type="text"  id="txtGia"
+                            <input name="name" type="text" id="txtGia"
                                    class="form-control w-258 mg-right-30 pull-left" onchange="ChangeMucgia(this)"
                                    placeholder="Tên Căn Nhà"/>
                         </div>
@@ -126,7 +126,7 @@
                         <div class="post-field mg-top-0">
                             <label class="first">Giá</label>
                             <div class="post-field-option-price">
-                                <input name="price" type="text"  id="txtGia"
+                                <input name="price" type="text" id="txtGia"
                                        class="form-control w-258 mg-right-30 pull-left" onchange="ChangeMucgia(this)"/>
                             </div>
                         </div>
