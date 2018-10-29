@@ -21,5 +21,5 @@ class PostModel extends Model
     public function houses()
     {
         return $this->belongsTo('App\Model\HousesModel', 'id_house');
-    };
+    }
 }

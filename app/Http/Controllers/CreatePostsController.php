@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\HousesModel;
+use App\Model\ImageModel;
 use App\Model\PostModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -18,21 +20,16 @@ class CreatePostsController extends Controller
     }
 
     public function store(Request $request){
+        $this->store1();
 
-        $post = new PostModel();
+        $houses =  new HousesModel();
 
-        $post->name = $request->input('name');
-        $post->room = $request->input('room');
-        $post->address = $request->input('address');
-        $post->number_room = $request->input('number_room');
-        $post->number_bathroom = $request->input('number_bathroom');
-        $post->title = $request->input('title');
-        $post->price = $request->input('price');
-        $post->describe = $request->input('describe');
+
+        $image = new ImageModel();
         $file = $request->inputFile;
 
         if (!$request->hasFile('inputFile')) {
-            $post->image = $file;
+            $image->image = $file;
 
         } else {
             //Lấy ra định dạng và tên mới của file từ request
@@ -45,13 +42,32 @@ class CreatePostsController extends Controller
             //Lưu file vào thư mục storage/app/public/image với tên mới
             $request->file('inputFile')->storeAs('public/images', $newFileName);
 
-            // Gán trường image của đối tượng task với tên mới
-            $post->image = $newFileName;
+            // Gán trường image của đối tượng với tên mới
+            $image->image = $newFileName;
         }
+        $image->save();
+        die();
+
+        $post = new PostModel();
+
+        $post->name = $request->input('name');
+        $post->room = $request->input('room');
+        $post->address = $request->input('address');
+        $post->number_room = $request->input('number_room');
+        $post->number_bathroom = $request->input('number_bathroom');
+        $post->title = $request->input('title');
+        $post->price = $request->input('price');
+        $post->describe = $request->input('describe');
+
+
         $post->save();
         $message = "Create List $request->inputName success!";
         Session::flash('create-success', $message);
         return redirect()->route('listBockHouse');
 
+    }
+
+    public function store1(){
+        //insert houses
     }
 }
