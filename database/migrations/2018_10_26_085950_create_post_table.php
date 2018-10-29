@@ -18,6 +18,7 @@ class CreatePostTable extends Migration
             $table->string('title', 255);
             $table->string('describe', 255);
             $table->text('conten');
+            $table->string('address', 255);
             $table->integer('id_image')->unsigned();
             $table->foreign('id_image')->references('id')->on('image');
             $table->integer('id_user')->unsigned();
