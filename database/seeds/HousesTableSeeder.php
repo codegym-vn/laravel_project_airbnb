@@ -14,35 +14,38 @@ class HousesTableSeeder extends Seeder
     {
         $houses = new HousesModel();
         $houses->name = 'Ha Noi hotel';
-        $houses->address = 'hà nội';
+        $houses->id_address = 1;
         $houses->room = 'khách sạn';
         $houses->number_room = '4';
         $houses->number_bathroom = '2';
         $houses->describe = 'VIP';
-        $houses->price = '10.000.000VND/1ngày';
+        $houses->price = 10000000;
         $houses->id_kind_house = 1;
+        $houses->status = 0;
         $houses->save();
 
         $houses = new HousesModel();
         $houses->name = 'HCM hotel';
-        $houses->address = 'Hồ Chí Minh';
+        $houses->id_address = 2;
         $houses->room = 'khách sạn';
         $houses->number_room = '5';
         $houses->number_bathroom = '2';
         $houses->describe = 'VIP';
-        $houses->price = '10.000.000VND/1ngày';
-        $houses->id_kind_house = 2;
+        $houses->price = 10000000;
+        $houses->id_kind_house = 1;
+        $houses->status = 0;
         $houses->save();
 
         $houses = new HousesModel();
-        $houses->name = 'Hải Phòng hotel';
-        $houses->address = 'Hải Phòng';
+        $houses->name = "Khách sạn";
+        $houses->id_address = 3;
         $houses->room = 'khách sạn';
         $houses->number_room = '3';
         $houses->number_bathroom = '2';
         $houses->describe = 'VIP';
-        $houses->price = '5.000.000VND/1ngày';
-        $houses->id_kind_house = 3;
+        $houses->price = 5000000;
+        $houses->id_kind_house = 1;
+        $houses->status = 1;
         $houses->save();
 
     }

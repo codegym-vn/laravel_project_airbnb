@@ -14,7 +14,7 @@ class Image extends Seeder
     {
         $image = new ImageModel();
         $image->image = '12';
-        $image->id_house = '1';
+        $image->id_house = 2;
         $image->save();
     }
 }
