@@ -172,15 +172,44 @@
                         <ul class="filter clearfix" style="height: 300px;">
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" name="price" id="hddCate"/>
                                     <select id="cboCate" name="price" onchange="ChangeValue('Cate', $(this).val());"
                                             class="form-control">
-                                        <option value="0">Mức giá</option>
-                                        <option value="0-2000000">Dưới 2 triệu</option>
-                                        <option value="2000000-4000000">Từ 2 - 4 triệu</option>
-                                        <option value="4000000-7000000">Từ 4 - 7 triệu</option>
-                                        <option value="7000000-13000000">Từ 7 - 13 triệu</option>
-                                        <option value="13000000-1000000000000">Trên 13 triệu</option>
+                                        <option value="0"
+                                                @if(isset($_POST['price']) && $_POST['price'] == '0')
+                                                selected
+                                                @endif
+                                        >Mức giá</option>
+                                        <option value="0-2000000"
+                                                @if(isset($_POST['price']) && $_POST['price'] == '0-2000000')
+                                                selected
+                                                @endif
+                                        >Dưới 2 triệu</option>
+                                        <option value="2000000-4000000"
+                                                @if(isset($_POST['price']) && $_POST['price'] == '2000000-4000000')
+                                                selected
+                                                @endif>
+                                            Từ 2 - 4 triệu
+                                        </option>
+                                        <option value="4000000-7000000"
+                                                @if(isset($_POST['price']) && $_POST['price'] == '4000000-7000000')
+                                                selected
+                                                @endif>
+                                            Từ 4 - 7 triệu
+                                        </option>
+
+                                        <option value="7000000-13000000"
+                                                @if(isset($_POST['price']) && $_POST['price'] == '7000000-13000000')
+                                                selected
+                                                @endif>
+                                            Từ 7 - 13 triệu
+                                        </option>
+                                        <option value="13000000-1000000000000"
+                                                @if(isset($_POST['price']) && $_POST['price'] == '13000000-1000000000000')
+                                                selected
+                                                @endif
+                                        >
+                                            Trên 13 triệu
+                                        </option>
                                     </select>
                                 </div>
                             </li>
@@ -192,7 +221,7 @@
                                             onchange="ChangeCity($(this).val())">
                                         <option value="-1">Thành Phố</option>
                                         @foreach($address as $address)
-                                            <option value="{{ $address->id }}">{{ $address->address }}</option>
+                                            <option value="{{ $address->id }}" selected>{{ $address->address }}</option>
                                         @endforeach
                                     </select>
                                 </div>
