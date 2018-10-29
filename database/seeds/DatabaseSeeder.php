@@ -11,8 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(Image::class);
-        $this->call(Post::class);
-
+//         $this->call(Image::class);
+//        $this->call(Post::class);
+        $this->call(Address::class);
     }
 }
