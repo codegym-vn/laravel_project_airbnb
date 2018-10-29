@@ -25,5 +25,3 @@ Route::get('/create-post', 'indexController@createPost')->name('create-post');
 Route::get('/sign-in', 'LoginController@signIn')->name('sign-in');
 
 Route::get('/sign-up', 'LoginController@signUp')->name('sign-up');
-
-
