@@ -16,12 +16,14 @@ class CreateHousesTable extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
-            $table->string('address', 100);
             $table->integer('room');
             $table->integer('number_room');
             $table->integer('number_bathroom');
             $table->integer('price');
             $table->string('describe', 255);
+            $table->integer('id_address')->unsigned();
+            $table->foreign('id_address')->references('id')->on('address');
+
             $table->integer('id_kind_house')->unsigned();
             $table->foreign('id_kind_house')->references('id')->on('kind_house');
             $table->boolean('status');
