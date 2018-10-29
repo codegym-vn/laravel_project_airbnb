@@ -49,6 +49,7 @@
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/Register.js"></script>
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <body>
 @include('index.layout.header')
 
@@ -75,29 +76,32 @@
                 <div class="main">
                     <div class="row clearfix">
                         <div class="col-gr-75per">
-                                <div class="pull-left title-search-product" style="">
-                                    <h1 class="fsize-22 fweight-700 text-uppercase blue-clr no-mg"
-                                        style="white-space: nowrap; text-overflow: ellipsis; width: 560px; overflow: hidden;">
-                                        Nhà đất cho thuê tại Việt Nam
-                                    </h1>
-                                    <div class="none">
+                            <div class="pull-left title-search-product" style="">
+                                <h1 class="fsize-22 fweight-700 text-uppercase blue-clr no-mg"
+                                    style="white-space: nowrap; text-overflow: ellipsis; width: 560px; overflow: hidden;">
+                                    Nhà đất cho thuê tại Việt Nam
+                                </h1>
+                                <div class="none">
 
-                                    </div>
-                                    <p class="no-mg">
-                                        Có <span class='blue-clr'>{{ count($houses) }}</span> bất động sản.
-                                    </p>
                                 </div>
+                                <p class="no-mg">
+                                    Có <span class='blue-clr'>{{ count($houses) }}</span> bất động sản.
+                                </p>
                             </div>
-
                         </div>
-                    </div>
 
+                    </div>
                 </div>
 
             </div>
-            <div class="col-gr-75per">
 
-                <ul class="group-prd group-3cl clearfix">
+        </div>
+        <div class="col-gr-75per">
+
+            <ul class="group-prd group-3cl clearfix">
+                @if(count($houses) == "0")
+                    Hiện không có nhà nào giống với yêu cầu của bạn
+                @else
                     @foreach($houses as $house)
                         <li>
                             <div class="image h155">
@@ -148,133 +152,105 @@
                             </div>
                         </li>
                     @endforeach
-                </ul>
+                @endif
+            </ul>
 
-                <div class="mg-bottom-30 clearfix">
-                    {{ $houses->links() }}
-                </div>
-
+            <div class="mg-bottom-30 clearfix">
+                {{ $houses->links() }}
             </div>
-            <div class="col-gr-25per">
-                <div class="group-advance-search style-col-search mg-bottom-30">
 
-                    <ul class="tabs-search home-search clearfix">
-                        <li id="ban"><a onclick="ChangeType(38);">Bán</a></li>
-                        <li id="chothue"><a onclick="ChangeType(49);">Cho thuê</a></li>
-                    </ul>
+        </div>
+        <div class="col-gr-25per">
+            <div class="group-advance-search style-col-search mg-bottom-30">
 
+                <ul class="tabs-search home-search clearfix">
+                    <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
+                </ul>
+                <form action="{{ route('listBockHouse') }}" method="post">
+                    {{ csrf_field() }}
                     <div class="search-content listProductSearch">
                         <ul class="filter clearfix" style="height: 300px;">
-                            <li class="none">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddType" id="hddType"
-                                       value="49"/>
-                                <select id="cboType" onchange="ChangeLoaigiaodich($(this).val());">
-                                    <option value="-1">Chọn BĐS</option>
-                                    <option value="38">BĐS Bán</option>
-                                    <option value="49">BĐS Cho Thuê</option>
-                                </select>
-                            </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddCate" id="hddCate"
-                                           value="-1"/>
-                                    <select id="cboCate" onchange="ChangeValue('Cate', $(this).val());"
+                                    <input type="hidden" name="price" id="hddCate"/>
+                                    <select id="cboCate" name="price" onchange="ChangeValue('Cate', $(this).val());"
                                             class="form-control">
-                                        <option value="-1">Loại nhà đất</option>
+                                        <option value="0">Mức giá</option>
+                                        <option value="0-2000000">Dưới 2 triệu</option>
+                                        <option value="2000000-4000000">Từ 2 - 4 triệu</option>
+                                        <option value="4000000-7000000">Từ 4 - 7 triệu</option>
+                                        <option value="7000000-13000000">Từ 7 - 13 triệu</option>
+                                        <option value="13000000-1000000000000">Trên 13 triệu</option>
                                     </select>
                                 </div>
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddCity" id="hddCity"
-                                           value="-1"/>
-                                    <select class="form-control" id="cboCity" onchange="ChangeCity($(this).val())">
-                                        <option value="-1">Tỉnh/Thành Phố</option>
+                                    <input type="hidden" name="address" id="hddCity"
+                                           value="0"/>
+                                    <select class="form-control" name="address" id="cboCity"
+                                            onchange="ChangeCity($(this).val())">
+                                        <option value="-1">Thành Phố</option>
+                                        @foreach($address as $address)
+                                            <option value="{{ $address->id }}">{{ $address->address }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddDistrict" id="hddDistrict"
-                                           value="-1"/>
-                                    <select id="cboDistrict" class="form-control"
+                                    <input type="hidden" id="hddDistrict"/>
+                                    <select id="cboDistrict" name="number_bathroom" class="form-control"
                                             onchange="ChangeQuanhuyen($(this).val())">
-                                        <option value="-1">Quận/Huyện</option>
+                                        <option value="0">Phòng tắm</option>
+                                        @for($i = 1; $i <= 10; $i++)
+                                            <option>{{ $i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddArea" id="hddArea"
-                                           value="-1"/>
-                                    <select id="cboArea" class="form-control"
+                                    <input type="hidden" id="hddArea"
+                                           value="0"/>
+                                    <select id="cboArea" class="form-control" name="number_room"
                                             onchange="ChangeValue('Area', $(this).val());">
-                                        <option value="-1">Diện tích</option>
+                                        <option value="0">Phòng ngủ</option>
+                                        @for($i = 1; $i <= 10; $i++)
+                                            <option>{{ $i }}</option>
+                                        @endfor
+
                                     </select>
                                 </div>
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddPrice" id="hddPrice"
+                                    <input type="hidden" id="hddPrice"
                                            value="-1"/>
-                                    <select id="cboPrice" class="form-control"
+                                    <select id="cboPrice" name="month" class="form-control"
                                             onchange="ChangeValue('Price', $(this).val());">
-                                        <option value="-1">Mức giá</option>
+                                        <option value="0">Thời gian</option>
+                                        <option value="0-2000000">Dưới 2 tháng</option>
+                                        <option value="2000000-4000000">Từ 2 - 4 tháng</option>
+                                        <option value="4000000-7000000">Từ 4 - 7 tháng</option>
+                                        <option value="7000000-13000000">Từ 7 - 12 tháng</option>
+                                        <option value="13000000-1000000000000">Trên 1 năm</option>
                                     </select>
                                 </div>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddProject" id="hddProject"
-                                       value="-1"/>
-                                <select id="cboProject" onchange="ChangeValue('Project', $(this).val());">
-                                    <option value="-1">Dự án</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddWard" id="hddWard"
-                                       value="-1"/>
-                                <select id="cboWard" onchange="ChangeValue('Ward', $(this).val());">
-                                    <option value="-1">Phường/Xã</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddStreet" id="hddStreet"
-                                       value="-1"/>
-                                <select id="cboStreet" onchange="ChangeValue('Street', $(this).val());">
-                                    <option value="-1">Đường/Phố</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddRoom" id="hddRoom"
-                                       value="-1"/>
-                                <select id="cboRoom" onchange="ChangeValue('Room', $(this).val());">
-                                    <option value="-1">Phòng ngủ</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddDirection" id="hddDirection"
-                                       value="-1"/>
-                                <select id="cboDirection" onchange="ChangeValue('Direction', $(this).val());">
-                                    <option value="-1">Hướng nhà</option>
-                                </select>
                             </li>
 
                             <li>
-                                <a id="btnSearch" class="btn bg-green full-width fweight-bold"
-                                   href="javascript:__doPostBack(&#39;ctl00$MainContent$BoxSearch$btnSearch&#39;,&#39;&#39;)">
-                                    Tìm kiếm
-                                </a>
+                                <input type="submit" id="btnSearch" class="btn bg-green full-width fweight-bold"
+                                       href="javascript:__doPostBack(&#39;ctl00$MainContent$BoxSearch$btnSearch&#39;,&#39;&#39;)"
+                                       value="Tìm kiếm">
                             </li>
                         </ul>
-                        <div class="text-center">
-                            <a id="searchAdvance" class="white-clr text-underline fsize-13 ">Tìm nâng cao</a>
-                        </div>
                     </div>
-
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 

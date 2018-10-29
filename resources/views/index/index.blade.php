@@ -76,15 +76,6 @@
             <ul class="filter clearfix">
                 <li>
                     <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddCate" id="hddCate" value="-1"/>
-                        <select id="cboCate" onchange="ChangeValue('Cate', $(this).val());" class="form-control">
-                            <option value="-1">Loại nhà đất</option>
-                        </select>
-                        <div class="icons-drop"></div>
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
                         <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddCity" id="hddCity" value="-1"/>
                         <select class="form-control" id="cboCity" onchange="ChangeCity($(this).val())">
                             <option value="-1">Tỉnh/Thành Phố</option>
