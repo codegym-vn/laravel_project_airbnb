@@ -16,7 +16,7 @@ Route::get('/', 'indexController@index')->name('index');
 
 Route::get('/new', 'indexController@new')->name('new');
 
-Route::get('/listBockHouse', 'HousesController@showHouses')->name('listBockHouse');
+Route::match(['get', 'post'], '/listBockHouse', 'HousesController@showHouses')->name('listBockHouse');
 
 Route::get('/information-house', 'indexController@informationHouse')->name('information-house');
 
