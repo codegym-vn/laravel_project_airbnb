@@ -17,22 +17,29 @@
     <meta name="generator" content="#"/>
     <meta name="distribution" content="Global"/>
     <meta name="keywords" content="Nhà, đất, cho, thuê, cho, thuê, nhà, tại, Việt"/>
-    <meta name="description" content="Nhà đất cho thuê cho thuê nhà tại Việt Nam với các loại diện tích giá cho thuê địa điểm khác nhau Nhà đất cho thuê cho thuê nhà tại Việt Nam thuê và cho thuê nhà đất đầy đủ cập nhật nhất"/>
+    <meta name="description"
+          content="Nhà đất cho thuê cho thuê nhà tại Việt Nam với các loại diện tích giá cho thuê địa điểm khác nhau Nhà đất cho thuê cho thuê nhà tại Việt Nam thuê và cho thuê nhà đất đầy đủ cập nhật nhất"/>
     <meta name="revisit-after" content="1 days"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="#"/>
     <link rel="canonical" href="#"/>
     <title>Nhà đất cho thuê, cho thuê nhà Việt Nam | tại Việt Nam</title>
     <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/reset.css?v=2018060171"/>
-    <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/font-awesome.min.css?v=2018060171"/>
-    <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/font-ops.css?v=2018060171"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="https://tinbatdongsan.com/Styles/font-awesome.min.css?v=2018060171"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="https://tinbatdongsan.com/Styles/font-ops.css?v=2018060171"/>
     <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/basis.css?v=2018060171"/>
-    <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Scripts/Fancybox/source/jquery.fancybox.css"/>
-    <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/general.css?v=2018060171"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="https://tinbatdongsan.com/Scripts/Fancybox/source/jquery.fancybox.css"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="https://tinbatdongsan.com/Styles/general.css?v=2018060171"/>
     <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/style.css?v=2018060171"/>
     <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/post.css?v=2018060171"/>
-    <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/firefox.css?v=2018060171"/>
-    <link rel="stylesheet" type="text/css" media="all" href="https://tinbatdongsan.com/Styles/font-rbt.min.css?v=2018060171"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="https://tinbatdongsan.com/Styles/firefox.css?v=2018060171"/>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="https://tinbatdongsan.com/Styles/font-rbt.min.css?v=2018060171"/>
     <link href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.css" rel="stylesheet"/>
     <link href="https://tinbatdongsan.com/Styles/Responsive.css?v=2018060171" rel="stylesheet" type="text/css"/>
     <link href="https://tinbatdongsan.comMaster/css/ie8.css" rel="stylesheet" type="text/css"/>
@@ -48,13 +55,18 @@
 @include('index.layout.header')
 
 
-
 <div class="head-search">
     <h4 class="title">Tìm kiếm bất động sản</h4>
     <div class="form-search">
-        <input name="ctl00$SearchContent$HomeSearch$ProductTextSearch$txtTextSearch" type="text" maxlength="100" id="txtTextSearch" class="form-control ui-autocomplete-input" autocomplete="off" onfocus="if (this.value == &#39;Nhập từ khóa&#39;) (this.value=&#39;&#39;)" onblur="if (this.value == &#39;&#39;) (this.value=&#39;Nhập từ khóa&#39;)" role="textbox" aria-autocomplete="list" aria-haspopup="true" />
-        <input type="hidden" name="ctl00$SearchContent$HomeSearch$ProductTextSearch$hddCateSearch" id="hddCateSearch" value="38" />
-        <a id="lbtSearchTop" class="submit" onclick="searchClick()"><i class="fafa-search" style="top: 10px; position: absolute;"></i></a>
+        <input name="ctl00$SearchContent$HomeSearch$ProductTextSearch$txtTextSearch" type="text" maxlength="100"
+               id="txtTextSearch" class="form-control ui-autocomplete-input" autocomplete="off"
+               onfocus="if (this.value == &#39;Nhập từ khóa&#39;) (this.value=&#39;&#39;)"
+               onblur="if (this.value == &#39;&#39;) (this.value=&#39;Nhập từ khóa&#39;)" role="textbox"
+               aria-autocomplete="list" aria-haspopup="true"/>
+        <input type="hidden" name="ctl00$SearchContent$HomeSearch$ProductTextSearch$hddCateSearch" id="hddCateSearch"
+               value="38"/>
+        <a id="lbtSearchTop" class="submit" onclick="searchClick()"><i class="fafa-search"
+                                                                       style="top: 10px; position: absolute;"></i></a>
     </div>
     <div class="group-advance-search">
         <ul class="tabs-search home-search clearfix">
@@ -62,17 +74,9 @@
         </ul>
         <div class="search-content">
             <ul class="filter clearfix">
-                <li class="none">
-                    <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddType" id="hddType" value="38" />
-                    <select class="form-control" id="cboType" onchange="ChangeLoaigiaodich($(this).val());">
-                        <option value="-1">Chọn BĐS</option>
-                        <option value="38">BĐS Bán</option>
-                        <option value="49">BĐS Cho Thuê</option>
-                    </select>
-                </li>
                 <li>
                     <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddCate" id="hddCate" value="-1" />
+                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddCate" id="hddCate" value="-1"/>
                         <select id="cboCate" onchange="ChangeValue('Cate', $(this).val());" class="form-control">
                             <option value="-1">Loại nhà đất</option>
                         </select>
@@ -81,7 +85,7 @@
                 </li>
                 <li>
                     <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddCity" id="hddCity" value="-1" />
+                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddCity" id="hddCity" value="-1"/>
                         <select class="form-control" id="cboCity" onchange="ChangeCity($(this).val())">
                             <option value="-1">Tỉnh/Thành Phố</option>
                         </select>
@@ -90,78 +94,62 @@
                 </li>
                 <li>
                     <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddDistrict" id="hddDistrict" value="-1" />
-                        <select id="cboDistrict" class="form-control" onchange="ChangeQuanhuyen($(this).val())">
-                            <option value="-1">Quận/Huyện</option>
-                        </select>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddWard" id="hddWard" value="-1" />
-                        <select id="cboWard" class="form-control" onchange="ChangeValue('Ward', $(this).val());">
-                            <option value="-1">Phường/Xã</option>
-                        </select>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddStreet" id="hddStreet" value="-1" />
-                        <select id="cboStreet" class="form-control" onchange="ChangeValue('Street', $(this).val());">
-                            <option value="-1">Đường/Phố</option>
-                        </select>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddArea" id="hddArea" value="-1" />
-                        <select id="cboArea" class="form-control" onchange="ChangeValue('Area', $(this).val());">
-                            <option value="-1">Diện tích</option>
-                        </select>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddPrice" id="hddPrice" value="-1" />
+                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddPrice" id="hddPrice" value="-1"/>
                         <select id="cboPrice" class="form-control" onchange="ChangeValue('Price', $(this).val());">
                             <option value="-1">Mức giá</option>
+                            <option value="-1">Dưới 2 triệu</option>
+                            <option value="-1">Từ 2 - 4 triệu</option>
+                            <option value="-1">Từ 4 - 7 triệu</option>
+                            <option value="-1">Từ 7 - 13 triệu</option>
+                            <option value="-1">Trên 13 triệu</option>
                         </select>
 
                     </div>
                 </li>
                 <li>
                     <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddProject" id="hddProject" value="-1" />
+                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddProject" id="hddProject"
+                               value="-1"/>
                         <select id="cboProject" class="form-control" onchange="ChangeValue('Project', $(this).val());">
-                            <option value="-1">Dự án</option>
+                            <option value="-1">Thời gian</option>
+                            <option value="-1">Dưới 2 tháng</option>
+                            <option value="-1">Từ 2 - 4 tháng</option>
+                            <option value="-1">Từ 4 - 7 tháng</option>
+                            <option value="-1">Từ 7 - 12 tháng</option>
+                            <option value="-1">Trên 1 năm</option>
                         </select>
-
                     </div>
                 </li>
                 <li>
                     <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddRoom" id="hddRoom" value="-1" />
+                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddRoom" id="hddRoom" value="-1"/>
                         <select id="cboRoom" class="form-control" onchange="ChangeValue('Room', $(this).val());">
                             <option value="-1">Phòng ngủ</option>
+                            @for($i = 1; $i <= 10; $i++)
+                                <option>{{ $i }}</option>
+                            @endfor
                         </select>
 
                     </div>
                 </li>
                 <li>
                     <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddDirection" id="hddDirection" value="-1" />
-                        <select id="cboDirection" class="form-control" onchange="ChangeValue('Direction', $(this).val());">
-                            <option value="-1">Hướng nhà</option>
+                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddDirection" id="hddDirection"
+                               value="-1"/>
+                        <select id="cboDirection" class="form-control"
+                                onchange="ChangeValue('Direction', $(this).val());">
+                            <option value="-1">Phòng tắm</option>
+                            @for($i = 1; $i <= 10; $i++)
+                                <option>{{ $i }}</option>
+                            @endfor
                         </select>
 
                     </div>
                 </li>
                 <li class="dbwidth">
-                    <a id="btnSearch" class="btn bg-green full-width" href="javascript:__doPostBack(&#39;ctl00$SearchContent$HomeSearch$btnSearch&#39;,&#39;&#39;)">  Tìm kiếm
+                    <a id="btnSearch" class="btn bg-green full-width"
+                       href="javascript:__doPostBack(&#39;ctl00$SearchContent$HomeSearch$btnSearch&#39;,&#39;&#39;)">
+                        Tìm kiếm
                     </a>
                 </li>
             </ul>
@@ -182,13 +170,21 @@
                         <ul class="group-prd sm-space group-5cl clearfix">
                             <li class="first">
                                 <div class="image border-6d">
-                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_0" title="Dự án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007" href="/ban-dat-nen-du-an-king-bay/du-an-king-bay-don-dau-thi-truong-bds-khu-dong-pr12388457.htm"><img id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_0" src="https://img.tinbatdongsan.com/crop/212x169/2018/09/14/20180914144405-18c8.jpg" /></a>
+                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_0"
+                                       title="Dự án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007"
+                                       href="/ban-dat-nen-du-an-king-bay/du-an-king-bay-don-dau-thi-truong-bds-khu-dong-pr12388457.htm"><img
+                                                id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_0"
+                                                src="https://img.tinbatdongsan.com/crop/212x169/2018/09/14/20180914144405-18c8.jpg"/></a>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title cut-text-3"><a id="hplTitle" title="Dự án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007" href="{{route('information-house')}}">Dự án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007</a>
+                                    <h4 class="title cut-text-3"><a id="hplTitle"
+                                                                    title="Dự án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007"
+                                                                    href="{{route('information-house')}}">Dự án King Bay
+                                            đón đầu thị trường BĐS khu Đông, LH 0933781007</a>
                                     </h4>
                                     <div class="info clearfix">
-                                        <div style="white-space: nowrap; text-overflow: ellipsis;" class="pull-left h20 ovf-hd ">
+                                        <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                             class="pull-left h20 ovf-hd ">
                                             <i class='fa fa-tag hint mg-right-5'></i>
                                             <span class="fweight-700 green-clr fsize-15">
                                             17 Triệu/m²
@@ -210,14 +206,22 @@
 
                             <li class="">
                                 <div class="image border-6d">
-                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_1" title="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817" href="/ban-dat-nen-du-an-king-bay/quy-dat-vang-cho-nha-dau-tu-ngay-mat-tien-duong-vanh-dai-3-pr12382210.htm"><img id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_1" src="https://img.tinbatdongsan.com/crop/212x169/2018/09/13/20180913160238-899d.jpg" /></a>
+                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_1"
+                                       title="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"
+                                       href="/ban-dat-nen-du-an-king-bay/quy-dat-vang-cho-nha-dau-tu-ngay-mat-tien-duong-vanh-dai-3-pr12382210.htm"><img
+                                                id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_1"
+                                                src="https://img.tinbatdongsan.com/crop/212x169/2018/09/13/20180913160238-899d.jpg"/></a>
                                 </div>
                                 <div class="content">
                                     <h4 class="title h40 cut-text-2">
-                                        <a id="hplTitle" title="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817" href="/ban-dat-nen-du-an-king-bay/quy-dat-vang-cho-nha-dau-tu-ngay-mat-tien-duong-vanh-dai-3-pr12382210.htm">Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817</a>
+                                        <a id="hplTitle"
+                                           title="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"
+                                           href="/ban-dat-nen-du-an-king-bay/quy-dat-vang-cho-nha-dau-tu-ngay-mat-tien-duong-vanh-dai-3-pr12382210.htm">Quỹ
+                                            đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817</a>
                                     </h4>
                                     <div class="info clearfix">
-                                        <div style="white-space: nowrap; text-overflow: ellipsis;" class="pull-left h20 ovf-hd w--100">
+                                        <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                             class="pull-left h20 ovf-hd w--100">
                                             <i class='fa fa-tag hint mg-right-5'></i>
                                             <span class="fweight-700 green-clr fsize-15">
                                             19 Triệu/m²
@@ -239,14 +243,23 @@
 
                             <li class="">
                                 <div class="image border-6d">
-                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_2" title="MỞ BÁN ĐẤT VÀNG VEN SÔNG ĐẸP NHẤT NHƠN TRẠCH - ĐÓN ĐẦU QUY HOẠCH VÀNH ĐAI 3, CẦU Q9, CAM KẾT LN 10%" href="/ban-dat-nen-du-an-king-bay/mo-ban-dat-vang-ven-song-dep-nhat-nhon-trach-don-dau-quy-hoach-vanh-dai-3-cau-q9-cam-ket-ln-10-pr12304005.htm"><img id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_2" src="https://img.tinbatdongsan.com/crop/212x169/2018/08/28/20180828115503-503d.jpg" /></a>
+                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_2"
+                                       title="MỞ BÁN ĐẤT VÀNG VEN SÔNG ĐẸP NHẤT NHƠN TRẠCH - ĐÓN ĐẦU QUY HOẠCH VÀNH ĐAI 3, CẦU Q9, CAM KẾT LN 10%"
+                                       href="/ban-dat-nen-du-an-king-bay/mo-ban-dat-vang-ven-song-dep-nhat-nhon-trach-don-dau-quy-hoach-vanh-dai-3-cau-q9-cam-ket-ln-10-pr12304005.htm"><img
+                                                id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_2"
+                                                src="https://img.tinbatdongsan.com/crop/212x169/2018/08/28/20180828115503-503d.jpg"/></a>
                                 </div>
                                 <div class="content">
                                     <h4 class="title h40 cut-text-2">
-                                        <a id="hplTitle" title="MỞ BÁN ĐẤT VÀNG VEN SÔNG ĐẸP NHẤT NHƠN TRẠCH - ĐÓN ĐẦU QUY HOẠCH VÀNH ĐAI 3, CẦU Q9, CAM KẾT LN 10%" href="/ban-dat-nen-du-an-king-bay/mo-ban-dat-vang-ven-song-dep-nhat-nhon-trach-don-dau-quy-hoach-vanh-dai-3-cau-q9-cam-ket-ln-10-pr12304005.htm">MỞ BÁN ĐẤT VÀNG VEN SÔNG ĐẸP NHẤT NHƠN TRẠCH - ĐÓN ĐẦU QUY HOẠCH VÀNH ĐAI 3, CẦU Q9, CAM KẾT LN 10%</a>
+                                        <a id="hplTitle"
+                                           title="MỞ BÁN ĐẤT VÀNG VEN SÔNG ĐẸP NHẤT NHƠN TRẠCH - ĐÓN ĐẦU QUY HOẠCH VÀNH ĐAI 3, CẦU Q9, CAM KẾT LN 10%"
+                                           href="/ban-dat-nen-du-an-king-bay/mo-ban-dat-vang-ven-song-dep-nhat-nhon-trach-don-dau-quy-hoach-vanh-dai-3-cau-q9-cam-ket-ln-10-pr12304005.htm">MỞ
+                                            BÁN ĐẤT VÀNG VEN SÔNG ĐẸP NHẤT NHƠN TRẠCH - ĐÓN ĐẦU QUY HOẠCH VÀNH ĐAI 3,
+                                            CẦU Q9, CAM KẾT LN 10%</a>
                                     </h4>
                                     <div class="info clearfix">
-                                        <div style="white-space: nowrap; text-overflow: ellipsis;" class="pull-left h20 ovf-hd w--100">
+                                        <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                             class="pull-left h20 ovf-hd w--100">
                                             <i class='fa fa-tag hint mg-right-5'></i>
                                             <span class="fweight-700 green-clr fsize-15">
                                             19 Triệu/m²
@@ -268,14 +281,22 @@
 
                             <li class="">
                                 <div class="image border-6d">
-                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_3" title="Khu đô thị sinh thái ven sông đẳng cấp, hiện đại vị trí đẹp, giá rẻ" href="/ban-dat-nen-du-an-king-bay/khu-do-thi-sinh-thai-ven-song-dang-cap-hien-dai-vi-tri-dep-gia-re-pr12243739.htm"><img id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_3" src="https://img.tinbatdongsan.com/crop/212x169/2018/08/14/20180814093458-4691.png" /></a>
+                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_3"
+                                       title="Khu đô thị sinh thái ven sông đẳng cấp, hiện đại vị trí đẹp, giá rẻ"
+                                       href="/ban-dat-nen-du-an-king-bay/khu-do-thi-sinh-thai-ven-song-dang-cap-hien-dai-vi-tri-dep-gia-re-pr12243739.htm"><img
+                                                id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_3"
+                                                src="https://img.tinbatdongsan.com/crop/212x169/2018/08/14/20180814093458-4691.png"/></a>
                                 </div>
                                 <div class="content">
                                     <h4 class="title h40 cut-text-2">
-                                        <a id="hplTitle" title="Khu đô thị sinh thái ven sông đẳng cấp, hiện đại vị trí đẹp, giá rẻ" href="/ban-dat-nen-du-an-king-bay/khu-do-thi-sinh-thai-ven-song-dang-cap-hien-dai-vi-tri-dep-gia-re-pr12243739.htm">Khu đô thị sinh thái ven sông đẳng cấp, hiện đại vị trí đẹp, giá rẻ</a>
+                                        <a id="hplTitle"
+                                           title="Khu đô thị sinh thái ven sông đẳng cấp, hiện đại vị trí đẹp, giá rẻ"
+                                           href="/ban-dat-nen-du-an-king-bay/khu-do-thi-sinh-thai-ven-song-dang-cap-hien-dai-vi-tri-dep-gia-re-pr12243739.htm">Khu
+                                            đô thị sinh thái ven sông đẳng cấp, hiện đại vị trí đẹp, giá rẻ</a>
                                     </h4>
                                     <div class="info clearfix">
-                                        <div style="white-space: nowrap; text-overflow: ellipsis;" class="pull-left h20 ovf-hd w--100">
+                                        <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                             class="pull-left h20 ovf-hd w--100">
                                             <i class='fa fa-tag hint mg-right-5'></i>
                                             <span class="fweight-700 green-clr fsize-15">
                                             19 Triệu/m²
@@ -297,15 +318,22 @@
 
                             <li class="">
                                 <div class="image border-6d">
-                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_4" title="DỰ ÁN KING BAY LÀ CON GÀ ĐẺ TRỨNG VÀNG CHO NHÀ ĐẦU TƯ" href="/ban-dat-nen-du-an-king-bay/du-an-king-bay-la-con-ga-de-trung-vang-cho-nha-dau-tu-pr12215218.htm"><img id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_4" src="https://img.tinbatdongsan.com/crop/212x169/2018/08/07/20180807110116-80d0.jpg" /></a>
+                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_4"
+                                       title="DỰ ÁN KING BAY LÀ CON GÀ ĐẺ TRỨNG VÀNG CHO NHÀ ĐẦU TƯ"
+                                       href="/ban-dat-nen-du-an-king-bay/du-an-king-bay-la-con-ga-de-trung-vang-cho-nha-dau-tu-pr12215218.htm"><img
+                                                id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_4"
+                                                src="https://img.tinbatdongsan.com/crop/212x169/2018/08/07/20180807110116-80d0.jpg"/></a>
                                 </div>
 
                                 <div class="content">
                                     <h4 class="title h40 cut-text-2">
-                                        <a id="hplTitle" title="DỰ ÁN KING BAY LÀ CON GÀ ĐẺ TRỨNG VÀNG CHO NHÀ ĐẦU TƯ" href="/ban-dat-nen-du-an-king-bay/du-an-king-bay-la-con-ga-de-trung-vang-cho-nha-dau-tu-pr12215218.htm">DỰ ÁN KING BAY LÀ CON GÀ ĐẺ TRỨNG VÀNG CHO NHÀ ĐẦU TƯ</a>
+                                        <a id="hplTitle" title="DỰ ÁN KING BAY LÀ CON GÀ ĐẺ TRỨNG VÀNG CHO NHÀ ĐẦU TƯ"
+                                           href="/ban-dat-nen-du-an-king-bay/du-an-king-bay-la-con-ga-de-trung-vang-cho-nha-dau-tu-pr12215218.htm">DỰ
+                                            ÁN KING BAY LÀ CON GÀ ĐẺ TRỨNG VÀNG CHO NHÀ ĐẦU TƯ</a>
                                     </h4>
                                     <div class="info clearfix">
-                                        <div style="white-space: nowrap; text-overflow: ellipsis;" class="pull-left h20 ovf-hd w--100">
+                                        <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                             class="pull-left h20 ovf-hd w--100">
                                             <i class='fa fa-tag hint mg-right-5'></i>
                                             <span class="fweight-700 green-clr fsize-15">
                                             03 Tỷ
@@ -327,15 +355,24 @@
 
                             <li class="">
                                 <div class="image border-6d">
-                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_5" title="Cơ Hội Để Sở Hữu Nền Đất Khu Phức Hợp King Bay Ven Sông, Mặt Tiền Vành Đai 3, Gía Chỉ 19Tr-m2" href="/ban-dat-nen-du-an-duong-ly-tu-trong-xa-long-tan-3/co-hoi-de-so-huu-nen-dat-khu-phuc-hop-king-bay-ven-song-mat-tien-vanh-dai-3-gia-chi-19trm2-pr12451632.htm"><img id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_5" src="https://img.tinbatdongsan.com/crop/212x169/2018/09/26/20180926111601-683f.jpeg" /></a>
+                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_5"
+                                       title="Cơ Hội Để Sở Hữu Nền Đất Khu Phức Hợp King Bay Ven Sông, Mặt Tiền Vành Đai 3, Gía Chỉ 19Tr-m2"
+                                       href="/ban-dat-nen-du-an-duong-ly-tu-trong-xa-long-tan-3/co-hoi-de-so-huu-nen-dat-khu-phuc-hop-king-bay-ven-song-mat-tien-vanh-dai-3-gia-chi-19trm2-pr12451632.htm"><img
+                                                id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_5"
+                                                src="https://img.tinbatdongsan.com/crop/212x169/2018/09/26/20180926111601-683f.jpeg"/></a>
                                 </div>
 
                                 <div class="content">
                                     <h4 class="title h40 cut-text-2">
-                                        <a id="hplTitle" title="Cơ Hội Để Sở Hữu Nền Đất Khu Phức Hợp King Bay Ven Sông, Mặt Tiền Vành Đai 3, Gía Chỉ 19Tr-m2" href="/ban-dat-nen-du-an-duong-ly-tu-trong-xa-long-tan-3/co-hoi-de-so-huu-nen-dat-khu-phuc-hop-king-bay-ven-song-mat-tien-vanh-dai-3-gia-chi-19trm2-pr12451632.htm">Cơ Hội Để Sở Hữu Nền Đất Khu Phức Hợp King Bay Ven Sông, Mặt Tiền Vành Đai 3, Gía Chỉ 19Tr-m2</a>
+                                        <a id="hplTitle"
+                                           title="Cơ Hội Để Sở Hữu Nền Đất Khu Phức Hợp King Bay Ven Sông, Mặt Tiền Vành Đai 3, Gía Chỉ 19Tr-m2"
+                                           href="/ban-dat-nen-du-an-duong-ly-tu-trong-xa-long-tan-3/co-hoi-de-so-huu-nen-dat-khu-phuc-hop-king-bay-ven-song-mat-tien-vanh-dai-3-gia-chi-19trm2-pr12451632.htm">Cơ
+                                            Hội Để Sở Hữu Nền Đất Khu Phức Hợp King Bay Ven Sông, Mặt Tiền Vành Đai 3,
+                                            Gía Chỉ 19Tr-m2</a>
                                     </h4>
                                     <div class="info clearfix">
-                                        <div style="white-space: nowrap; text-overflow: ellipsis;" class="pull-left h20 ovf-hd w--100">
+                                        <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                             class="pull-left h20 ovf-hd w--100">
                                             <i class='fa fa-tag hint mg-right-5'></i>
                                             <span class="fweight-700 green-clr fsize-15">
                                             19 Triệu/m²
@@ -357,15 +394,22 @@
 
                             <li class="">
                                 <div class="image border-6d">
-                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_6" title="Dự Án - Cơ Hội Đầu Tư Không Nên Bỏ Lỡ" href="/ban-dat-nen-du-an-khu-do-thi-mega-city-2/du-an-co-hoi-dau-tu-khong-nen-bo-lo-pr12214794.htm"><img id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_6" src="https://img.tinbatdongsan.com/crop/212x169/2018/08/07/20180807100757-fb7f.jpg" /></a>
+                                    <a id="MainContent_ProductHot_ctl00_rptProductHome_hplAvatar_6"
+                                       title="Dự Án - Cơ Hội Đầu Tư Không Nên Bỏ Lỡ"
+                                       href="/ban-dat-nen-du-an-khu-do-thi-mega-city-2/du-an-co-hoi-dau-tu-khong-nen-bo-lo-pr12214794.htm"><img
+                                                id="MainContent_ProductHot_ctl00_rptProductHome_imgAvatar_6"
+                                                src="https://img.tinbatdongsan.com/crop/212x169/2018/08/07/20180807100757-fb7f.jpg"/></a>
                                 </div>
 
                                 <div class="content">
                                     <h4 class="title h40 cut-text-2">
-                                        <a id="hplTitle" title="Dự Án - Cơ Hội Đầu Tư Không Nên Bỏ Lỡ" href="/ban-dat-nen-du-an-khu-do-thi-mega-city-2/du-an-co-hoi-dau-tu-khong-nen-bo-lo-pr12214794.htm">Dự Án - Cơ Hội Đầu Tư Không Nên Bỏ Lỡ</a>
+                                        <a id="hplTitle" title="Dự Án - Cơ Hội Đầu Tư Không Nên Bỏ Lỡ"
+                                           href="/ban-dat-nen-du-an-khu-do-thi-mega-city-2/du-an-co-hoi-dau-tu-khong-nen-bo-lo-pr12214794.htm">Dự
+                                            Án - Cơ Hội Đầu Tư Không Nên Bỏ Lỡ</a>
                                     </h4>
                                     <div class="info clearfix">
-                                        <div style="white-space: nowrap; text-overflow: ellipsis;" class="pull-left h20 ovf-hd w--100">
+                                        <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                             class="pull-left h20 ovf-hd w--100">
                                             <i class='fa fa-tag hint mg-right-5'></i>
                                             <span class="fweight-700 green-clr fsize-15">
                                             69 Triệu/m²
@@ -407,15 +451,24 @@
 
                         <li class="first">
                             <div class="image border-6d">
-                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_0" title="Bán nhà  1 trệt 1 lầu hẻm liên tổ 3-4 đường nguyễn văn cừ p. an khánh q. ninh kiều" href="/ban-nha-rieng-duong-nguyen-van-cu-1-phuong-an-khanh-1/ban-nha-1-tret-1-lau-hem-lien-to-34-duong-nguyen-van-cu-p-an-khanh-q-ninh-kieu-pr12659621.htm"><img id="MainContent_ProductHot_rptNewProducts_imgAvatar_0" src="https://img.tinbatdongsan.com/crop/212x169/2018/10/27/20181027202602-cd42.jpg" /></a>
+                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_0"
+                                   title="Bán nhà  1 trệt 1 lầu hẻm liên tổ 3-4 đường nguyễn văn cừ p. an khánh q. ninh kiều"
+                                   href="/ban-nha-rieng-duong-nguyen-van-cu-1-phuong-an-khanh-1/ban-nha-1-tret-1-lau-hem-lien-to-34-duong-nguyen-van-cu-p-an-khanh-q-ninh-kieu-pr12659621.htm"><img
+                                            id="MainContent_ProductHot_rptNewProducts_imgAvatar_0"
+                                            src="https://img.tinbatdongsan.com/crop/212x169/2018/10/27/20181027202602-cd42.jpg"/></a>
                             </div>
 
                             <div class="content">
                                 <h4 class="title cut-text-3">
-                                    <a id="hplTitle" title="Bán nhà  1 trệt 1 lầu hẻm liên tổ 3-4 đường nguyễn văn cừ p. an khánh q. ninh kiều" href="/ban-nha-rieng-duong-nguyen-van-cu-1-phuong-an-khanh-1/ban-nha-1-tret-1-lau-hem-lien-to-34-duong-nguyen-van-cu-p-an-khanh-q-ninh-kieu-pr12659621.htm">Bán nhà  1 trệt 1 lầu hẻm liên tổ 3-4 đường nguyễn văn cừ p. an khánh q. ninh kiều</a>
+                                    <a id="hplTitle"
+                                       title="Bán nhà  1 trệt 1 lầu hẻm liên tổ 3-4 đường nguyễn văn cừ p. an khánh q. ninh kiều"
+                                       href="/ban-nha-rieng-duong-nguyen-van-cu-1-phuong-an-khanh-1/ban-nha-1-tret-1-lau-hem-lien-to-34-duong-nguyen-van-cu-p-an-khanh-q-ninh-kieu-pr12659621.htm">Bán
+                                        nhà 1 trệt 1 lầu hẻm liên tổ 3-4 đường nguyễn văn cừ p. an khánh q.
+                                        ninh kiều</a>
                                 </h4>
                                 <div class="info clearfix">
-                                    <div style="white-space: nowrap; text-overflow: ellipsis;" class="h20 ovf-hd pull-left ">
+                                    <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                         class="h20 ovf-hd pull-left ">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr fsize-15">
                                                     2.2 Tỷ
@@ -437,15 +490,24 @@
 
                         <li class="">
                             <div class="image border-6d">
-                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_1" title="Cần tiền bán gấp biệt thự Hưng Thái, PMH, Q7 cam kết giá rẻ nhất thị trường. LH: 0917300798" href="/ban-nha-biet-thu-lien-ke-hung-thai/can-tien-ban-gap-biet-thu-hung-thai-pmh-q7-cam-ket-gia-re-nhat-thi-truong-lh-0917300798-pr12632221.htm"><img id="MainContent_ProductHot_rptNewProducts_imgAvatar_1" src="https://img.tinbatdongsan.com/crop/212x169/2018/10/24/20181024143914-8d1b.jpg" /></a>
+                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_1"
+                                   title="Cần tiền bán gấp biệt thự Hưng Thái, PMH, Q7 cam kết giá rẻ nhất thị trường. LH: 0917300798"
+                                   href="/ban-nha-biet-thu-lien-ke-hung-thai/can-tien-ban-gap-biet-thu-hung-thai-pmh-q7-cam-ket-gia-re-nhat-thi-truong-lh-0917300798-pr12632221.htm"><img
+                                            id="MainContent_ProductHot_rptNewProducts_imgAvatar_1"
+                                            src="https://img.tinbatdongsan.com/crop/212x169/2018/10/24/20181024143914-8d1b.jpg"/></a>
                             </div>
 
                             <div class="content">
                                 <h4 class="title h40 cut-text-2">
-                                    <a id="hplTitle" title="Cần tiền bán gấp biệt thự Hưng Thái, PMH, Q7 cam kết giá rẻ nhất thị trường. LH: 0917300798" href="/ban-nha-biet-thu-lien-ke-hung-thai/can-tien-ban-gap-biet-thu-hung-thai-pmh-q7-cam-ket-gia-re-nhat-thi-truong-lh-0917300798-pr12632221.htm">Cần tiền bán gấp biệt thự Hưng Thái, PMH, Q7 cam kết giá rẻ nhất thị trường. LH: 0917300798</a>
+                                    <a id="hplTitle"
+                                       title="Cần tiền bán gấp biệt thự Hưng Thái, PMH, Q7 cam kết giá rẻ nhất thị trường. LH: 0917300798"
+                                       href="/ban-nha-biet-thu-lien-ke-hung-thai/can-tien-ban-gap-biet-thu-hung-thai-pmh-q7-cam-ket-gia-re-nhat-thi-truong-lh-0917300798-pr12632221.htm">Cần
+                                        tiền bán gấp biệt thự Hưng Thái, PMH, Q7 cam kết giá rẻ nhất thị trường. LH:
+                                        0917300798</a>
                                 </h4>
                                 <div class="info clearfix">
-                                    <div style="white-space: nowrap; text-overflow: ellipsis;" class="h20 ovf-hd pull-left w--100">
+                                    <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                         class="h20 ovf-hd pull-left w--100">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr fsize-15">
                                                     15.5 Tỷ
@@ -467,15 +529,23 @@
 
                         <li class="">
                             <div class="image border-6d">
-                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_2" title="Chính chủ bán 1592m2 mặt tiền 834 gần vòng xoay tượng đài ngã 5 tân An " href="/ban-dat-xa-huong-tho-phu/chinh-chu-ban-1592m2-mat-tien-834-gan-vong-xoay-tuong-dai-nga-5-tan-an-pr12659613.htm"><img id="MainContent_ProductHot_rptNewProducts_imgAvatar_2" src="https://img.tinbatdongsan.com/crop/212x169/2018/10/27/20181027203501-3466.jpg" /></a>
+                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_2"
+                                   title="Chính chủ bán 1592m2 mặt tiền 834 gần vòng xoay tượng đài ngã 5 tân An "
+                                   href="/ban-dat-xa-huong-tho-phu/chinh-chu-ban-1592m2-mat-tien-834-gan-vong-xoay-tuong-dai-nga-5-tan-an-pr12659613.htm"><img
+                                            id="MainContent_ProductHot_rptNewProducts_imgAvatar_2"
+                                            src="https://img.tinbatdongsan.com/crop/212x169/2018/10/27/20181027203501-3466.jpg"/></a>
                             </div>
 
                             <div class="content">
                                 <h4 class="title h40 cut-text-2">
-                                    <a id="hplTitle" title="Chính chủ bán 1592m2 mặt tiền 834 gần vòng xoay tượng đài ngã 5 tân An " href="/ban-dat-xa-huong-tho-phu/chinh-chu-ban-1592m2-mat-tien-834-gan-vong-xoay-tuong-dai-nga-5-tan-an-pr12659613.htm">Chính chủ bán 1592m2 mặt tiền 834 gần vòng xoay tượng đài ngã 5 tân An </a>
+                                    <a id="hplTitle"
+                                       title="Chính chủ bán 1592m2 mặt tiền 834 gần vòng xoay tượng đài ngã 5 tân An "
+                                       href="/ban-dat-xa-huong-tho-phu/chinh-chu-ban-1592m2-mat-tien-834-gan-vong-xoay-tuong-dai-nga-5-tan-an-pr12659613.htm">Chính
+                                        chủ bán 1592m2 mặt tiền 834 gần vòng xoay tượng đài ngã 5 tân An </a>
                                 </h4>
                                 <div class="info clearfix">
-                                    <div style="white-space: nowrap; text-overflow: ellipsis;" class="h20 ovf-hd pull-left w--100">
+                                    <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                         class="h20 ovf-hd pull-left w--100">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr fsize-15">
                                                     5.2 Tỷ
@@ -497,15 +567,23 @@
 
                         <li class="">
                             <div class="image border-6d">
-                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_3" title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại hẽm 479,QL.13,QThủ Đức,giá 2tỷ8" href="/ban-nha-biet-thu-lien-ke-duong-479-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-hem-479ql13qthu-ducgia-2ty8-pr11590986.htm"><img id="MainContent_ProductHot_rptNewProducts_imgAvatar_3" src="https://img.tinbatdongsan.com/crop/212x169/2018/03/30/20180330205444-c661.jpg" /></a>
+                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_3"
+                                   title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại hẽm 479,QL.13,QThủ Đức,giá 2tỷ8"
+                                   href="/ban-nha-biet-thu-lien-ke-duong-479-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-hem-479ql13qthu-ducgia-2ty8-pr11590986.htm"><img
+                                            id="MainContent_ProductHot_rptNewProducts_imgAvatar_3"
+                                            src="https://img.tinbatdongsan.com/crop/212x169/2018/03/30/20180330205444-c661.jpg"/></a>
                             </div>
 
                             <div class="content">
                                 <h4 class="title h40 cut-text-2">
-                                    <a id="hplTitle" title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại hẽm 479,QL.13,QThủ Đức,giá 2tỷ8" href="/ban-nha-biet-thu-lien-ke-duong-479-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-hem-479ql13qthu-ducgia-2ty8-pr11590986.htm">Bán Nhà mới xây, BẢO HÀNH5NĂM,tại hẽm 479,QL.13,QThủ Đức,giá 2tỷ8</a>
+                                    <a id="hplTitle"
+                                       title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại hẽm 479,QL.13,QThủ Đức,giá 2tỷ8"
+                                       href="/ban-nha-biet-thu-lien-ke-duong-479-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-hem-479ql13qthu-ducgia-2ty8-pr11590986.htm">Bán
+                                        Nhà mới xây, BẢO HÀNH5NĂM,tại hẽm 479,QL.13,QThủ Đức,giá 2tỷ8</a>
                                 </h4>
                                 <div class="info clearfix">
-                                    <div style="white-space: nowrap; text-overflow: ellipsis;" class="h20 ovf-hd pull-left w--100">
+                                    <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                         class="h20 ovf-hd pull-left w--100">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr fsize-15">
                                                     2.8 Tỷ
@@ -527,15 +605,23 @@
 
                         <li class="">
                             <div class="image border-6d">
-                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_4" title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại Đường Số 8 Xuân Phước,QThủ Đức,giá 2tỷ9" href="/ban-nha-biet-thu-lien-ke-duong-8-2-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-duong-so-8-xuan-phuocqthu-ducgia-2ty9-pr11590995.htm"><img id="MainContent_ProductHot_rptNewProducts_imgAvatar_4" src="https://img.tinbatdongsan.com/crop/212x169/2018/03/30/20180330205907-2a86.jpg" /></a>
+                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_4"
+                                   title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại Đường Số 8 Xuân Phước,QThủ Đức,giá 2tỷ9"
+                                   href="/ban-nha-biet-thu-lien-ke-duong-8-2-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-duong-so-8-xuan-phuocqthu-ducgia-2ty9-pr11590995.htm"><img
+                                            id="MainContent_ProductHot_rptNewProducts_imgAvatar_4"
+                                            src="https://img.tinbatdongsan.com/crop/212x169/2018/03/30/20180330205907-2a86.jpg"/></a>
                             </div>
 
                             <div class="content">
                                 <h4 class="title h40 cut-text-2">
-                                    <a id="hplTitle" title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại Đường Số 8 Xuân Phước,QThủ Đức,giá 2tỷ9" href="/ban-nha-biet-thu-lien-ke-duong-8-2-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-duong-so-8-xuan-phuocqthu-ducgia-2ty9-pr11590995.htm">Bán Nhà mới xây, BẢO HÀNH5NĂM,tại Đường Số 8 Xuân Phước,QThủ Đức,giá 2tỷ9</a>
+                                    <a id="hplTitle"
+                                       title="Bán Nhà mới xây, BẢO HÀNH5NĂM,tại Đường Số 8 Xuân Phước,QThủ Đức,giá 2tỷ9"
+                                       href="/ban-nha-biet-thu-lien-ke-duong-8-2-phuong-hiep-binh-phuoc/ban-nha-moi-xay-bao-hanh5namtai-duong-so-8-xuan-phuocqthu-ducgia-2ty9-pr11590995.htm">Bán
+                                        Nhà mới xây, BẢO HÀNH5NĂM,tại Đường Số 8 Xuân Phước,QThủ Đức,giá 2tỷ9</a>
                                 </h4>
                                 <div class="info clearfix">
-                                    <div style="white-space: nowrap; text-overflow: ellipsis;" class="h20 ovf-hd pull-left w--100">
+                                    <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                         class="h20 ovf-hd pull-left w--100">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr fsize-15">
                                                     2.9 Tỷ
@@ -557,15 +643,23 @@
 
                         <li class="">
                             <div class="image border-6d">
-                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_5" title="Bán nhà mới xây, tại Hiệp Bình Chánh, Q. Thủ Đức, đường Số 36, giá 2,9 tỷ" href="/ban-nha-rieng-duong-so-36-phuong-hiep-binh-chanh/ban-nha-moi-xaytai-hiep-binh-chanhqthu-ducduong-so-36gia-29ty-pr11594543.htm"><img id="MainContent_ProductHot_rptNewProducts_imgAvatar_5" src="https://img.tinbatdongsan.com/crop/212x169/2018/04/01/20180401100718-55c2.jpg" /></a>
+                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_5"
+                                   title="Bán nhà mới xây, tại Hiệp Bình Chánh, Q. Thủ Đức, đường Số 36, giá 2,9 tỷ"
+                                   href="/ban-nha-rieng-duong-so-36-phuong-hiep-binh-chanh/ban-nha-moi-xaytai-hiep-binh-chanhqthu-ducduong-so-36gia-29ty-pr11594543.htm"><img
+                                            id="MainContent_ProductHot_rptNewProducts_imgAvatar_5"
+                                            src="https://img.tinbatdongsan.com/crop/212x169/2018/04/01/20180401100718-55c2.jpg"/></a>
                             </div>
 
                             <div class="content">
                                 <h4 class="title h40 cut-text-2">
-                                    <a id="hplTitle" title="Bán nhà mới xây, tại Hiệp Bình Chánh, Q. Thủ Đức, đường Số 36, giá 2,9 tỷ" href="/ban-nha-rieng-duong-so-36-phuong-hiep-binh-chanh/ban-nha-moi-xaytai-hiep-binh-chanhqthu-ducduong-so-36gia-29ty-pr11594543.htm">Bán nhà mới xây, tại Hiệp Bình Chánh, Q. Thủ Đức, đường Số 36, giá 2,9 tỷ</a>
+                                    <a id="hplTitle"
+                                       title="Bán nhà mới xây, tại Hiệp Bình Chánh, Q. Thủ Đức, đường Số 36, giá 2,9 tỷ"
+                                       href="/ban-nha-rieng-duong-so-36-phuong-hiep-binh-chanh/ban-nha-moi-xaytai-hiep-binh-chanhqthu-ducduong-so-36gia-29ty-pr11594543.htm">Bán
+                                        nhà mới xây, tại Hiệp Bình Chánh, Q. Thủ Đức, đường Số 36, giá 2,9 tỷ</a>
                                 </h4>
                                 <div class="info clearfix">
-                                    <div style="white-space: nowrap; text-overflow: ellipsis;" class="h20 ovf-hd pull-left w--100">
+                                    <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                         class="h20 ovf-hd pull-left w--100">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr fsize-15">
                                                     2.9 Tỷ
@@ -587,15 +681,23 @@
 
                         <li class="">
                             <div class="image border-6d">
-                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_6" title="Bán gấp nhà 1 trệt 3 lầu, tại đường Số 4 Cầu Ông Dầu,Q Thủ Đức, giá 3tỷ2" href="/ban-nha-rieng-phuong-hiep-binh-phuoc/ban-gap-nha-1-tret-3-lau-tai-duong-so-4-cau-ong-dauq-thu-duc-gia-3ty2-pr10599084.htm"><img id="MainContent_ProductHot_rptNewProducts_imgAvatar_6" src="https://img.tinbatdongsan.com/crop/212x169/2018/04/08/20180408215306-1eb3.jpg" /></a>
+                                <a id="MainContent_ProductHot_rptNewProducts_hplAvatar_6"
+                                   title="Bán gấp nhà 1 trệt 3 lầu, tại đường Số 4 Cầu Ông Dầu,Q Thủ Đức, giá 3tỷ2"
+                                   href="/ban-nha-rieng-phuong-hiep-binh-phuoc/ban-gap-nha-1-tret-3-lau-tai-duong-so-4-cau-ong-dauq-thu-duc-gia-3ty2-pr10599084.htm"><img
+                                            id="MainContent_ProductHot_rptNewProducts_imgAvatar_6"
+                                            src="https://img.tinbatdongsan.com/crop/212x169/2018/04/08/20180408215306-1eb3.jpg"/></a>
                             </div>
 
                             <div class="content">
                                 <h4 class="title h40 cut-text-2">
-                                    <a id="hplTitle" title="Bán gấp nhà 1 trệt 3 lầu, tại đường Số 4 Cầu Ông Dầu,Q Thủ Đức, giá 3tỷ2" href="/ban-nha-rieng-phuong-hiep-binh-phuoc/ban-gap-nha-1-tret-3-lau-tai-duong-so-4-cau-ong-dauq-thu-duc-gia-3ty2-pr10599084.htm">Bán gấp nhà 1 trệt 3 lầu, tại đường Số 4 Cầu Ông Dầu,Q Thủ Đức, giá 3tỷ2</a>
+                                    <a id="hplTitle"
+                                       title="Bán gấp nhà 1 trệt 3 lầu, tại đường Số 4 Cầu Ông Dầu,Q Thủ Đức, giá 3tỷ2"
+                                       href="/ban-nha-rieng-phuong-hiep-binh-phuoc/ban-gap-nha-1-tret-3-lau-tai-duong-so-4-cau-ong-dauq-thu-duc-gia-3ty2-pr10599084.htm">Bán
+                                        gấp nhà 1 trệt 3 lầu, tại đường Số 4 Cầu Ông Dầu,Q Thủ Đức, giá 3tỷ2</a>
                                 </h4>
                                 <div class="info clearfix">
-                                    <div style="white-space: nowrap; text-overflow: ellipsis;" class="h20 ovf-hd pull-left w--100">
+                                    <div style="white-space: nowrap; text-overflow: ellipsis;"
+                                         class="h20 ovf-hd pull-left w--100">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr fsize-15">
                                                     3.2 Tỷ
@@ -630,9 +732,9 @@
     </div>
 
 </div>
-<input type="hidden" name="ctl00$MainContent$ProductCount$areaCount" id="areaCount" />
-<input type="hidden" name="ctl00$MainContent$ProductCount$priceCount" id="priceCount" />
-<input type="hidden" name="ctl00$MainContent$ProductCount$roomCount" id="roomCount" />
+<input type="hidden" name="ctl00$MainContent$ProductCount$areaCount" id="areaCount"/>
+<input type="hidden" name="ctl00$MainContent$ProductCount$priceCount" id="priceCount"/>
+<input type="hidden" name="ctl00$MainContent$ProductCount$roomCount" id="roomCount"/>
 <div class="block-estate pd-top-30 pd-bottom-15">
 
     <div class="main">
@@ -1198,12 +1300,13 @@
                 <li>
                     <div class="image border-6d">
                         <a href="#">
-                            <img src="https://img.tinbatdongsan.com/2018/10/27/20181027121940978424-f64a.jpg" alt="Những tuyến đường "đắt nhất hành tinh" tại Hà Nội">
+                            <img src="https://img.tinbatdongsan.com/2018/10/27/20181027121940978424-f64a.jpg"
+                                 alt="Những tuyến đường " đắt nhất hành tinh" tại Hà Nội">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="#" title="Những tuyến đường "đắt nhất hành tinh" tại Hà Nội">
+                            <a href="#" title="Những tuyến đường " đắt nhất hành tinh" tại Hà Nội">
                             Những tuyến đường "đắt nhất hành tinh" tại Hà Nội
                             </a>
                         </h4>
@@ -1212,7 +1315,8 @@
                             27/10/2018
                         </p>
                         <p class="introduce">
-                            Những dự án đường hàng nghìn tỷ đồng được mệnh danh là những tuyến đường "đắt nhất hành tinh" tại Hà Nội liên tục được thiết lập với số vốn đầu tư tăng dần.
+                            Những dự án đường hàng nghìn tỷ đồng được mệnh danh là những tuyến đường "đắt nhất hành
+                            tinh" tại Hà Nội liên tục được thiết lập với số vốn đầu tư tăng dần.
                         </p>
                     </div>
                 </li>
@@ -1220,12 +1324,14 @@
                 <li>
                     <div class="image border-6d">
                         <a href="/tu-van/phe-duyet-tuyen-duong-dat-nhat-hanh-tinh-hon-7200-ty-dong-tai-ha-noi-ar18234.htm">
-                            <img src="https://img.tinbatdongsan.com/2018/10/26/20181026134357042124-e96e.jpg" alt="Phê duyệt tuyến đường "đắt nhất hành tinh" hơn 7.200 tỷ đồng tại Hà Nội">
+                            <img src="https://img.tinbatdongsan.com/2018/10/26/20181026134357042124-e96e.jpg"
+                                 alt="Phê duyệt tuyến đường " đắt nhất hành tinh" hơn 7.200 tỷ đồng tại Hà Nội">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="/tu-van/phe-duyet-tuyen-duong-dat-nhat-hanh-tinh-hon-7200-ty-dong-tai-ha-noi-ar18234.htm" title="Phê duyệt tuyến đường "đắt nhất hành tinh" hơn 7.200 tỷ đồng tại Hà Nội">
+                            <a href="/tu-van/phe-duyet-tuyen-duong-dat-nhat-hanh-tinh-hon-7200-ty-dong-tai-ha-noi-ar18234.htm"
+                               title="Phê duyệt tuyến đường " đắt nhất hành tinh" hơn 7.200 tỷ đồng tại Hà Nội">
                             Phê duyệt tuyến đường "đắt nhất hành tinh" hơn 7.200 tỷ đồng tại Hà Nội
                             </a>
                         </h4>
@@ -1234,7 +1340,8 @@
                             26/10/2018
                         </p>
                         <p class="introduce">
-                            Phó Chủ tịch UBND TP. Hà Nội Nguyễn Thế Hùng vừa phê duyệt Dự án tuyến đường vành đai 1 đoạn Hoàng Cầu - Voi Phục (giai đoạn 1). Với chiều dài 2,2km, đây được xem ...
+                            Phó Chủ tịch UBND TP. Hà Nội Nguyễn Thế Hùng vừa phê duyệt Dự án tuyến đường vành đai 1 đoạn
+                            Hoàng Cầu - Voi Phục (giai đoạn 1). Với chiều dài 2,2km, đây được xem ...
                         </p>
                     </div>
                 </li>
@@ -1242,12 +1349,14 @@
                 <li>
                     <div class="image border-6d">
                         <a href="/tu-van/de-xuat-khong-cho-nguoi-ngoai-tinh-mua-nha-cao-tang-tai-vung-noi-do-ar18232.htm">
-                            <img src="https://img.tinbatdongsan.com/2018/10/26/Z9BcC3fq/nha-cao-tang-8e2e.jpg" alt="Đề xuất không cho người ngoại tỉnh mua nhà cao tầng tại vùng nội đô">
+                            <img src="https://img.tinbatdongsan.com/2018/10/26/Z9BcC3fq/nha-cao-tang-8e2e.jpg"
+                                 alt="Đề xuất không cho người ngoại tỉnh mua nhà cao tầng tại vùng nội đô">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="/tu-van/de-xuat-khong-cho-nguoi-ngoai-tinh-mua-nha-cao-tang-tai-vung-noi-do-ar18232.htm" title="Đề xuất không cho người ngoại tỉnh mua nhà cao tầng tại vùng nội đô">
+                            <a href="/tu-van/de-xuat-khong-cho-nguoi-ngoai-tinh-mua-nha-cao-tang-tai-vung-noi-do-ar18232.htm"
+                               title="Đề xuất không cho người ngoại tỉnh mua nhà cao tầng tại vùng nội đô">
                                 Đề xuất không cho người ngoại tỉnh mua nhà cao tầng tại vùng nội đô
                             </a>
                         </h4>
@@ -1256,7 +1365,8 @@
                             26/10/2018
                         </p>
                         <p class="introduce">
-                            Đó là đề xuất được đưa ra bởi Chủ tịch Tổng hội Xây dựng Việt Nam trong hội thảo khoa học Quản lý phát triển công trình cao tầng khu vực nội đô lịch sử mở rộng TP. ...
+                            Đó là đề xuất được đưa ra bởi Chủ tịch Tổng hội Xây dựng Việt Nam trong hội thảo khoa học
+                            Quản lý phát triển công trình cao tầng khu vực nội đô lịch sử mở rộng TP. ...
                         </p>
                     </div>
                 </li>
@@ -1264,12 +1374,14 @@
                 <li>
                     <div class="image border-6d">
                         <a href="/tu-van/no-ro-xu-huong-cho-thue-mat-bang-theo-ngay-gio-tai-sai-gon-ar18230.htm">
-                            <img src="https://img.tinbatdongsan.com/2018/10/26/Z9BcC3fq/thue-mat-bang-994f.jpg" alt="Nở rộ xu hướng cho thuê mặt bằng theo ngày, giờ tại Sài Gòn">
+                            <img src="https://img.tinbatdongsan.com/2018/10/26/Z9BcC3fq/thue-mat-bang-994f.jpg"
+                                 alt="Nở rộ xu hướng cho thuê mặt bằng theo ngày, giờ tại Sài Gòn">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="/tu-van/no-ro-xu-huong-cho-thue-mat-bang-theo-ngay-gio-tai-sai-gon-ar18230.htm" title="Nở rộ xu hướng cho thuê mặt bằng theo ngày, giờ tại Sài Gòn">
+                            <a href="/tu-van/no-ro-xu-huong-cho-thue-mat-bang-theo-ngay-gio-tai-sai-gon-ar18230.htm"
+                               title="Nở rộ xu hướng cho thuê mặt bằng theo ngày, giờ tại Sài Gòn">
                                 Nở rộ xu hướng cho thuê mặt bằng theo ngày, giờ tại Sài Gòn
                             </a>
                         </h4>
@@ -1278,14 +1390,14 @@
                             26/10/2018
                         </p>
                         <p class="introduce">
-                            Xu hướng cho thuê mặt bằng dôi dư tại nhiều nhà mặt tiền, hàng quán, văn phòng với giá bạc triệu đang ngày càng nở rộ tại quận 1, 3, Bình Thạnh (Tp.HCM).
+                            Xu hướng cho thuê mặt bằng dôi dư tại nhiều nhà mặt tiền, hàng quán, văn phòng với giá bạc
+                            triệu đang ngày càng nở rộ tại quận 1, 3, Bình Thạnh (Tp.HCM).
                         </p>
                     </div>
                 </li>
 
 
             </ul>
-
 
 
         </div>
@@ -1297,12 +1409,14 @@
                 <li>
                     <div class="image border-6d">
                         <a href="/tin-du-an/cung-nhau-dich-muc-so-thi-nha-mau-2-phong-ngu-tien-nghi-cua-khu-do-thi-vincity-quan-9-ar18227.htm">
-                            <img src="https://img.tinbatdongsan.com/2018/10/25/IMTCYxsf/thiet-ke-can-ho-vinc-068c.jpg" alt="Cùng nhau ‘đích mục sở thị’ nhà mẫu 2 phòng ngủ tiện nghi của khu đô thị vincity quận 9">
+                            <img src="https://img.tinbatdongsan.com/2018/10/25/IMTCYxsf/thiet-ke-can-ho-vinc-068c.jpg"
+                                 alt="Cùng nhau ‘đích mục sở thị’ nhà mẫu 2 phòng ngủ tiện nghi của khu đô thị vincity quận 9">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="/tin-du-an/cung-nhau-dich-muc-so-thi-nha-mau-2-phong-ngu-tien-nghi-cua-khu-do-thi-vincity-quan-9-ar18227.htm" title="Cùng nhau ‘đích mục sở thị’ nhà mẫu 2 phòng ngủ tiện nghi của khu đô thị vincity quận 9">
+                            <a href="/tin-du-an/cung-nhau-dich-muc-so-thi-nha-mau-2-phong-ngu-tien-nghi-cua-khu-do-thi-vincity-quan-9-ar18227.htm"
+                               title="Cùng nhau ‘đích mục sở thị’ nhà mẫu 2 phòng ngủ tiện nghi của khu đô thị vincity quận 9">
                                 Cùng nhau ‘đích mục sở thị’ nhà mẫu 2 phòng ngủ tiện nghi của khu đô thị vincity quận 9
                             </a>
                         </h4>
@@ -1311,7 +1425,8 @@
                             25/10/2018
                         </p>
                         <p class="introduce">
-                            Vốn là dự án bất động sản đình đám được tập đoàn Vingroup ra mắt vào cuối năm 2016, khu đô thị Vincity quận 9 cùng với vị trí đắc địa, tiện ích bậc nhất,.. đã ‘đốn ...
+                            Vốn là dự án bất động sản đình đám được tập đoàn Vingroup ra mắt vào cuối năm 2016, khu đô
+                            thị Vincity quận 9 cùng với vị trí đắc địa, tiện ích bậc nhất,.. đã ‘đốn ...
                         </p>
                     </div>
                 </li>
@@ -1319,12 +1434,14 @@
                 <li>
                     <div class="image border-6d">
                         <a href="/tin-du-an/gia-ban-biet-thu-the-k-park-qua-xung-tam-voi-triet-ly-tien-nao-cua-nay-ar18186.htm">
-                            <img src="https://img.tinbatdongsan.com/2018/10/20/IMTCYxsf/chung-cu-the-k-park--1fb4.jpeg" alt="Giá bán biệt thự The K Park quả xứng tầm với triết lý ‘tiền nào của nấy’">
+                            <img src="https://img.tinbatdongsan.com/2018/10/20/IMTCYxsf/chung-cu-the-k-park--1fb4.jpeg"
+                                 alt="Giá bán biệt thự The K Park quả xứng tầm với triết lý ‘tiền nào của nấy’">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="/tin-du-an/gia-ban-biet-thu-the-k-park-qua-xung-tam-voi-triet-ly-tien-nao-cua-nay-ar18186.htm" title="Giá bán biệt thự The K Park quả xứng tầm với triết lý ‘tiền nào của nấy’">
+                            <a href="/tin-du-an/gia-ban-biet-thu-the-k-park-qua-xung-tam-voi-triet-ly-tien-nao-cua-nay-ar18186.htm"
+                               title="Giá bán biệt thự The K Park quả xứng tầm với triết lý ‘tiền nào của nấy’">
                                 Giá bán biệt thự The K Park quả xứng tầm với triết lý ‘tiền nào của nấy’
                             </a>
                         </h4>
@@ -1333,7 +1450,8 @@
                             20/10/2018
                         </p>
                         <p class="introduce">
-                            Nhắc đến hình thức nhà ở villa chắc chắn ai cũng hình dung ra một mức giá ‘trên trời’. Tuy nhiên, những tiện ích mà nó mang lại chắc chắn sẽ khiến bạn thỏa mãn, hài ...
+                            Nhắc đến hình thức nhà ở villa chắc chắn ai cũng hình dung ra một mức giá ‘trên trời’. Tuy
+                            nhiên, những tiện ích mà nó mang lại chắc chắn sẽ khiến bạn thỏa mãn, hài ...
                         </p>
                     </div>
                 </li>
@@ -1341,12 +1459,14 @@
                 <li>
                     <div class="image border-6d">
                         <a href="/tin-du-an/trai-nghiem-cuoc-song-tien-ich-dang-cap-3-sao-tai-vincity-quan-9-ar17775.htm">
-                            <img src="https://img.tinbatdongsan.com/2018/08/10/IMTCYxsf/vi-tri-du-an-vincity-678d.jpg" alt="Trải nghiệm cuộc sống tiện ích đẳng cấp 3 sao tại Vincity quận 9">
+                            <img src="https://img.tinbatdongsan.com/2018/08/10/IMTCYxsf/vi-tri-du-an-vincity-678d.jpg"
+                                 alt="Trải nghiệm cuộc sống tiện ích đẳng cấp 3 sao tại Vincity quận 9">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="/tin-du-an/trai-nghiem-cuoc-song-tien-ich-dang-cap-3-sao-tai-vincity-quan-9-ar17775.htm" title="Trải nghiệm cuộc sống tiện ích đẳng cấp 3 sao tại Vincity quận 9">
+                            <a href="/tin-du-an/trai-nghiem-cuoc-song-tien-ich-dang-cap-3-sao-tai-vincity-quan-9-ar17775.htm"
+                               title="Trải nghiệm cuộc sống tiện ích đẳng cấp 3 sao tại Vincity quận 9">
                                 Trải nghiệm cuộc sống tiện ích đẳng cấp 3 sao tại Vincity quận 9
                             </a>
                         </h4>
@@ -1355,7 +1475,8 @@
                             10/08/2018
                         </p>
                         <p class="introduce">
-                            Vincity quận 9 được xây dựng theo tiêu chuẩn căn hộ 3 sao cao cấp, hứa hẹn sẽ đem đến những giây phút hưởng thụ cuộc sống một cách trọn vẹn nhất cho cư dân. Cùng ...
+                            Vincity quận 9 được xây dựng theo tiêu chuẩn căn hộ 3 sao cao cấp, hứa hẹn sẽ đem đến những
+                            giây phút hưởng thụ cuộc sống một cách trọn vẹn nhất cho cư dân. Cùng ...
                         </p>
                     </div>
                 </li>
@@ -1363,12 +1484,14 @@
                 <li>
                     <div class="image border-6d">
                         <a href="/tin-du-an/co-nen-dau-tu-vao-bat-dong-san-quan-9-trong-nam-2019-ar17774.htm">
-                            <img src="https://img.tinbatdongsan.com/2018/08/10/IMTCYxsf/toan-canh-vincity-qu-4a51.jpg" alt="Có nên đầu tư vào bất động sản quận 9 trong năm 2019?">
+                            <img src="https://img.tinbatdongsan.com/2018/08/10/IMTCYxsf/toan-canh-vincity-qu-4a51.jpg"
+                                 alt="Có nên đầu tư vào bất động sản quận 9 trong năm 2019?">
                         </a>
                     </div>
                     <div class="content">
                         <h4 class="title fsize-15">
-                            <a href="/tin-du-an/co-nen-dau-tu-vao-bat-dong-san-quan-9-trong-nam-2019-ar17774.htm" title="Có nên đầu tư vào bất động sản quận 9 trong năm 2019?">
+                            <a href="/tin-du-an/co-nen-dau-tu-vao-bat-dong-san-quan-9-trong-nam-2019-ar17774.htm"
+                               title="Có nên đầu tư vào bất động sản quận 9 trong năm 2019?">
                                 Có nên đầu tư vào bất động sản quận 9 trong năm 2019?
                             </a>
                         </h4>
@@ -1377,7 +1500,8 @@
                             10/08/2018
                         </p>
                         <p class="introduce">
-                            ​Quận 9 là quận sở hữu diện tích lớn nhất ở khu vực phía đông Sài Gòn, cùng với vị trí cửa ngõ của thành phố, nên quận được kỳ vọng rất lớn trở thành trung tâm kinh ...
+                            ​Quận 9 là quận sở hữu diện tích lớn nhất ở khu vực phía đông Sài Gòn, cùng với vị trí cửa
+                            ngõ của thành phố, nên quận được kỳ vọng rất lớn trở thành trung tâm kinh ...
                         </p>
                     </div>
                 </li>
