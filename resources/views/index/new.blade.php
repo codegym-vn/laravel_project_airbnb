@@ -53,11 +53,13 @@
 <body>
 @include('index.layout.header')
 
-
 <div class="bg-blue-20 height105">
+
     <div class="main">
+
         <div class="row clearfix">
             <div class="col-gr-100per">
+
                 <div class="folder-title clearfix">
                     <div class="pull-left" style="width:57%;">
                         <h4 id="titleName"
@@ -69,28 +71,42 @@
                                    onfocus="if (this.value == '-Tìm tin tức, lời khuyên, tư vấn-') (this.value='')"
                                    onblur="if (this.value == '') (this.value='-Tìm tin tức, lời khuyên, tư vấn-')"
                                    class="search-project form-control pull-left"/>
-                            <a class="pull-right btn-search-project" id="btnSearchArticles" onclick="return searchArticles()"><i class="fa-fa-search"
-                                   style="text-align: center; line-height: 40px; margin-left: 20px; color: white; !important;">Tìm kiem </i>
+                            <a class="pull-right btn-search-project" id="btnSearchArticles"
+                               onclick="return searchArticles()">
+                                <i class="fa fa-search"
+                                   style="text-align: center; line-height: 40px; margin-left: 20px; color: white !important;"></i>
                             </a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-    </div>
-</div>
 
+    </div>
+
+</div>
 <div id="wrapper">
 
     <div class="main">
 
         <div class="row clearfix">
+
+
             <div class="col-gr-75per">
                 <div class="none cateNameNews">
                     <span id="MainContent_ArticleList_lblCateName">Tin tức</span>
                 </div>
+
                 <ul class="group-prd group-project group-1cl clearfix">
+
                     <li>
+                        <div class="image">
+                            <a href="/thong-tin-thi-truong/nhung-tuyen-duong-dat-nhat-hanh-tinh-tai-ha-noi-ar18242.htm"
+                               title="Những tuyến đường " đắt nhất hành tinh" tại Hà Nội">
+                            <img src="https://img.tinbatdongsan.com/2018/10/27/20181027121940978424-f64a.jpg">
+                            </a>
+                        </div>
                         <div class="content">
                             <h4 class="title">
                                 <a href="/thong-tin-thi-truong/nhung-tuyen-duong-dat-nhat-hanh-tinh-tai-ha-noi-ar18242.htm"
@@ -388,10 +404,10 @@
                                 <li>
                                     <div class="image">
                                         <a href="/tin-tuc/nha-trang-dat-nen-hut-khach-ar12560.htm"
-                                           title="Nha Trang: Đất nền ">
-                                            <img id="mostReadImg"
-                                                 src="http://img.tinbatdongsan.com/2015/03/05/0Ln61R5F/ca1970232-bdba.jpg"
-                                                 alt="">
+                                           title="Nha Trang: Đất nền " hút" khách">
+                                        <img id="mostReadImg"
+                                             src="http://img.tinbatdongsan.com/2015/03/05/0Ln61R5F/ca1970232-bdba.jpg"
+                                             alt="">
                                         </a>
                                     </div>
                                     <div class="content">
@@ -403,158 +419,28 @@
                                         </h4>
                                     </div>
                                 </li>
+
                             </ul>
+
                         </div>
+
+
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-</div>
 
-<div id="LinkBoxHot_BoxHotLink_pnBoxLink">
-
-    <div class="block-foot-link pd-top-30 pd-bottom-40">
-
-        <div class="main">
-
-            <h4 class="title-txt mg-bottom-20">Liên kết nổi bật</h4>
-
-            <div class="row clearfix">
-
-                <div class="container-list-dot-link">
-
-                    <ul class="list-dot-link clearfix link-dot-link-hot">
-
-                        <li class="">
-                            <a href="/ban-nha-rieng-duong-calmette-53.htm"> Bán nhà Đường Calmette
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-nha-mat-pho-duong-phan-liem-53.htm"> Bán nhà mặt tiền Đường Phan Liêm
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-nha-mat-pho-duong-huynh-man-dat-57.htm"> Bán nhà mặt tiền Đường Huỳnh Mẫn Đạt
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="mg-right-0">
-                            <a href="/ban-nha-rieng-phuong-thanh-loc-3.htm"> Bán nhà Phường Thạnh Lộc
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-can-ho-chung-cu-vinhomes-central-park.htm"> Chung cư Vinhomes Central Park
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/cho-thue-nha-mat-pho-pho-phan-dang-luu-68.htm"> Cho thuê nhà mặt tiền Đường Phan
-                                Đăng Lưu
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-nha-rieng-duong-co-bac-68.htm"> Bán nhà Đường Cô Bắc
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="mg-right-0">
-                            <a href="/ban-nha-mat-pho-duong-truc-bach-2.htm"> Bán nhà mặt phố Đường Trúc Bạch
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/cho-thue-nha-mat-pho-pho-kham-thien-3.htm"> Cho thuê nhà mặt phố Phố Khâm Thiên
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-nha-mat-pho-duong-tue-tinh-4.htm"> Bán nhà mặt phố Đường Tuệ Tĩnh
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/cho-thue-can-ho-chung-cu-khu-do-thi-moi-dich-vong.htm"> Chung cư Khu đô thị mới
-                                Dịch Vọng
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="mg-right-0">
-                            <a href="/cho-thue-nha-rieng-duong-nguyen-khang-7.htm"> Cho thuê nhà Đường Nguyễn Khang
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-nha-biet-thu-lien-ke-xa-thanh-liet.htm"> Bán nhà biệt thự, liền kề Xã Thanh
-                                Liệt
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-dat-phuong-tan-dong-hiep.htm"> Bán đất Phường Tân Đông Hiệp
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/nha-dat-ban-kien-an-hp.htm"> Nhà đất bán Quận Kiến An
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="mg-right-0">
-                            <a href="/ban-dat-vinh-cuu-dna.htm"> Bán đất Huyện Vĩnh Cửu
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-dat-long-khanh-dna.htm"> Bán đất Huyện Long Khánh
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/ban-dat-chau-thanh-hgi.htm"> Bán đất Huyện Châu Thành
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="/nha-dat-cho-thue-van-lam-hy.htm"> Nhà đất cho thuê Huyện Văn Lâm
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                        <li class="mg-right-0">
-                            <a href="/ban-dat-thai-binh-tb.htm"> Bán đất Huyện Thái Bình
-                                <i class="fa fa-chevron-right blue-clr"></i>
-                            </a>
-                        </li>
-
-                    </ul>
+                <div class="block-foot-link pd-top-30 pd-bottom-40">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTin-B%25E1%25BA%25A5t-%25C4%2590%25E1%25BB%2599ng-S%25E1%25BA%25A3n-1350951281594366%2F&tabs=timeline&width=263&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=282156201795763"
+                            width="263" height="500" style="border: none; overflow: hidden" scrolling="no"
+                            frameborder="0" allowtransparency="true"></iframe>
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
 
 
