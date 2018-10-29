@@ -16,7 +16,7 @@ class CreateHousesTable extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
-            $table->integer('room');
+            $table->string('room', 100);
             $table->integer('number_room');
             $table->integer('number_bathroom');
             $table->integer('price');
@@ -27,7 +27,6 @@ class CreateHousesTable extends Migration
             $table->integer('id_kind_house')->unsigned();
             $table->foreign('id_kind_house')->references('id')->on('kind_house');
             $table->boolean('status');
-            $table->boolean('time_box');
             $table->timestamps();
         });
     }
