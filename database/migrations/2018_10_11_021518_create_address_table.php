@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKindHouseTable extends Migration
+class CreateAddressTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateKindHouseTable extends Migration
      */
     public function up()
     {
-        Schema::create('kind_house', function (Blueprint $table) {
+        Schema::create('address', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
+            $table->string('address', 255);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateKindHouseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kind_house');
+        Schema::dropIfExists('address');
     }
 }

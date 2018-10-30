@@ -15,9 +15,15 @@ class CreatePostTable extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 100);
+            $table->string('room', 100);
+            $table->integer('number_room');
+            $table->integer('number_bathroom');
+            $table->integer('price');
             $table->string('title', 255);
             $table->string('describe', 255);
-            $table->text('conten');
+            $table->string('address', 255);
+            $table->string('image')->nullable();
             $table->integer('id_image')->unsigned();
             $table->foreign('id_image')->references('id')->on('image');
             $table->integer('id_user')->unsigned();
