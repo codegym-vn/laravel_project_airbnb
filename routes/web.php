@@ -29,3 +29,5 @@ Route::get('/sign-up', 'LoginController@signUp')->name('sign-up');
 Route::get('/create', 'CreatePostsController@create')->name('post.create');
 
 Route::post('/create', 'CreatePostsController@store')->name('post.store');
+
+Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails');
