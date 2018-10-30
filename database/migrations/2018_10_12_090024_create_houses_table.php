@@ -23,7 +23,7 @@ class CreateHousesTable extends Migration
             $table->string('describe', 255);
             $table->integer('id_address')->unsigned();
             $table->foreign('id_address')->references('id')->on('address');
-
+            $table->string('role', 10);
             $table->integer('id_kind_house')->unsigned();
             $table->foreign('id_kind_house')->references('id')->on('kind_house');
             $table->boolean('status');

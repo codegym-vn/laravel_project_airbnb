@@ -10,7 +10,7 @@ use App\Model\PostModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class CreatePostsController extends Controller
+class CreatePostsController extends RetrievesllDataController
 {
     public function index(){
         $post = PostModel::all();
@@ -19,16 +19,16 @@ class CreatePostsController extends Controller
 
     public function create(){
         $kindHouses = KindHouseModel::all();
-        $address = AddressModel::all();
-        return view('collection.user.create-post', compact('address', 'kindHouses'));
+        dd($kindHouses);
+//        $address = AddressModel::all();
+//        return view('collection.user.create-post', compact('address', 'kindHouses'));
     }
 
     public function store(Request $request){
         //gọi function thêm nhà
         $this->insertHouses($request);
-
- 
         $houses = HousesModel::orderBy('id', 'desc')->first();
+
         //lấy giá trị mới nhất của nhà
 
         //lấy id thêm ảnh

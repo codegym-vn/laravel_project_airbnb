@@ -78,7 +78,7 @@
         <div class="row clearfix ">
             <div class="col-gr-100per">
                 <div id="MainContent_PostNews1_pnDangtin">
-                    <form method="post" action="{{ route('post.store', $user->id) }}" enctype="multipart/form-data"
+                    <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data"
                           class="contact_form" id="contact_form">
                         {{ csrf_field() }}
                         <div class="post-title">
@@ -102,7 +102,8 @@
                             <div class="post-field-option set-relative">
                                 <input type="hidden" name="room" id="hddCatePost"
                                        value="-1"/>
-                                <select id="cboCatePost" name="id_kind_house" class="form-control" onchange="ChangeCatePost($(this).val())">
+                                <select id="cboCatePost" name="id_kind_house" class="form-control"
+                                        onchange="ChangeCatePost($(this).val())">
                                     <option value="-1">Loại nhà đất</option>
                                     @foreach($kindHouses as $item)
                                         <option value="{{$item->id}}">{{$item->name}}</option>
