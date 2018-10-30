@@ -27,6 +27,7 @@ class CreatePostsController extends Controller
         //gọi function thêm nhà
         $this->insertHouses($request);
 
+ 
         $houses = HousesModel::orderBy('id', 'desc')->first();
         //lấy giá trị mới nhất của nhà
 
@@ -63,6 +64,8 @@ class CreatePostsController extends Controller
     protected function insertImage($request, $idHouses){
         //thêm ảnh
         $this->insertHouses($request);
+
+ 
         $image = new ImageModel();
         $file = $request->inputFile;
         $image->id_house = $idHouses;
@@ -107,7 +110,5 @@ class CreatePostsController extends Controller
         Session::flash('create-success', $message);
         return redirect()->route('listBockHouse');
 
-    }
-
-
+    } 
 }
