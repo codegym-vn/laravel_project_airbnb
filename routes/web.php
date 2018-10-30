@@ -8,7 +8,7 @@ Route::match(['get', 'post'], '/listBockHouse', 'HousesController@showHouses')->
 
 Route::get('/information-house', 'indexController@informationHouse')->name('information-house');
 
-//Route::get('/create-post', 'indexController@createPost')->name('create-post');
+Route::post('/search', 'HousesController@search')->name('search');
 
 
 
@@ -30,4 +30,6 @@ Route::post('/user/forgot-password/{id}', 'DashBoardController@forgotPass')->nam
 Route::get('/create', 'CreatePostsController@create')->name('post.create');
 
 Route::post('/create', 'CreatePostsController@store')->name('post.store');
+
+Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails');
  
