@@ -53,6 +53,22 @@
 <body>
 @include('index.layout.header')
 
+
+<div class="head-search">
+    <h4 class="title">Tìm kiếm bất động sản</h4>
+    <div class="form-search">
+        <input name="ctl00$SearchContent$ProductTextSearch$txtTextSearch" type="text" maxlength="100" id="txtTextSearch"
+               class="form-control ui-autocomplete-input" autocomplete="off"
+               onfocus="if (this.value == &#39;Nhập từ khóa&#39;) (this.value=&#39;&#39;)"
+               onblur="if (this.value == &#39;&#39;) (this.value=&#39;Nhập từ khóa&#39;)" role="textbox"
+               aria-autocomplete="list" aria-haspopup="true"/>
+        <input type="hidden" name="ctl00$SearchContent$ProductTextSearch$hddCateSearch" id="hddCateSearch" value="49"/>
+        <a id="lbtSearchTop" class="submit" onclick="searchClick()"><i class="fa fa-search"
+                                                                       style="top: 10px; position: absolute;"></i></a>
+    </div>
+    <div class="bg-blue-20 pd-top-20 pd-bottom-20 h90 body-title-list">
+    </div>
+</div>
 <div id="wrapper">
     <div class="main">
         <div class="row clearfix">
@@ -140,7 +156,6 @@
             </ul>
 
             <div class="mg-bottom-30 clearfix">
-                {{ $houses->appends(request()->query()) }}
             </div>
 
         </div>
@@ -208,9 +223,9 @@
                                         <option value="-1">Thành Phố</option>
                                         @foreach($address as $address)
                                             <option value="{{ $address->id }}"
-                                                        @if(isset($_POST['address']) && $address->id == $_POST['address'])
-                                                            selected
-                                                        @endif
+                                                    @if(isset($_POST['address']) && $address->id == $_POST['address'])
+                                                    selected
+                                                    @endif
                                             >
                                                 {{ $address->address }}
                                             </option>
@@ -227,7 +242,7 @@
                                         @for($i = 1; $i <= 10; $i++)
                                             <option value="{{ $i }}"
                                                     @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
-                                                        selected
+                                                    selected
                                                     @endif
                                             >
                                                 {{ $i }}

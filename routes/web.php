@@ -20,7 +20,7 @@ Route::match(['get', 'post'], '/listBockHouse', 'HousesController@showHouses')->
 
 Route::get('/information-house', 'indexController@informationHouse')->name('information-house');
 
-//Route::get('/create-post', 'indexController@createPost')->name('create-post');
+Route::post('/search', 'HousesController@search')->name('search');
 
 Route::get('/sign-in', 'LoginController@signIn')->name('sign-in');
 
