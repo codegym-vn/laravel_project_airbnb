@@ -38,4 +38,9 @@ class HousesController extends RetrievesllDataController
 
         return view('index.list-bock-house', compact('houses', 'address'));
     }
+
+    public function seeDetails($id){
+        $seeDetailHouses = HousesModel::find($id);
+        return view('index.information-house', compact('seeDetailHouses'));
+    }
 }

@@ -22,9 +22,6 @@ class CreatePostsController extends Controller
     public function store(Request $request){
         $this->store1();
 
-        $houses =  new HousesModel();
-
-
         $image = new ImageModel();
         $file = $request->inputFile;
 
@@ -65,9 +62,5 @@ class CreatePostsController extends Controller
         Session::flash('create-success', $message);
         return redirect()->route('listBockHouse');
 
-    }
-
-    public function store1(){
-        //insert houses
     }
 }

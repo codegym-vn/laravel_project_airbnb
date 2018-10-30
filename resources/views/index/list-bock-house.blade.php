@@ -107,7 +107,7 @@
                             <div class="image h155">
                                 <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                                    title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
-                                   href="/cho-thue-nha-rieng-duong-nguyen-luong-bang-1-phuong-hang-bot/cho-thue-nha-rieng-tai-duong-nguyen-luong-bang-dong-da-ha-noi-dien-tich-75m2-gia-27-trieuthang-pr12662917.htm"><img
+                                   href="{{ route('seeDetails', $house->id) }}"><img
                                             id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
                                             class="img-list-product"
                                             src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
@@ -117,7 +117,7 @@
                                 <h4 class="title lh-16 h50 mg-bottom-5">
                                     <a id="hplTitle"
                                        title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
-                                       href="/cho-thue-nha-rieng-duong-nguyen-luong-bang-1-phuong-hang-bot/cho-thue-nha-rieng-tai-duong-nguyen-luong-bang-dong-da-ha-noi-dien-tich-75m2-gia-27-trieuthang-pr12662917.htm">
+                                       href="{{ route('seeDetails', $house->id) }}">
                                         {{ $house->name }}
                                     </a>
                                 </h4>
@@ -146,7 +146,7 @@
                                     </div>
                                     <a id="hplView" title="Cần cho thuê căn hộ chung cư Sunrise City khu North, Quận 7"
                                        class="none"
-                                       href="/cho-thue-can-ho-chung-cu-duong-nguyen-huu-tho-phuong-tan-hung-14/can-cho-thue-can-ho-chung-cu-sunrise-city-khu-north-quan-7-pr12659076.htm">Xem
+                                       href="{{ route('seeDetails', $house->id) }}">Xem
                                         thêm</a>
                                 </div>
                             </div>
@@ -178,12 +178,14 @@
                                                 @if(isset($_POST['price']) && $_POST['price'] == '0')
                                                 selected
                                                 @endif
-                                        >Mức giá</option>
+                                        >Mức giá
+                                        </option>
                                         <option value="0-2000000"
                                                 @if(isset($_POST['price']) && $_POST['price'] == '0-2000000')
                                                 selected
                                                 @endif
-                                        >Dưới 2 triệu</option>
+                                        >Dưới 2 triệu
+                                        </option>
                                         <option value="2000000-4000000"
                                                 @if(isset($_POST['price']) && $_POST['price'] == '2000000-4000000')
                                                 selected
@@ -221,7 +223,9 @@
                                             onchange="ChangeCity($(this).val())">
                                         <option value="-1">Thành Phố</option>
                                         @foreach($address as $address)
-                                            <option value="{{ $address->id }}" selected>{{ $address->address }}</option>
+                                            <option value="{{ $address->id }}">
+                                                {{ $address->address }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
