@@ -17,7 +17,7 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <h2 class="text-center mb-4">Register</h2>
-                    <form action="#" method="post">
+                    <form action="{{route('sign-up')}}" method="post">
                         @csrf
                         <div class="auto-form-wrapper">
                             <div class="form-group">
