@@ -8,8 +8,11 @@ Route::match(['get', 'post'], '/listBockHouse', 'HousesController@showHouses')->
 
 Route::get('/information-house', 'indexController@informationHouse')->name('information-house');
 
-Route::post('/search', 'HousesController@search')->name('search');
+ 
+ 
+Route::get('/sign-in', 'LoginController@signIn')->name('sign-in');
 
+Route::post('/search', 'HousesController@search')->name('search');
 
 
 Route::get('/sign-in', 'LoginController@signIn')->name('sign-in');
