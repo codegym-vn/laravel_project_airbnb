@@ -10,32 +10,38 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        if ($request->method() === "GET") {
             $houses = HousesModel::orderBy('status', 'desc')
                 ->paginate(10, ['*'], 'trang');
-        } else {
-            $price = null;
+        return view('index.list-bock-house', compact('houses', 'address'));
+    }
 
-            if ($request->price != 0) {
-                $price = explode('-', $request->price);
-            }
+    public function seeDetails($id){
+        $seeDetailHouses = HousesModel::find($id);
+        return view('index.information-house', compact('seeDetailHouses'));
+    }
 
-            if ($price) {
-                $houses = HousesModel::orWhereBetween('price', [$price[0], $price[1]])
-                    ->orWhere('id_address', "like", "%$request->address")
-                    ->orWhere('number_room', 'like', "%$request->number_room%")
-                    ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
-                    ->orWhere('month', "like", "%$request->month%")
-                    ->paginate(10, ['*'], 'trang');
-            } else {
-                $houses = HousesModel::where('id_address', "like", "%$request->address")
-                    ->orWhere('number_room', 'like', "%$request->number_room%")
-                    ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
-                    ->orWhere('month', "like", "%$request->month%")
-                    ->paginate(10, ['*'], 'trang');
-            }
+    public function search(Request $request){
+        $address = $this->address();
+
+        if ($request->price != 0 | $request->price != null) {
+            $price = explode('-', $request->price);
         }
 
-        return view('index.list-bock-house', compact('houses', 'address'));
+        if ($price) {
+            $houses = HousesModel::orWhereBetween('price', [$price[0], $price[1]])
+                ->orWhere('id_address', "like", "%$request->address")
+                ->orWhere('number_room', 'like', "%$request->number_room%")
+                ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
+                ->orWhere('month', "like", "%$request->month%")
+                ->get();
+        } else {
+            $houses = HousesModel::where('id_address', "like", "%$request->address")
+                ->orWhere('number_room', 'like', "%$request->number_room%")
+                ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
+                ->orWhere('month', "like", "%$request->month%")
+                ->get();
+        }
+        return view('index.search', compact('houses', 'address'));
+
     }
 }

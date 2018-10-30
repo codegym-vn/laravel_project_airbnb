@@ -78,7 +78,7 @@
         <div class="row clearfix ">
             <div class="col-gr-100per">
                 <div id="MainContent_PostNews1_pnDangtin">
-                    <form method="post" action="{{ route('post.create') }}" enctype="multipart/form-data"
+                    <form method="post" action="{{ route('post.store', $user->id) }}" enctype="multipart/form-data"
                           class="contact_form" id="contact_form">
                         {{ csrf_field() }}
                         <div class="post-title">
@@ -102,8 +102,11 @@
                             <div class="post-field-option set-relative">
                                 <input type="hidden" name="room" id="hddCatePost"
                                        value="-1"/>
-                                <select id="cboCatePost" class="form-control" onchange="ChangeCatePost($(this).val())">
+                                <select id="cboCatePost" name="id_kind_house" class="form-control" onchange="ChangeCatePost($(this).val())">
                                     <option value="-1">Loại nhà đất</option>
+                                    @foreach($kindHouses as $item)
+                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                    @endforeach
                                 </select>
                                 <span style="color: red; position: absolute; line-height: 40px; left: 0; top: 30px; display: none;"
                                       id="spanLoainhadat">Bạn cần nhập loại nhà đất</span>
@@ -115,8 +118,11 @@
                                 <input type="hidden" name="address" id="hddCityPost"
                                        value="-1"/>
                                 <select id="cboCityPost" onchange="ChangeCityPost($(this).val())"
-                                        class="form-control mg-bottom-20">
+                                        class="form-control mg-bottom-20" name="id_address">
                                     <option value="-1">Tỉnh/Thành</option>
+                                    @foreach($address as $item)
+                                        <option value="{{ $item->id }}">{{ $item->address }}</option>
+                                    @endforeach
                                 </select>
                                 <span style="color: Red; top: 40px; float: left; position: absolute; z-index: 1; left: 0px; display: none;"
                                       id="spanCityPost">Bạn cần nhập Tỉnh thành phố</span>
