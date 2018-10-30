@@ -6,6 +6,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @method static find()
+ * @method static where(string $string, $id)
+ */
 class User extends Authenticatable
 {
     use Notifiable;
@@ -27,4 +31,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
 }
