@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                <!-- Button trigger modal -->
+                    <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Đặt
                         lịch thuê nhà này
                     </button>
@@ -73,7 +73,7 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                                 aria-hidden="true">&times;</span></button>
                                 </div>
-                                <form action="{{route('bockhoue', $house->id)}}">
+                                <form method="post" action="{{route('bockhoue', ['idHouses' => $house->id, 'idUser' => $user['id']])}}">
                                     @csrf
                                     <div class="modal-body">
                                         <ul>

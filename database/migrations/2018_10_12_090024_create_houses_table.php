@@ -24,10 +24,6 @@ class CreateHousesTable extends Migration
             $table->string('describe', 255);
             $table->integer('id_address')->unsigned();
             $table->foreign('id_address')->references('id')->on('address');
-<<<<<<< HEAD
-            $table->string('role', 10);
-=======
->>>>>>> 3b4045ea7a11b829a692d557ff6b2874ea83557f
             $table->integer('id_kind_house')->unsigned();
             $table->foreign('id_kind_house')->references('id')->on('kind_house');
             $table->integer('id_user')->unsigned();
