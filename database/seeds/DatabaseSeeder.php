@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HousesTableSeeder::class);
         $this->call(Image::class);
         $this->call(Post::class);
+        $this->call(CalenderTableSeeder::class);
     }
 }

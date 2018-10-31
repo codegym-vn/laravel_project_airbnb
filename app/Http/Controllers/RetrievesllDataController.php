@@ -11,6 +11,7 @@ use App\Model\KindEvaluateModel;
 use App\Model\KindHouseModel;
 use App\Model\PostModel;
 use App\Model\StatisicalModel;
+use App\User;
 use Illuminate\Http\Request;
 
 abstract class RetrievesllDataController extends Controller
@@ -59,5 +60,8 @@ abstract class RetrievesllDataController extends Controller
         return $statisical;
     }
 
-
+    public function user($id){
+        $user = User::find($id);
+        return $user;
+    }
 }

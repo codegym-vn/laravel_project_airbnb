@@ -20,12 +20,14 @@ class CreateHousesTable extends Migration
             $table->integer('number_room');
             $table->integer('number_bathroom');
             $table->integer('price');
+            $table->string('month', 255);
             $table->string('describe', 255);
             $table->integer('id_address')->unsigned();
             $table->foreign('id_address')->references('id')->on('address');
-
             $table->integer('id_kind_house')->unsigned();
             $table->foreign('id_kind_house')->references('id')->on('kind_house');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->boolean('status');
             $table->timestamps();
         });
