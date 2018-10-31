@@ -39,7 +39,6 @@ Route::prefix('sign-in')->group(function () {
 });
 
 
-
 Route::prefix('userBockHouse')->group(function () {
 
     Route::get('/edit-users/{id}', 'DashBoardController@editUserPostHouse')->name('editUsers');
@@ -89,7 +88,6 @@ Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails'
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
 
 Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
-
 
 
 
