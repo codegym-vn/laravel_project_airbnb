@@ -12,11 +12,6 @@ class indexController extends Controller
         return view('index.index');
     }
 
-    public function new()
-    {
-        return view('index.new');
-    }
-
     public function listBockHouse()
     {
         return view('index.list-bock-house');
@@ -29,7 +24,7 @@ class indexController extends Controller
 
     public function createPost()
     {
-        return view('collection.user.create-post');
+        return view('collection.userPostHouse.create-post');
 
     }
 }

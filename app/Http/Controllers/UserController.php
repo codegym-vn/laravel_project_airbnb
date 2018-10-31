@@ -25,7 +25,7 @@ class UserController extends RetrievesllDataController
 //            if ($statistic->id_user)
             $price = $statistic->houses->price + $price;
         }
-        return view('collection.user.statistics', compact('user', 'statistics', 'price'));
+        return view('collection.userPostHouse.statistics', compact('user', 'statistics', 'price'));
     }
 
     public function feedback(Request $request, $id) {
