@@ -913,7 +913,7 @@ define(
         menuButton = { text: menu.title };
         menuItems = [];
 
-        // Default/user defined items
+        // Default/userPostHouse defined items
         Tools.each((menu.items || '').split(/[ ,]/), function (item) {
           var menuItem = createMenuItem(editorMenuItems, item);
 

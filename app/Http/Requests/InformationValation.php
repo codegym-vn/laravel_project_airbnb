@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class InformationValation extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the userPostHouse is authorized to make this request.
      *
      * @return bool
      */

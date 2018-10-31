@@ -20,7 +20,7 @@ class CreatePostsController extends Controller
     public function create(){
         $kindHouses = KindHouseModel::all();
         $address = AddressModel::all();
-        return view('collection.user.create-post', compact('address', 'kindHouses'));
+        return view('collection.userPostHouse.create-post', compact('address', 'kindHouses'));
     }
 
     public function store(Request $request){
