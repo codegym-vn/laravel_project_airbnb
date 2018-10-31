@@ -27,12 +27,13 @@ class CreatePostsController extends RetrievesllDataController
         return view('collection.user.newPost', compact('user', 'posts'));
     }
 
-    public function create($id)
+    public function create(Request $request, $id)
     {
         $kindHouses = KindHouseModel::all();
         $address = AddressModel::all();
         $user = User::find($id);
         return view('collection.admin.creat-post', compact('address', 'kindHouses', 'user'));
+
     }
 
     public function store(Request $request, $id)
