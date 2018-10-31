@@ -27,6 +27,7 @@ class DashBoardController extends Controller
         $users = User::where('id', $id)->get();
         return view('collection.user.edit-user', compact('id', 'users'));
     }
+
     public function updateUser(InformationValation $request, $id)
     {
         $user = User::find($id);
@@ -56,5 +57,11 @@ class DashBoardController extends Controller
         } else {
             return redirect()->route('forgot-pass', Auth::user()->id)->with(['messenger2' => 'Mật khẩu không chính xác']);
         }
+    }
+
+    public function post()
+    {
+
+
     }
 }

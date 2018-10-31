@@ -19,7 +19,7 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="{{route('sign-in')}}" method="post">
+                        <form action="{{route('sign-store')}}" method="post">
                             @csrf
 
                             @if(Session::has('errLogin'))
@@ -61,8 +61,7 @@
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-block g-login">
-                                    <img class="mr-3" src="../../images/file-icons/icon-google.svg" alt="">Log in with
-                                    Google
+                                    <img class="mr-3" src="../../images/file-icons/icon-google.svg" alt="">Log in with Google
                                 </button>
                             </div>
                             <div class="text-block text-center my-3">
