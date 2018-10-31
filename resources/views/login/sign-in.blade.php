@@ -19,7 +19,7 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="{{route('sign-in')}}" method="post">
+                        <form action="{{ route('dashboard') }}" method="post">
                             @csrf
 
                             @if(Session::has('errLogin'))

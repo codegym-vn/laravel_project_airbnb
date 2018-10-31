@@ -5,7 +5,7 @@
             <!-- DataTables Example -->
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fas fa-table"></i> Lịch
+                    <i class="fas fa-table"></i> Thống kê
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -13,24 +13,23 @@
                             <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Lịch hẹn</th>
-                                <th>Tên người hẹn</th>
-                                <th>Số điện thoại</th>
+                                <th>Tên người thuê</th>
                                 <th>Nhà</th>
+                                <th>Gíá tiền</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($calenders as $key => $calender)
+                            @foreach($statistics as $key => $statistic)
                                 <tr>
                                     <td>{{ $key++ }}</td>
-                                    <td>{{ $calender->calender }}</td>
-                                    <td>{{ $calender->name }}</td>
-                                    <td>{{ $calender->phone }}</td>
-                                    <td>{{ $calender->houses->name }}</td>
+                                    <td>{{ $statistic->user->name }}</td>
+                                    <td>{{ $statistic->houses->name }}</td>
+                                    <td>{{ $statistic->houses->price }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+                        <tr>Tổng doanh thu : {{ $price }} VND</tr>
                     </div>
                 </div>
             </div>

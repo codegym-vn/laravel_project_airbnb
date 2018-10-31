@@ -13,20 +13,32 @@ use Illuminate\Support\Facades\Session;
 
 class CreatePostsController extends RetrievesllDataController
 {
-    public function index(){
+    public function index()
+    {
         $post = PostModel::all();
         return view('index.list-bock-houses', compact('post'));
     }
 
-    public function create(){
-        $kindHouses = KindHouseModel::all();
-        $address = AddressModel::all();
-        return view('collection.user.create-post', compact('address', 'kindHouses'));
+    public function showNewPost($id)
+    {
+        $user = $this->user($id);
+        $posts = PostModel::orderBy('id', 'desc')
+            ->get();
+        return view('collection.user.newPost', compact('user', 'posts'));
     }
 
-    public function store(Request $request){
+    public function create($id)
+    {
+        $kindHouses = KindHouseModel::all();
+        $address = AddressModel::all();
+        $user = User::find($id);
+        return view('collection.admin.creat-post', compact('address', 'kindHouses', 'user'));
+    }
+
+    public function store(Request $request, $id)
+    {
         //gọi function thêm nhà
-        $this->insertHouses($request);
+        $this->insertHouses($request, $id);
         $houses = HousesModel::orderBy('id', 'desc')->first();
 
         //lấy giá trị mới nhất của nhà
@@ -36,15 +48,15 @@ class CreatePostsController extends RetrievesllDataController
         $image = ImageModel::orderBy('id', 'desc')->first();
 
         //thêm bài post
-        $this->insertPost($request, $image->id, $houses->id);
+        $this->insertPost($request, $image->id, $houses->id, $id);
     }
 
-    protected function insertPost($request, $idImage, $idHouses ) {
+    protected function insertPost($request, $idImage, $idHouses, $idUser)
+    {
         //thêm bài post
         $post = new PostModel();
 
         $post->name = $request->input('name');
-        $post->room = $request->input('room');
         $post->address = $request->input('address');
         $post->number_room = $request->input('number_room');
         $post->number_bathroom = $request->input('number_bathroom');
@@ -53,18 +65,16 @@ class CreatePostsController extends RetrievesllDataController
         $post->describe = $request->input('describe');
         $post->id_image = $idImage;
         $post->id_house = $idHouses;
-
+        $post->id_user = $idUser;
         $post->save();
         $message = "Create List $request->inputName success!";
         Session::flash('create-success', $message);
         return redirect()->route('listBockHouse');
     }
 
-    protected function insertImage($request, $idHouses){
+    protected function insertImage($request, $idHouses)
+    {
         //thêm ảnh
-        $this->insertHouses($request);
-
- 
         $image = new ImageModel();
         $file = $request->inputFile;
         $image->id_house = $idHouses;
@@ -90,20 +100,19 @@ class CreatePostsController extends RetrievesllDataController
         $image->save();
     }
 
-    protected function insertHouses($request ) {
+    protected function insertHouses($request, $idUser)
+    {
         //thêm nhầ
         $houses = new HousesModel();
-
         $houses->name = $request->input('name');
-        $houses->room = $request->input('room');
         $houses->number_room = $request->input('number_room');
         $houses->number_bathroom = $request->input('number_bathroom');
         $houses->price = $request->input('price');
         $houses->describe = $request->input('describe');
         $houses->id_address = $request->input('id_address');
         $houses->id_kind_house = $request->input('id_kind_house');
-        $houses->id_user = 1;
-        $houses->month =0;
+        $houses->id_user = $idUser;
+        $houses->month = 0;
         $houses->status = 0;
 
         $houses->save();
@@ -111,5 +120,5 @@ class CreatePostsController extends RetrievesllDataController
         Session::flash('create-success', $message);
         return redirect()->route('listBockHouse');
 
-    } 
+    }
 }

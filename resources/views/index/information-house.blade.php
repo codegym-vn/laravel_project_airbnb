@@ -42,6 +42,8 @@
     <link href="https://tinbatdongsan.com/Styles/Responsive.css?v=2018060171" rel="stylesheet" type="text/css"/>
     <link href="https://tinbatdongsan.comMaster/css/ie8.css" rel="stylesheet" type="text/css"/>
     <link href="https://tinbatdongsan.com/Scripts/jquery.selectbox-0.2/css/jquery.selectbox.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link href="https://tinbatdongsan.com/Styles/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/jquery-ui-1.8.24.min.js"></script>
@@ -102,45 +104,15 @@
                 <div class="folder-title clearfix">
                     <h1 class="fsize-22 fweight-700 text-uppercase blue-clr no-mg"
                         style="margin-bottom: 10px !important;">
-                        Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817
+                        {{ $seeDetailHouses->name }}
                     </h1>
                     <div class="lh-28 clearfix">
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
 
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>Bán đất nền dự án - King Bay</span></a>
-                            - Huyện Nhơn Trạch - Đồng Nai
+                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
+                                        class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
-                        <ul class="list-control-social pull-right mg-bottom-25 set-relative lh-15">
-                            <li style="top: -14px; position: absolute; right: 110px; line-height: 28px;">
-                                <a rel="nofollow" id="savedNews" onclick="productSaved(this,'12382210');"
-                                   class="save-news">
-                                    <i class="fa fa-download"></i>
-                                    <span class="tooltips">Lưu tin</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="nofollow"
-                                   href="https://www.facebook.com/sharer/sharer.php?u=http://tinbatdongsan.com/ban-dat-nen-du-an-king-bay/quy-dat-vang-cho-nha-dau-tu-ngay-mat-tien-duong-vanh-dai-3-pr12382210.htm"
-                                   class="share-fb">
-                                    <i class="fa fa-facebook-square"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="nofollow"
-                                   href="https://twitter.com/home?status=http://tinbatdongsan.com/ban-dat-nen-du-an-king-bay/quy-dat-vang-cho-nha-dau-tu-ngay-mat-tien-duong-vanh-dai-3-pr12382210.htm"
-                                   class="share-tw">
-                                    <i class="fa fa-twitter-square"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a rel="nofollow"
-                                   href="https://plus.google.com/share?url=http://tinbatdongsan.com/ban-dat-nen-du-an-king-bay/quy-dat-vang-cho-nha-dau-tu-ngay-mat-tien-duong-vanh-dai-3-pr12382210.htm"
-                                   class="share-gplus">
-                                    <i class="fa fa-google-plus-square"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
@@ -161,44 +133,45 @@
                                         <span class="fsize-13">Giá</span>
                                         <br>
                                         <span class="fsize-17 green-clr fweight-700">
-                                19 Triệu/m²
+                                {{ number_format($seeDetailHouses->price) }} Triệu
                             </span>
                                     </div>
                                     <div class="pull-right">
-                                        <span class="fsize-13">Diện tích</span>
+                                        <span class="fsize-13">Loại nhà</span>
                                         <br>
                                         <span class="fsize-17 green-clr fweight-700">
-                                125&nbsp;m&#178;
+                                {{ $seeDetailHouses->kindHouse->name }}
                             </span>
                                     </div>
                                 </div>
                                 <ul class="list-info clearfix">
                                     <li>
                                         <div class="value">
-                                            12382210
+                                            {{ $seeDetailHouses->number_room }}
                                         </div>
-                                        ID
+                                        Phòng ngủ
                                     </li>
-
-                                    <li>
-                                        <div class="value line">
-                                            13/09<br/>2018
-                                        </div>
-                                        Ngày đăng
-                                    </li>
-
-                                    <li>
-                                        <div class="value line">
-                                            13/12<br/>2018
-                                        </div>
-                                        Hết hạn
-                                    </li>
-
                                     <li>
                                         <div class="value">
-                                            KXĐ
+                                            {{ $seeDetailHouses->number_bathroom }}
                                         </div>
-                                        Hướng nhà
+                                        Phòng tắm
+                                    </li>
+                                    <li>
+                                        <div class="value line">
+                                            {{ $seeDetailHouses->created_at }}
+                                        </div>
+                                        Phong
+                                    </li>
+                                    <li>
+                                        <div class="value">
+                                            Loại nhà
+                                        </div>
+                                        @if($seeDetailHouses->status == 0 )
+                                            <p>Chưa cho thuê</p>
+                                        @else
+                                            <p>Dã cho thuê</p>
+                                        @endif
                                     </li>
 
                                 </ul>
@@ -237,33 +210,19 @@
                 </div>
 
                 <div id="infoDetail" class="lh-24 mg-bottom-10">
-                    Đất nền King Bay nằm trên mặt tiền đường Vành Đai và 3 mặt tiền sông Đồng Nai.<br/>* Tổng quan dự án
-                    King Bay:<br/>- Chủ đầu tư: Công ty Freeland thuộc khối liên minh của tập đoàn Vinaland Group.<br/>-
-                    Vị trí: Mặt tiền đường Vành Đai 3, xã Long Tân, huyện Nhơn Trạch, tỉnh Đồng Nai.<br/>- Tổng diện
-                    tích: 125ha gồm 4 phân khu A, B, C và D.<br/>Với đầy đủ tiện ích: Công viên bờ sông, trường học,
-                    trung tâm thương mại, bệnh viện, khu mua sắm.<br/>King Bay mở bán phân khu D: Phân khu cao cấp, liền
-                    kề bệnh viện, trường học, trung tâm thương mại, tiện kinh doanh mua bán.<br/>Đa dạng diện tích dễ
-                    đầu tư: 125m2, 156,5m2, 161m2, 175m2 và 400m2.<br/>* King Bay sinh lợi:<br/>- Sở hữu 3 mặt tiền con
-                    sông lớn Đồng Nai với nhánh sông Sài Gòn.<br/>- Nằm ngay mặt tiền Vành Đai 3 lộ giới 120m, mang đến
-                    giá trị sinh lợi cực cao (tuyến đường trọng điểm khu Đông Sài Gòn).<br/>- Thanh toán linh hoạt, cam
-                    kết sinh lợi 10%/năm.<br/>- Tiện ích đẳng cấp: Công viên nghìn tỷ rộng 6ha trải dài dọc bờ sông được
-                    ví như Disneyland Hồng Kong, bến du thuyền đẳng cấp Quốc tế 5 sao, sân golf 18 lỗ, TTTM, trường học,
-                    bệnh viện Quốc tế.<br/>- Gần và cách sân bay Quốc tế Long Thành chỉ 10 phút.<br/>- Chính sách tri ân
-                    cho khách hàng sỉ, khách hàng mua theo Group.<br/>Chế độ hậu mãi, chăm sóc khách hàng cực tốt,
-                    thường xuyên cập nhật tình trạng hàng, giá trực tiếp từ CĐT, hỗ trợ chuyển nhượng nhanh chóng khi
-                    khách có nhu cầu.
+                    {{ $seeDetailHouses->describe }}
                 </div>
 
 
-                <div class="mg-bottom-20 clearfix">
-                    <h4 onclick="ShowMaps()"
-                        class="pull-left pointer lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">
-                        Xem bản đồ
-                    </h4>
-                    <div class="box-maps">
-                        <img onclick="ShowMaps()" class="img-maps" src="../../Images/maps.png"/>
-                    </div>
-                </div>
+                {{--<div class="mg-bottom-20 clearfix">--}}
+                {{--<h4 onclick="ShowMaps()"--}}
+                {{--class="pull-left pointer lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">--}}
+                {{--Xem bản đồ--}}
+                {{--</h4>--}}
+                {{--<div class="box-maps">--}}
+                {{--<img onclick="ShowMaps()" class="img-maps" src="{{ asset('maps.png') }}"/>--}}
+                {{--</div>--}}
+                {{--</div>--}}
                 <div class="mg-bottom-20">
                     <div id="maps" class="spanMap box">
                         <input type="hidden" name="ctl00$MainContent$ProductDetail1$hddLatitude" id="hddLatitude"
@@ -307,7 +266,7 @@
                 </div>
 
                 <div class="mg-bottom-20 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Liên hệ
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi
                     </h4>
                 </div>
 
@@ -315,7 +274,7 @@
                     <div class="col-left">
                         <div class="pd-15 bg-gray-40">
                             <p class="fweight-bold dblue-clr">
-                                Quynh.
+                                {{ $user->name }}
                             </p>
                             <div class="box-info clearfix">
                                 <div class="avatar size80 border-square pull-left">
@@ -325,21 +284,14 @@
                                     <p class="fweight-600 text-ellipsis">
                                         <i class="fa fa-phone green-clr mg-right-5" style="margin-left: 3px"></i>
                                         <span id="toPhone">
-                                0984038817 - 0984038817
+                                {{ $user->phone }}
                             </span>
                                     </p>
                                     <p class="fweight-600 text-ellipsis">
                                         <i class="fa fa-envelope green-clr mg-right-5"></i>
                                         <span id="toEmail">
-                                vuquynh155@gmail.com
-                            </span>
-                                    </p>
-                                    <p class="fweight-600 text-ellipsis no-mg">
-                                        <i class="fa fa-map-marker green-clr mg-right-5" style="margin-left: 3px"></i>
-                                        <span id="toAddress">
-                                Dự án King Bay, đường Vành Đai 3, xã Long Tân, Nhơn Trạch, Đồng Nai
-                            </span>
-
+                                            {{ $user->email }}
+                                        </span>
                                     </p>
                                 </div>
                             </div>
@@ -350,613 +302,115 @@
                     <style>
 
                     </style>
-                    <div id="boxContact" class="info-contact mg-bottom-40 clearfix">
-                        <div class="col-mid" style="width: 29% !important;">
+                    <form action="{{ route('feedback', $seeDetailHouses->id) }}" method="post">
+                        {{ csrf_field() }}
+                        <div id="boxContact" class="info-contact mg-bottom-40 clearfix">
+                            <div class="col-mid" style="width: 29% !important;">
 
-                            <div class="mg-bottom-10">
-                                <input name="ctl00$MainContent$ProductDetail1$UcContact$txtName" type="text"
-                                       id="txtName" class="form-control" placeholder="Tên của bạn"/>
+                                <div class="mg-bottom-10">
+                                    <input name="name" type="text"
+                                           id="txtName" class="form-control" placeholder="Tên của bạn"/>
+                                </div>
+
+                                <div class="mg-bottom-10">
+                                    <input name="phone" type="text"
+                                           id="txtPhone" class="form-control" placeholder="Số điện thoại của bạn"/>
+                                </div>
+
+                                <div class="no-mg">
+                                    <input name="email" type="text"
+                                           id="txtEmail" class="form-control" placeholder="Email của bạn"/>
+                                </div>
+
+                            </div>
+                            <div class="col-right" style="width: 30% !important;">
+
+                                <div class="mg-bottom-10">
+                              <input name="conten" rows="2" cols="20" id="txtContent"
+                                        class="form-control" placeholder="Nhập phản hồi của bạn">
+
+                              </input>
+                                </div>
+
+                                <div class="group-tbstyle pull-left">
+                                    <div class="gr-action pd-left-5 pull-left">
+                                        <input onclick="SendContact();" type="submit" class="btn" style="background: #2384c7; padding: 0 10px;" value="Phản hồi">
+                                    </div>
+                                </div>
+
                             </div>
 
-                            <div class="mg-bottom-10">
-                                <input name="ctl00$MainContent$ProductDetail1$UcContact$txtPhone" type="text"
-                                       id="txtPhone" class="form-control" placeholder="Số điện thoại của bạn"/>
+                            <script src="/Scripts/Contact.js"></script>
+                            <div class="loading_contact" style="display: none">
+                                <img src="/Images/loading.gif"/>
                             </div>
-
-                            <div class="no-mg">
-                                <input name="ctl00$MainContent$ProductDetail1$UcContact$txtEmail" type="text"
-                                       id="txtEmail" class="form-control" placeholder="Email của bạn"/>
-                            </div>
-
                         </div>
-                        <div class="col-right" style="width: 30% !important;">
-
-                            <div class="mg-bottom-10">
-            <textarea name="ctl00$MainContent$ProductDetail1$UcContact$txtContent" rows="2" cols="20" id="txtContent"
-                      class="form-control" placeholder="Nhập nội dung">
-</textarea>
-                            </div>
-
-                            <div class="group-tbstyle pull-left">
-
-                                <div class="gr-content pull-left w--37">
-                                    <input name="ctl00$MainContent$ProductDetail1$UcContact$txtcode" type="text"
-                                           maxlength="4" id="txtcode" placeholder="Mã xác thực"
-                                           class="form-control pd-8-5"/>
-                                </div>
-                                <div class="gr-action captcha-img pull-left w-63">
-                                    <img id="img_CAPTCHA_Contact"
-                                         style="width: 100px; height: 24px; margin-top: 10px; vertical-align: middle;"
-                                         src="/Layout/Capchar/CaptchaGenerator.aspx"
-                                         alt="" noloaderror="1"/>
-                                </div>
-                                <div class="gr-action pull-left w-12" style="margin: 12px 0 0 -8px;">
-                                    <a onmouseover="this.style.cursor='pointer'"
-                                       onclick="javascript:refreshCaptcha('img_CAPTCHA_Contact');" class="dark-clr">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                </div>
-
-                                <div class="gr-action pd-left-5 pull-left">
-                                    <a onclick="SendContact();" class="btn"
-                                       style="background: #2384c7; padding: 0 10px;">Gửi email</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <script src="/Scripts/Contact.js"></script>
-                        <div class="loading_contact" style="display: none">
-                            <img src="/Images/loading.gif"/>
-                        </div>
-                    </div>
-
+                    </form>
                     <script>
                         $(function () {
                             if ($.trim($('#toEmail').text()) == "--")
                                 $('#boxContact').addClass("none-pointer");
                         });
                     </script>
-
                 </div>
 
-                <div id="MainContent_ProductDetail1_ProductArea_other_product" class="product_other">
-                    <div class="title-line-through mg-bottom-20">
-                        <h4 class="title">Tin rao cùng khu vực
-                        </h4>
-                    </div>
-                    <ul class="group-prd group-3cl mg-bottom-10 clearfix">
-
-                        <li>
-                            <div class="image border-6d h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_hplAvatar_0"
-                                   title="Siêu sinh lời khu đô thị sinh thái ven sông Kinh Bay, cam kết thu về sau 365 ngày + 10%"
-                                   href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/sieu-sinh-loi-khu-do-thi-sinh-thai-ven-song-kinhbay-cam-ket-thu-ve-sau-365-ngay-10-pr12380360.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_imgAvatar_0"
-                                            src="https://img.tinbatdongsan.com/crop/263x173/2018/09/13/20180913120154-ee49.jpg"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle"
-                                       title="Siêu sinh lời khu đô thị sinh thái ven sông Kinh Bay, cam kết thu về sau 365 ngày + 10%"
-                                       href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/sieu-sinh-loi-khu-do-thi-sinh-thai-ven-song-kinhbay-cam-ket-thu-ve-sau-365-ngay-10-pr12380360.htm">Siêu
-                                        sinh lời khu đô thị sinh thái ven sông Kinh Bay, cam kết thu về sau 365 ngày +
-                                        10%</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Nhơn Trạch - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    Thỏa thuận</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    75&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_hplAvatar_1"
-                                   title="Đất nền King Bay, khu đô thị ven sông Đồng Nai"
-                                   href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/dat-nen-king-bay-khu-do-thi-ven-song-dong-nai-pr12640953.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_imgAvatar_1"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Đất nền King Bay, khu đô thị ven sông Đồng Nai"
-                                       href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/dat-nen-king-bay-khu-do-thi-ven-song-dong-nai-pr12640953.htm">Đất
-                                        nền King Bay, khu đô thị ven sông Đồng Nai</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Nhơn Trạch - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    Thỏa thuận</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    125&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_hplAvatar_2"
-                                   title="Đất đẹp sổ đỏ KĐT King Bay, liên hệ 0902667980"
-                                   href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/dat-dep-so-do-gia-chi-15tr-kdt-kingbay-lien-he-0902667980-pr12627239.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_imgAvatar_2"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Đất đẹp sổ đỏ KĐT King Bay, liên hệ 0902667980"
-                                       href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/dat-dep-so-do-gia-chi-15tr-kdt-kingbay-lien-he-0902667980-pr12627239.htm">Đất
-                                        đẹp sổ đỏ KĐT King Bay, liên hệ 0902667980</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Nhơn Trạch - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    2.63 Tỷ</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    175&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_hplAvatar_3"
-                                   title="Đất đẹp sổ đỏ giá chỉ 15tr KĐT King Bay, liên hệ 0938667980"
-                                   href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/dat-dep-so-do-gia-chi-15tr-kdt-kingbay-lien-he-0938667980-pr12615629.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_imgAvatar_3"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Đất đẹp sổ đỏ giá chỉ 15tr KĐT King Bay, liên hệ 0938667980"
-                                       href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/dat-dep-so-do-gia-chi-15tr-kdt-kingbay-lien-he-0938667980-pr12615629.htm">Đất
-                                        đẹp sổ đỏ giá chỉ 15tr KĐT King Bay, liên hệ 0938667980</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Nhơn Trạch - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    2.63 Tỷ</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    175&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_hplAvatar_4"
-                                   title="Cần sang nhượng đất biệt thự dự án King Bay, giá 17tr/m2"
-                                   href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/can-sang-nhuong-dat-biet-thu-du-an-kingbay-gia-17trm2-pr12581719.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_imgAvatar_4"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Cần sang nhượng đất biệt thự dự án King Bay, giá 17tr/m2"
-                                       href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/can-sang-nhuong-dat-biet-thu-du-an-kingbay-gia-17trm2-pr12581719.htm">Cần
-                                        sang nhượng đất biệt thự dự án King Bay, giá 17tr/m2</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Nhơn Trạch - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    17 Triệu/m²</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    450&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_hplAvatar_5"
-                                   title="Dự án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007"
-                                   href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/du-an-king-bay-don-dau-thi-truong-bds-khu-dong-pr12388457.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptAreaProducts_imgAvatar_5"
-                                            src="https://img.tinbatdongsan.com/crop/263x173/2018/09/14/20180914144405-18c8.jpg"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle"
-                                       title="Dự án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007"
-                                       href="/ban-dat-nen-du-an-duong-vanh-dai-3-xa-long-tan-3/du-an-king-bay-don-dau-thi-truong-bds-khu-dong-pr12388457.htm">Dự
-                                        án King Bay đón đầu thị trường BĐS khu Đông, LH 0933781007</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Nhơn Trạch - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    17 Triệu/m²</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    --</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
                 <div id="MainContent_ProductDetail1_ProductArea_product_price" class="product_other">
                     <div class="title-line-through mg-bottom-20">
                         <h4 class="title">Tin rao cùng khoảng giá
                         </h4>
                     </div>
                     <ul class="group-prd group-3cl mg-bottom-20 clearfix">
+                        @foreach($priceHouses as $house)
+                            <li>
+                                <div class="image h155">
+                                    <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
+                                       title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
+                                       href="{{ route('seeDetails', $house->id) }}"><img
+                                                id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
+                                                class="img-list-product"
+                                                src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
+                                </div>
 
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_0"
-                                   title="Đất xây BT, nhà nghỉ dưỡng gần sân bay Long Thành Đồng Nai giá rẻ, thổ cư sổ hồng riêng công"
-                                   href="/ban-dat-nen-du-an-long-thanh-dna/dat-xay-biet-thu-nha-nghi-duong-gan-san-bay-long-thanh-dong-nai-gia-re-tho-cu-so-hong-rieng-cong-pr8846400.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_0"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle"
-                                       title="Đất xây BT, nhà nghỉ dưỡng gần sân bay Long Thành Đồng Nai giá rẻ, thổ cư sổ hồng riêng công"
-                                       href="/ban-dat-nen-du-an-long-thanh-dna/dat-xay-biet-thu-nha-nghi-duong-gan-san-bay-long-thanh-dong-nai-gia-re-tho-cu-so-hong-rieng-cong-pr8846400.htm">Đất
-                                        xây BT, nhà nghỉ dưỡng gần sân bay Long Thành Đồng Nai giá rẻ, thổ cư sổ hồng
-                                        riêng ...</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Long Thành - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    6.6 Triệu/m²</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    125&nbsp;m&#178;</span>
+                                <div class="content">
+                                    <h4 class="title lh-16 h50 mg-bottom-5">
+                                        <a id="hplTitle"
+                                           title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
+                                           href="{{ route('seeDetails', $house->id) }}">
+                                            {{ $house->name }}
+                                        </a>
+                                    </h4>
+
+                                    <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-6">
+                                        <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
+                                        {{ $house->address->address }}
+                                    </p>
+                                    <div class="info clearfix">
+                                        <div class="pull-left w--100 mg-bottom-5"
+                                             style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+                                            <i class='fa fa-tag hint mg-right-5'></i>
+                                            <span class="fweight-700 green-clr">
+                                    {{ number_format($house->price) }} Triệu
+                                </span>
+                                        </div>
+                                        <div class="pull-left w--100">
+                                            <i class='fa fa-arrows-alt hint mg-right-5'></i>
+                                            <span class="fweight-700 green-clr">
+                                            @if($house->status == 0 )
+                                                    Chưa cho thuê
+                                                @else
+                                                    Dã cho thuê
+                                                @endif
+                                        </span>
+                                        </div>
+                                        <a id="hplView"
+                                           title="Cần cho thuê căn hộ chung cư Sunrise City khu North, Quận 7"
+                                           class="none"
+                                           href="{{ route('seeDetails', $house->id) }}">Xem
+                                            thêm</a>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_1"
-                                   title="Pearl Riverside Giang Điền. 0938364681"
-                                   href="/ban-dat-nen-du-an-xa-giang-dien/pearl-riverside-giang-dien-pr8857111.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_1"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Pearl Riverside Giang Điền. 0938364681"
-                                       href="/ban-dat-nen-du-an-xa-giang-dien/pearl-riverside-giang-dien-pr8857111.htm">Pearl
-                                        Riverside Giang Điền. 0938364681</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Trảng Bom - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    7 Triệu/m²</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    100&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_2"
-                                   title="Đất hiếm tựa Ruby, siêu phẩm Ocean Land 16, hiếm Phú Quốc"
-                                   href="/ban-dat-nen-du-an-duong-cay-thong-ngoai-360/dat-hiem-tua-ruby-sieu-pham-ocean-land-16-hiem-phu-quoc-pr8906706.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_2"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Đất hiếm tựa Ruby, siêu phẩm Ocean Land 16, hiếm Phú Quốc"
-                                       href="/ban-dat-nen-du-an-duong-cay-thong-ngoai-360/dat-hiem-tua-ruby-sieu-pham-ocean-land-16-hiem-phu-quoc-pr8906706.htm">Đất
-                                        hiếm tựa Ruby, siêu phẩm Ocean Land 16, hiếm Phú Quốc</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Phú Quốc - Kiên Giang
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    Thỏa thuận</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    120&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_3"
-                                   title="Chính thức mở bán dự án đất nền trung tâm An Nhơn"
-                                   href="/ban-dat-nen-du-an-phuong-binh-dinh/chinh-thuc-mo-ban-du-an-dat-nen-tp-quy-nhon-pr9493586.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_3"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Chính thức mở bán dự án đất nền trung tâm An Nhơn"
-                                       href="/ban-dat-nen-du-an-phuong-binh-dinh/chinh-thuc-mo-ban-du-an-dat-nen-tp-quy-nhon-pr9493586.htm">Chính
-                                        thức mở bán dự án đất nền trung tâm An Nhơn</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    An Nhơn - Bình Định
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    650 Triệu</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    100&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_4"
-                                   title="Cơ hội đầu tư đất nền Tây Bắc Đà Nẵng, chiết khấu đến 6%, trúng xe Mercedes C200"
-                                   href="/ban-dat-nen-du-an-duong-so-5-phuong-hoa-hiep-nam/co-hoi-dau-tu-dat-nen-tay-bac-da-nang-chiec-khau-den-6-trung-xe-mercedes-c200-pr8772401.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_4"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle"
-                                       title="Cơ hội đầu tư đất nền Tây Bắc Đà Nẵng, chiết khấu đến 6%, trúng xe Mercedes C200"
-                                       href="/ban-dat-nen-du-an-duong-so-5-phuong-hoa-hiep-nam/co-hoi-dau-tu-dat-nen-tay-bac-da-nang-chiec-khau-den-6-trung-xe-mercedes-c200-pr8772401.htm">Cơ
-                                        hội đầu tư đất nền Tây Bắc Đà Nẵng, chiết khấu đến 6%, trúng xe Mercedes
-                                        C200</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Liên Chiểu - Đà Nẵng
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    13 Triệu/m²</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    125&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_5"
-                                   title="Đất đầu tư sau lưng chợ Bình Chánh, Quốc Lộ 1A, giai đoạn 1 chỉ 30 nền suất nội bộ giá rẻ"
-                                   href="/ban-dat-nen-du-an-duong-bui-thanh-khiet-thi-tran-tan-tuc/dat-dau-tu-sau-lung-cho-binh-chanh-quoc-lo-1a-giai-doan-1-chi-30-nen-suat-noi-bo-gia-re-pr9598538.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_5"
-                                            src="https://img.tinbatdongsan.com/crop/263x173/2018/07/16/20180716080456-acb4.jpg"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle"
-                                       title="Đất đầu tư sau lưng chợ Bình Chánh, Quốc Lộ 1A, giai đoạn 1 chỉ 30 nền suất nội bộ giá rẻ"
-                                       href="/ban-dat-nen-du-an-duong-bui-thanh-khiet-thi-tran-tan-tuc/dat-dau-tu-sau-lung-cho-binh-chanh-quoc-lo-1a-giai-doan-1-chi-30-nen-suat-noi-bo-gia-re-pr9598538.htm">Đất
-                                        đầu tư sau lưng chợ Bình Chánh, Quốc Lộ 1A, giai đoạn 1 chỉ 30 nền suất nội bộ
-                                        giá rẻ</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Bình Chánh - Hồ Chí Minh
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    950 Triệu</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    100&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_6"
-                                   title="Đất nền mặt tiền Lý Thái Tổ , mặt tiền sông 20m Đại Phước, Nhơn Trạch"
-                                   href="/ban-dat-nen-du-an-duong-ly-thai-to-xa-dai-phuoc-1/dat-nen-mt-ly-thai-to-mt-song-20m-dai-phuoc-nhon-trach-pr10528921.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_6"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle"
-                                       title="Đất nền mặt tiền Lý Thái Tổ , mặt tiền sông 20m Đại Phước, Nhơn Trạch"
-                                       href="/ban-dat-nen-du-an-duong-ly-thai-to-xa-dai-phuoc-1/dat-nen-mt-ly-thai-to-mt-song-20m-dai-phuoc-nhon-trach-pr10528921.htm">Đất
-                                        nền mặt tiền Lý Thái Tổ , mặt tiền sông 20m Đại Phước, Nhơn Trạch</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Nhơn Trạch - Đồng Nai
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    10 Triệu</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    258&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_7"
-                                   title="Cần bán lô đất 2 MT, đường Số 8, Long Phước, Q.9"
-                                   href="/ban-dat-nen-du-an-duong-so-8-phuong-long-phuoc-2/can-ban-lo-dat-2-mat-tien-duong-so-8-long-phuoc-quan-9-pr10435144.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_7"
-                                            src="/Images/no-photo263.png"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle" title="Cần bán lô đất 2 MT, đường Số 8, Long Phước, Q.9"
-                                       href="/ban-dat-nen-du-an-duong-so-8-phuong-long-phuoc-2/can-ban-lo-dat-2-mat-tien-duong-so-8-long-phuoc-quan-9-pr10435144.htm">Cần
-                                        bán lô đất 2 MT, đường Số 8, Long Phước, Q.9</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Quận 9 - Hồ Chí Minh
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    21.5 Triệu/m²</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    75.3&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="image border-6d  h155">
-                                <a id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_hplAvatar_8"
-                                   title="Chỉ 750tr, sở hữu ngay đất nền Coco City, siêu dự án hot nhất tháng 7"
-                                   href="/ban-dat-nen-du-an-duong-dung-si-dien-ngoc-xa-dien-ngoc-1/chi-750tr-so-huu-ngay-dat-nen-coco-city-sieu-du-an-hot-nhat-thang-7-pr9637986.htm"><img
-                                            id="MainContent_ProductDetail1_ProductArea_rptUnitPrice_imgAvatar_8"
-                                            src="https://img.tinbatdongsan.com/crop/263x173/2018/07/16/20180716171424-dff8.jpg"/></a>
-                            </div>
-                            <div class="content">
-                                <h4 class="title">
-                                    <a id="hplTitle"
-                                       title="Chỉ 750tr, sở hữu ngay đất nền Coco City, siêu dự án hot nhất tháng 7"
-                                       href="/ban-dat-nen-du-an-duong-dung-si-dien-ngoc-xa-dien-ngoc-1/chi-750tr-so-huu-ngay-dat-nen-coco-city-sieu-du-an-hot-nhat-thang-7-pr9637986.htm">Chỉ
-                                        750tr, sở hữu ngay đất nền Coco City, siêu dự án hot nhất tháng 7</a>
-                                </h4>
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-5">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    Điện Bàn - Quảng Nam
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100  mg-bottom-5 ovf-hd"
-                                         style="white-space: nowrap; text-overflow: ellipsis;">
-                                        <i class="fa fa-tag hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    11 Triệu/m²</span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class="fa fa-arrows-alt hint mg-right-5"></i>
-                                        <span class="fweight-700 green-clr">
-                                    110&nbsp;m&#178;</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -965,215 +419,175 @@
             <div class="col-gr-25per mg-top-5">
                 <div class="group-advance-search style-col-search mg-bottom-30">
                     <ul class="tabs-search home-search clearfix">
-                        <li id="ban"><a onclick="ChangeType(38);">Bán</a></li>
-                        <li id="chothue"><a onclick="ChangeType(49);">Cho thuê</a></li>
+                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
                     </ul>
-                    <div class="search-content listProductSearch">
-                        <ul class="filter clearfix" style="height: 300px;">
-                            <li class="none">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddType" id="hddType"
-                                       value="38"/>
-                                <select id="cboType" onchange="ChangeLoaigiaodich($(this).val());">
-                                    <option value="-1">Chọn BĐS</option>
-                                    <option value="38">BĐS Bán</option>
-                                    <option value="49">BĐS Cho Thuê</option>
-                                </select>
-                            </li>
-                            <li>
-                                <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddCate" id="hddCate"
-                                           value="40"/>
-                                    <select id="cboCate" onchange="ChangeValue('Cate', $(this).val());"
-                                            class="form-control">
-                                        <option value="-1">Loại nhà đất</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddCity" id="hddCity"
-                                           value="DNA"/>
-                                    <select class="form-control" id="cboCity" onchange="ChangeCity($(this).val())">
-                                        <option value="-1">Tỉnh/Thành Phố</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddDistrict" id="hddDistrict"
-                                           value="239"/>
-                                    <select id="cboDistrict" class="form-control"
-                                            onchange="ChangeQuanhuyen($(this).val())">
-                                        <option value="-1">Quận/Huyện</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddArea" id="hddArea"
-                                           value="5"/>
-                                    <select id="cboArea" class="form-control"
-                                            onchange="ChangeValue('Area', $(this).val());">
-                                        <option value="-1">Diện tích</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="custom-select">
-                                    <input type="hidden" name="ctl00$MainContent$BoxSearch$hddPrice" id="hddPrice"
-                                           value="0"/>
-                                    <select id="cboPrice" class="form-control"
-                                            onchange="ChangeValue('Price', $(this).val());">
-                                        <option value="-1">Mức giá</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddProject" id="hddProject"
-                                       value="2828"/>
-                                <select id="cboProject" onchange="ChangeValue('Project', $(this).val());">
-                                    <option value="-1">Dự án</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddWard" id="hddWard"
-                                       value="7296"/>
-                                <select id="cboWard" onchange="ChangeValue('Ward', $(this).val());">
-                                    <option value="-1">Phường/Xã</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddStreet" id="hddStreet"
-                                       value="8005"/>
-                                <select id="cboStreet" onchange="ChangeValue('Street', $(this).val());">
-                                    <option value="-1">Đường/Phố</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddRoom" id="hddRoom" value="0"/>
-                                <select id="cboRoom" onchange="ChangeValue('Room', $(this).val());">
-                                    <option value="-1">Phòng ngủ</option>
-                                </select>
-                            </li>
-                            <li class="none advance-search">
-                                <input type="hidden" name="ctl00$MainContent$BoxSearch$hddDirection" id="hddDirection"
-                                       value="0"/>
-                                <select id="cboDirection" onchange="ChangeValue('Direction', $(this).val());">
-                                    <option value="-1">Hướng nhà</option>
-                                </select>
-                            </li>
+                    <form action="{{ route('search') }}" method="post">
+                        {{ csrf_field() }}
+                        <div class="search-content listProductSearch">
+                            <ul class="filter clearfix" style="height: 300px;">
+                                <li>
+                                    <div class="custom-select">
+                                        <select id="cboCate" name="price" onchange="ChangeValue('Cate', $(this).val());"
+                                                class="form-control">
+                                            <option value="0"
+                                                    @if(isset($_POST['price']) && $_POST['price'] == '0')
+                                                    selected
+                                                    @endif
+                                            >Mức giá
+                                            </option>
+                                            <option value="0-2000000"
+                                                    @if(isset($_POST['price']) && $_POST['price'] == '0-2000000')
+                                                    selected
+                                                    @endif
+                                            >Dưới 2 triệu
+                                            </option>
+                                            <option value="2000000-4000000"
+                                                    @if(isset($_POST['price']) && $_POST['price'] == '2000000-4000000')
+                                                    selected
+                                                    @endif>
+                                                Từ 2 - 4 triệu
+                                            </option>
+                                            <option value="4000000-7000000"
+                                                    @if(isset($_POST['price']) && $_POST['price'] == '4000000-7000000')
+                                                    selected
+                                                    @endif>
+                                                Từ 4 - 7 triệu
+                                            </option>
 
-                            <li>
-                                <a id="btnSearch" class="btn bg-green full-width fweight-bold"
-                                   href="javascript:__doPostBack(&#39;ctl00$MainContent$BoxSearch$btnSearch&#39;,&#39;&#39;)">
-                                    Tìm kiếm
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="text-center">
-                            <a id="searchAdvance" class="white-clr text-underline fsize-13 ">Tìm nâng cao</a>
+                                            <option value="7000000-13000000"
+                                                    @if(isset($_POST['price']) && $_POST['price'] == '7000000-13000000')
+                                                    selected
+                                                    @endif>
+                                                Từ 7 - 13 triệu
+                                            </option>
+                                            <option value="13000000-1000000000000"
+                                                    @if(isset($_POST['price']) && $_POST['price'] == '13000000-1000000000000')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Trên 13 triệu
+                                            </option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <input type="hidden" name="address" id="hddCity"
+                                               value="0"/>
+                                        <select class="form-control" name="address" id="cboCity"
+                                                onchange="ChangeCity($(this).val())">
+                                            <option value="-1">Thành Phố</option>
+                                            @foreach($address as $address)
+                                                <option value="{{ $address->id }}"
+                                                        @if(isset($_POST['address']) && $address->id == $_POST['address'])
+                                                        selected
+                                                        @endif
+                                                >
+                                                    {{ $address->address }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <input type="hidden" id="hddDistrict"/>
+                                        <select id="cboDistrict" name="number_bathroom" class="form-control"
+                                                onchange="ChangeQuanhuyen($(this).val())">
+                                            <option value="0">Phòng tắm</option>
+                                            @for($i = 1; $i <= 10; $i++)
+                                                <option value="{{ $i }}"
+                                                        @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
+                                                        selected
+                                                        @endif
+                                                >
+                                                    {{ $i }}
+                                                </option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <input type="hidden" id="hddArea"
+                                               value="0"/>
+                                        <select id="cboArea" class="form-control" name="number_room"
+                                                onchange="ChangeValue('Area', $(this).val());">
+                                            <option value="0">Phòng ngủ</option>
+                                            @for($i = 1; $i <= 10; $i++)
+                                                <option
+                                                        value="{{ $i }}"
+                                                        @if(isset($_POST['number_room']) && $_POST['number_room'] == $i)
+                                                        selected
+                                                        @endif
+                                                >
+                                                    {{ $i }}
+                                                </option>
+                                            @endfor
+
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <input type="hidden" id="hddPrice"
+                                               value="-1"/>
+                                        <select id="cboPrice" name="month" class="form-control"
+                                                onchange="ChangeValue('Price', $(this).val());">
+                                            <option value="0"
+                                                    @if(isset($_POST['month']) && $_POST['month'] == '0')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Thời gian
+                                            </option>
+                                            <option value="0-2"
+                                                    @if(isset($_POST['month']) && $_POST['month'] == '0-2')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Dưới 2 tháng
+                                            </option>
+                                            <option value="2-4"
+                                                    @if(isset($_POST['month']) && $_POST['month'] == '2-4')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Từ 2 - 4 tháng
+                                            </option>
+                                            <option value="4-7"
+                                                    @if(isset($_POST['month']) && $_POST['month'] == '4-7')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Từ 4 - 7 tháng
+                                            </option>
+                                            <option value="7000000-13000000"
+                                                    @if(isset($_POST['month']) && $_POST['month'] == '7-13')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Từ 7 - 12 tháng
+                                            </option>
+                                            <option value="13-1000000000000"
+                                                    @if(isset($_POST['month']) && $_POST['month'] == '13-1000000000000')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Trên 1 năm
+                                            </option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <input type="submit" id="btnSearch" class="btn bg-green full-width fweight-bold"
+                                           href="javascript:__doPostBack(&#39;ctl00$MainContent$BoxSearch$btnSearch&#39;,&#39;&#39;)"
+                                           value="Tìm kiếm">
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-
-                </div>
-
-                <div class="mg-bottom-30 border-gray-100 radius">
-
-                    <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
-                        <h4 class="current-col-title fsize-18 fweight-700 text-uppercase dblue-clr">
-                            Bán đất nền dự án theo dự án tại huyện Nhơn Trạch
-                        </h4>
-                    </div>
-
-                    <ul id="showCityProductBoxCount" class="list-dot-link list-col-location mg-bottom-15 clearfix">
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-dai-phuoc-center-city.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Đại Phước Center City&nbsp;<span class="blue-clr">(243)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-dai-phuoc-lotus.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Đại Phước Lotus&nbsp;<span class="blue-clr">(6)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-eco-sun.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Eco Sun&nbsp;<span class="blue-clr">(1)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-khu-dan-cu-bai-tu-long-dai-phuoc.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Khu dân cư Bái Tử Long Đại Phước&nbsp;<span class="blue-clr">(4)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-khu-do-thi-detaco-nhon-trach.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Khu đô thị Detaco Nhơn Trạch&nbsp;<span class="blue-clr">(2)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-khu-do-thi-dong-sai-gon.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Khu đô thị Đông Sài Gòn&nbsp;<span class="blue-clr">(1)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-khu-do-thi-mega-city-2.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Khu đô thị Mega City 2&nbsp;<span class="blue-clr">(25)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-khu-do-thi-moi-phuoc-an.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Khu đô thị mới Phước An&nbsp;<span class="blue-clr">(28)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-khu-do-thi-nhon-trach.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Khu đô thị Nhơn Trạch&nbsp;<span class="blue-clr">(24)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-richland-city.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Richland City&nbsp;<span class="blue-clr">(59)</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="/ban-dat-nen-du-an-sunflower-city.htm">
-                                <i class="fa fa-circle green-clr"></i>
-                                Sunflower City&nbsp;<span class="blue-clr">(10)</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                    <div id="showBoxhot" class="text-center mg-bottom-15">
-                        <a href="javascript:showBoxHot();" id="viewMoreProductCount">
-                            <span class="dark-clr text-underline">Xem thêm</span><i class="fa fa-chevron-circle-down mg-left-5 blue-clr"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="block-foot-link pd-top-30 pd-bottom-40">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTin-B%25E1%25BA%25A5t-%25C4%2590%25E1%25BB%2599ng-S%25E1%25BA%25A3n-1350951281594366%2F&tabs=timeline&width=263&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=282156201795763" width="263" height="500" style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                    </form>
                 </div>
             </div>
         </div>

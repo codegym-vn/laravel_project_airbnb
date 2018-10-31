@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\HousesModel;
+use App\User;
 use Illuminate\Http\Request;
 
 class HousesController extends RetrievesllDataController
@@ -10,17 +11,22 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-            $houses = HousesModel::orderBy('status', 'desc')
-                ->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::orderBy('status', 'desc')
+            ->paginate(10, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
-    public function seeDetails($id){
+    public function seeDetails($id)
+    {
         $seeDetailHouses = HousesModel::find($id);
-        return view('index.information-house', compact('seeDetailHouses'));
+        $user = $this->user($seeDetailHouses->id_user);
+        $priceHouses = HousesModel::where('price', $seeDetailHouses->price)->get();
+        $address = $this->address();
+        return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address'));
     }
 
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $address = $this->address();
 
         if ($request->price != 0 | $request->price != null) {
@@ -43,5 +49,22 @@ class HousesController extends RetrievesllDataController
         }
         return view('index.search', compact('houses', 'address'));
 
+    }
+
+    public function showUpdatedHomeStatus($id)
+    {
+        $houses = HousesModel::where('id_user', $id)->get();
+        $user = User::find($id);
+        return view('collection.user.show-updated-home-status', compact('houses', 'user'));
+    }
+
+    public function updatedHomeStatus(Request $request)
+    {
+        $id = $request->nameHouse;
+        $status = $request->status;
+
+        $updateHouseStatus = HousesModel::find($id);
+        $updateHouseStatus->status = $status;
+        $updateHouseStatus->save();
     }
 }
