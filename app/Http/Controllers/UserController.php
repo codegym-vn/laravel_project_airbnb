@@ -79,7 +79,7 @@ class UserController extends RetrievesllDataController
         return view('collection.userBockHouse.calendar', compact('user', 'calenders'));
     }
 
-    public function deleteCalender($id) {
+    public function deleteCalender(Request $request, $id) {
         $calenders = CalenderModel::find($id);
         $user = User::find($calenders->id_user);
 
@@ -88,6 +88,7 @@ class UserController extends RetrievesllDataController
         $time = $calender - $date;
 
         if ($time <= 86400) {
+            $request->session()->flash('calender', 'Hủy lịch thất bại');
             return redirect(route('showCalendars', $user->id));
         }else{
             $calender = CalenderModel::where('id', $calender->id)
