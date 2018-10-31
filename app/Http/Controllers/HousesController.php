@@ -67,8 +67,4 @@ class HousesController extends RetrievesllDataController
         $updateHouseStatus->save();
     }
 
-    public  function showHouse() {
-        $houses =  HousesModel::all();
-        return view('collection.userPostHouse.dashboard' , compact('houses'));
-    }
 }

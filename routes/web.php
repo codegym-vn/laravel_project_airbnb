@@ -24,8 +24,10 @@ Route::prefix('userBockHouse')->group(function () {
     Route::get('/edit-users/{id}', 'DashBoardController@editUserBockHouse')->name('editUserBockHouses');
     Route::post('/edit-userBockHouse/{id}', 'DashBoardController@updateUserBockHouse')->name('editUserBockHouse');
 
-});
+    Route::get('/bockhoue', 'UserController@viewCanlendar')->name('viewCanlendar');
+    Route::get('/bockhoue/{id}', 'UserController@calendar')->name('bockhoue');
 
+});
 Route::prefix('userPostHouse')->group(function () {
     Route::get('/forgot-pass/{id}', 'DashBoardController@forgotPassword')->name('forgot-pass');
     Route::post('/forgot-password/{id}', 'DashBoardController@forgotPass')->name('forgot-password');
