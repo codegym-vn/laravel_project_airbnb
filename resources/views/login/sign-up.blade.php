@@ -41,12 +41,13 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="form-group d-flex justify-content-center">
-                                <div class="form-check form-check-flat mt-0">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" checked> I agree to the terms
-                                    </label>
-                                </div>
+                                <select name="role" class="select2-container--bootstrap">
+                                    <option value="2"> Đăng nhà </option>
+                                    <option value="3"> Thuê nhà</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary submit-btn btn-block">Register</button>

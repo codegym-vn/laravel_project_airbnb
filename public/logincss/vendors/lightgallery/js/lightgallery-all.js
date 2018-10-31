@@ -2711,7 +2711,7 @@
         var scale = 1;
         /**
          * @desc Image zoom
-         * Translate the wrap and scale the image to get better user experience
+         * Translate the wrap and scale the image to get better userPostHouse experience
          *
          * @param {String} scaleVal - Zoom decrement/increment value
          */

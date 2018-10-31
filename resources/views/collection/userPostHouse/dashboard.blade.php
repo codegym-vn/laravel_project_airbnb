@@ -1,4 +1,4 @@
-@extends('collection.user.layout.teamplate')
+@extends('collection.userPostHouse.layout.teamplate')
 @section('content')
     <div id="content-wrapper">
         <div class="container-fluid">
@@ -9,6 +9,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        {{--{{$houses}}--}}
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>

@@ -67,6 +67,7 @@
                 productId = '12382210';
             </script>
             <style>
+
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -78,12 +79,6 @@
                     height: 85px;
                     bottom: -5px;
                 }
-
-                /*.galleria-image img {
-                    width: 100% !important;
-                    top: 0px !important;
-                    height: 350px !important;
-                }*/
 
                 .galleria-thumbnails .galleria-image {
                     width: 129px !important;
@@ -110,8 +105,7 @@
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
 
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
-                                        class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
+                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +115,6 @@
                     <div class="block-info">
 
                         <div class="border-gray-100 bg-gray-20 radius">
-
                             <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
                                 <h4 class="fsize-16 no-mg text-uppercase dblue-clr">Đặc điểm bất động sản
                                 </h4>
@@ -140,7 +133,7 @@
                                         <span class="fsize-13">Loại nhà</span>
                                         <br>
                                         <span class="fsize-17 green-clr fweight-700">
-                                {{ $seeDetailHouses->kindHouse->name }}
+                                         {{ $seeDetailHouses->kindHouse->name }}
                             </span>
                                     </div>
                                 </div>
@@ -148,24 +141,20 @@
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_room }}
-                                        </div>
-                                        Phòng ngủ
+                                        </div>Phòng ngủ
                                     </li>
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_bathroom }}
-                                        </div>
-                                        Phòng tắm
+                                        </div>Phòng tắm
                                     </li>
                                     <li>
                                         <div class="value line">
                                             {{ $seeDetailHouses->created_at }}
-                                        </div>
-                                        Phong
+                                        </div>Phong
                                     </li>
                                     <li>
-                                        <div class="value">
-                                            Loại nhà
+                                        <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
                                             <p>Chưa cho thuê</p>
@@ -418,9 +407,12 @@
 
             <div class="col-gr-25per mg-top-5">
                 <div class="group-advance-search style-col-search mg-bottom-30">
+
                     <ul class="tabs-search home-search clearfix">
-                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
+                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
+                        <li id="ban"><a  href="{{route('sign-in')}}" onclick="ChangeType(38);">Đặt lịch   </a></li>
                     </ul>
+
                     <form action="{{ route('search') }}" method="post">
                         {{ csrf_field() }}
                         <div class="search-content listProductSearch">
