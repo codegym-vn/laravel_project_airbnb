@@ -284,7 +284,7 @@
                                     <p class="fweight-600 text-ellipsis">
                                         <i class="fa fa-phone green-clr mg-right-5" style="margin-left: 3px"></i>
                                         <span id="toPhone">
-                                0984038817 - 0984038817
+                                {{ $user->phone }}
                             </span>
                                     </p>
                                     <p class="fweight-600 text-ellipsis">
