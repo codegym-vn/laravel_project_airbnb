@@ -54,7 +54,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a style="color: white" class="nav-link" href="{{ route('showCalendar', $user->id) }}">
+            <a style="color: white" class="nav-link" href="{{ route('showCalendars', $user->id) }}">
                 <i class="far fa-calendar-alt" style="color: white"></i>
                 <span>
                     Lịch

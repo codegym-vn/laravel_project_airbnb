@@ -20,6 +20,8 @@ class CreateCalenderTable extends Migration
             $table->integer('phone');
             $table->integer('id_house')->unsigned();
             $table->foreign('id_house')->references('id')->on('houses');
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_user')->references('id')->on('users');
             $table->timestamps();
         });
     }

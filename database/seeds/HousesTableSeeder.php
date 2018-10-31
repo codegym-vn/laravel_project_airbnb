@@ -22,6 +22,7 @@ class HousesTableSeeder extends Seeder
         $houses->price = 10000000;
         $houses->id_kind_house = 1;
         $houses->id_user = 1;
+        $houses->month = 1;
         $houses->status = 0;
         $houses->save();
 
@@ -35,6 +36,7 @@ class HousesTableSeeder extends Seeder
         $houses->price = 10000000;
         $houses->id_kind_house = 1;
         $houses->id_user = 1;
+        $houses->month = 1;
         $houses->status = 0;
         $houses->save();
 
@@ -48,6 +50,7 @@ class HousesTableSeeder extends Seeder
         $houses->price = 5000000;
         $houses->id_kind_house = 1;
         $houses->id_user = 1;
+        $houses->month = 1;
         $houses->status = 1;
         $houses->save();
 

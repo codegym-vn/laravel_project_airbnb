@@ -7,7 +7,6 @@ use App\Model\HousesModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use phpDocumentor\Reflection\Types\Compound;
 
 class LoginController extends Controller
 {
@@ -37,19 +36,10 @@ class LoginController extends Controller
                 } else if ($user->role == 2) {
                     return view('collection.userPostHouse.dashboard', compact('user'));
                 } else if ($user->role == 3) {
-                    if (isset($_GET['id'])) {
-                        $id = $_GET['id'];
-                        $house = HousesModel::find($id);
-                        return view('collection.userBockHouse.dashboard', compact('user', 'house'));
-                    } else {
+                    $id = $_GET['id'];
+                    $house = HousesModel::find($id);
+                    return view('collection.userBockHouse.dashboard', compact('user', 'house'));
 
-                        dd(11);
-                        if (isset($_GET['id'])) {
-                            $id = $_GET['id'];
-                            $house = HousesModel::find($id);
-                            return view('collection.userBockHouse.dashboard', compact('user', 'house'));
-                        }
-                    }
                 }
             }
         } else {
