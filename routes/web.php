@@ -42,5 +42,7 @@ Route::get('/create', 'CreatePostsController@create')->name('post.create');
 Route::post('/create', 'CreatePostsController@store')->name('post.store');
 
 Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails');
- 
+
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
+
+Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
