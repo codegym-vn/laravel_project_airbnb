@@ -78,7 +78,7 @@
         <div class="row clearfix ">
             <div class="col-gr-100per">
                 <div id="MainContent_PostNews1_pnDangtin">
-                    <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data"
+                    <form method="post" action="{{ route('post.store'), $user->id }}" enctype="multipart/form-data"
                           class="contact_form" id="contact_form">
                         {{ csrf_field() }}
                         <div class="post-title">

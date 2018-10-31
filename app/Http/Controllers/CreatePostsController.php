@@ -7,6 +7,7 @@ use App\Model\HousesModel;
 use App\Model\ImageModel;
 use App\Model\KindHouseModel;
 use App\Model\PostModel;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -19,9 +20,8 @@ class CreatePostsController extends RetrievesllDataController
 
     public function create(){
         $kindHouses = KindHouseModel::all();
-        dd($kindHouses);
-//        $address = AddressModel::all();
-//        return view('collection.user.create-post', compact('address', 'kindHouses'));
+        $address = AddressModel::all();
+        return view('collection.user.create-post', compact('address', 'kindHouses'));
     }
 
     public function store(Request $request){
@@ -39,7 +39,7 @@ class CreatePostsController extends RetrievesllDataController
         $this->insertPost($request, $image->id, $houses->id);
     }
 
-    protected function insertPost($request, $idImage, $idHouses) {
+    protected function insertPost($request, $idImage, $idHouses ) {
         //thêm bài post
         $post = new PostModel();
 
@@ -53,7 +53,6 @@ class CreatePostsController extends RetrievesllDataController
         $post->describe = $request->input('describe');
         $post->id_image = $idImage;
         $post->id_house = $idHouses;
-
 
         $post->save();
         $message = "Create List $request->inputName success!";
@@ -91,7 +90,7 @@ class CreatePostsController extends RetrievesllDataController
         $image->save();
     }
 
-    protected function insertHouses($request) {
+    protected function insertHouses($request ) {
         //thêm nhầ
         $houses = new HousesModel();
 
@@ -103,6 +102,8 @@ class CreatePostsController extends RetrievesllDataController
         $houses->describe = $request->input('describe');
         $houses->id_address = $request->input('id_address');
         $houses->id_kind_house = $request->input('id_kind_house');
+        $houses->id_user = 1;
+        $houses->month =0;
         $houses->status = 0;
 
         $houses->save();
