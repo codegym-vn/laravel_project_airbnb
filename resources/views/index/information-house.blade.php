@@ -410,7 +410,7 @@
 
                     <ul class="tabs-search home-search clearfix">
                         <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
-                        <li id="ban"><a  href="{{route('sign-in')}}" onclick="ChangeType(38);">Đặt lịch   </a></li>
+                        <li id="ban"><a  href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt lịch</a></li>
                     </ul>
 
                     <form action="{{ route('search') }}" method="post">

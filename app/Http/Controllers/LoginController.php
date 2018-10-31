@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginValation;
+use App\Model\HousesModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,19 @@ class LoginController extends Controller
                 } else if ($user->role == 2) {
                     return view('collection.userPostHouse.dashboard', compact('user'));
                 } else if ($user->role == 3) {
-                    return view('collection.userBockHouse.dashboard', compact('user'));
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        $house = HousesModel::find($id);
+                        return view('collection.userBockHouse.dashboard', compact('user', 'house'));
+                    } else {
+
+                        dd(11);
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            $house = HousesModel::find($id);
+                            return view('collection.userBockHouse.dashboard', compact('user', 'house'));
+                        }
+                    }
                 }
             }
         } else {
