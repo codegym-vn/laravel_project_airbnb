@@ -13,4 +13,9 @@ class StatisicalModel extends Model
         return $this->belongsTo('App\Model\HousesModel', 'id_house');
     }
 
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'id_user');
+    }
+
 }
