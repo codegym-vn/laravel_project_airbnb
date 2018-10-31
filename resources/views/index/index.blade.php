@@ -54,21 +54,6 @@
 <body>
 @include('index.layout.header')
 
-
-<div class="head-search">
-    <h4 class="title">Tìm kiếm bất động sản</h4>
-    <div class="form-search">
-        <input name="ctl00$SearchContent$HomeSearch$ProductTextSearch$txtTextSearch" type="text" maxlength="100"
-               id="txtTextSearch" class="form-control ui-autocomplete-input" autocomplete="off"
-               onfocus="if (this.value == &#39;Nhập từ khóa&#39;) (this.value=&#39;&#39;)"
-               onblur="if (this.value == &#39;&#39;) (this.value=&#39;Nhập từ khóa&#39;)" role="textbox"
-               aria-autocomplete="list" aria-haspopup="true"/>
-        <input type="hidden" name="ctl00$SearchContent$HomeSearch$ProductTextSearch$hddCateSearch" id="hddCateSearch"
-               value="38"/>
-        <a id="lbtSearchTop" class="submit" onclick="searchClick()"><i class="fafa-search"
-                                                                       style="top: 10px; position: absolute;"></i></a>
-    </div>
-</div>
 <div class="block-news pd-top-30 pd-bottom-30">
     <div class="main">
         <div id="MainContent_ProductHot_pnProduct">

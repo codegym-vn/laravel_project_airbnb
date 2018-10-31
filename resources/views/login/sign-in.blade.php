@@ -19,12 +19,12 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="#" method="post">
+                        <form action="{{ route('dashboard') }}" method="post">
                             @csrf
 
-                            {{--@if(Session::has('errLogin'))--}}
-                                {{--<p style="color: red;text-align: center">{{Session::get('errLogin')}}</p>--}}
-                            {{--@endif--}}
+                            @if(Session::has('errLogin'))
+                                <p style="color: red;text-align: center">{{Session::get('errLogin')}}</p>
+                            @endif
 
                             <div class="form-group">
                                 <label class="label">Username</label>
@@ -33,9 +33,10 @@
                                     <div class="input-group-append"><span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
                                     </div>
                                 </div>
-                                {{--@if ($errors->has('password'))--}}
-                                    {{--<p style="color: red;text-align: center">{{ $errors->first('password') }}</p>--}}
-                                {{--@endif--}}
+
+                                @if ($errors->has('password'))
+                                    <p style="color: red;text-align: center">{{ $errors->first('password') }}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="label">Password</label>
@@ -44,9 +45,10 @@
                                     <div class="input-group-append"><span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
                                     </div>
                                 </div>
-                                {{--@if ($errors->has('password'))--}}
-                                    {{--<p style="color: red;text-align: center">{{ $errors->first('password') }}</p>--}}
-                                {{--@endif--}}
+
+                                @if ($errors->has('password'))
+                                    <p style="color: red;text-align: center">{{ $errors->first('password') }}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary submit-btn btn-block">Login</button>
@@ -91,5 +93,4 @@
 <script src="{{asset('/logincss/js/off-canvas.js')}}"></script>
 <script src="{{asset('/logincss/js/misc.js')}}"></script>
 </body>
-
 </html>

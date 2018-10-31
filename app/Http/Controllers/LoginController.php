@@ -2,40 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginValation;
+use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Compound;
 
 class LoginController extends Controller
 {
-
     public function signIn()
     {
         return view('login.sign-in');
     }
 
-
-    public function login(StoreLogin $request)
+    public function login(LoginValation $request)
     {
         $use = $request->input('username');
         $pass = $request->input('password');
-
         $loginData = [
             'email' => $use,
             'password' => $pass
         ];
-
         if (Auth::attempt($loginData)) {
             $login = User::where('email', $use)->get();
             foreach ($login as $user) {
                 if ($user->role == 1) {
-                    return redirect()->route('dashboard');
+                    return redirect()->route('dashBoard');
                 } else {
-                    return redirect()->route('dashboardUser');
+                    return view('collection.user.dashboard', compact('user'));
                 }
             }
         } else {
-            return redirect()->route('login')->with(['errLogin' => 'Sai tên đăng nhập hoặc mật khẩu '
-            ]);
+            return redirect()->route('sign-in')->with(['errLogin' => 'Sai tên đăng nhập hoặc mật khẩu']);
         }
     }
 
@@ -52,11 +50,6 @@ class LoginController extends Controller
         return view('login.sign-up');
     }
 
-
-    /**
-     * @method save()
-     */
-
     public function register(Request $request)
     {
         $register = new User();
@@ -65,11 +58,7 @@ class LoginController extends Controller
         $register->password = bcrypt($request->input('password'));
         $register->role = RoleInterface::user;
         $register->save();
-        return redirect()->route('login');
+        return redirect()->route('sign-in');
     }
 
-    public function test()
-    {
-        return view('testb');
-    }
 }
