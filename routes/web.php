@@ -38,12 +38,26 @@ Route::prefix('userPostHouse')->group(function () {
 
 Route::get('/calendar/{id}', 'UserController@showCalendar')->name('showCalendar');
 
-Route::get('/create', 'CreatePostsController@create')->name('post.create');
+Route::get('/create/{id}', 'CreatePostsController@create')->name('post.create');
 
-Route::post('/create', 'CreatePostsController@store')->name('post.store');
+Route::post('/create/{id}', 'CreatePostsController@store')->name('post.store');
+
+Route::get('/new-post/{id}', 'CreatePostsController@showNewPost')->name('showNewPost');
 
 Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails');
 
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
 
 Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
+
+
+
+
+
+
+
+
+//test
+Route::get('/11', function (){
+    return view('collection.user.viewSelectPostType');
+});
