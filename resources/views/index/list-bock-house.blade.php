@@ -158,8 +158,8 @@
                                 <div class="custom-select">
                                     <select id="cboCate" name="price" onchange="ChangeValue('Cate', $(this).val());"
                                             class="form-control">
-                                        <option value="0"
-                                                @if(isset($_POST['price']) && $_POST['price'] == '0')
+                                        <option value="0-1000000000000"
+                                                @if(isset($_POST['price']) && $_POST['price'] == '0-1000000000000')
                                                 selected
                                                 @endif
                                         >Mức giá
@@ -262,8 +262,8 @@
                                            value="-1"/>
                                     <select id="cboPrice" name="month" class="form-control"
                                             onchange="ChangeValue('Price', $(this).val());">
-                                        <option value="0"
-                                                @if(isset($_POST['month']) && $_POST['month'] == '0')
+                                        <option value="0-1000000000000"
+                                                @if(isset($_POST['month']) && $_POST['month'] == '0-1000000000000')
                                                 selected
                                                 @endif
                                         >
