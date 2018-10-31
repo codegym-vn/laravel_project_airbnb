@@ -65,6 +65,7 @@
                 productId = '12382210';
             </script>
             <style>
+
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -76,12 +77,6 @@
                     height: 85px;
                     bottom: -5px;
                 }
-
-                /*.galleria-image img {
-                    width: 100% !important;
-                    top: 0px !important;
-                    height: 350px !important;
-                }*/
 
                 .galleria-thumbnails .galleria-image {
                     width: 129px !important;
@@ -108,8 +103,7 @@
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
 
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
-                                        class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
+                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -138,7 +132,7 @@
                                         <span class="fsize-13">Loại nhà</span>
                                         <br>
                                         <span class="fsize-17 green-clr fweight-700">
-                                {{ $seeDetailHouses->kindHouse->name }}
+                                         {{ $seeDetailHouses->kindHouse->name }}
                             </span>
                                     </div>
                                 </div>
@@ -146,24 +140,20 @@
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_room }}
-                                        </div>
-                                        Phòng ngủ
+                                        </div>Phòng ngủ
                                     </li>
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_bathroom }}
-                                        </div>
-                                        Phòng tắm
+                                        </div>Phòng tắm
                                     </li>
                                     <li>
                                         <div class="value line">
                                             {{ $seeDetailHouses->created_at }}
-                                        </div>
-                                        Phong
+                                        </div>Phong
                                     </li>
                                     <li>
-                                        <div class="value">
-                                            Loại nhà
+                                        <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
                                             <p>Chưa cho thuê</p>

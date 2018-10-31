@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class HousesModel extends Model
 {
     protected $table = 'houses';
-    public $timestamps = false;
 
     public function address() {
         return $this->belongsTo('App\Model\AddressModel', 'id_address');
