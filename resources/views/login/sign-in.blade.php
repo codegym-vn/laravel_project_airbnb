@@ -19,7 +19,11 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
+<<<<<<< HEAD
                         <form action="{{route('sign-store')}}" method="post">
+=======
+                        <form action="{{ route('dashboard') }}" method="post">
+>>>>>>> c7e998b37c8b335cd0bb3a061f596ea2b610a79e
                             @csrf
 
                             @if(Session::has('errLogin'))

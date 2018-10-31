@@ -11,10 +11,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         $this->call( kindHouse::class);
+=======
+        $this->call(kindHouse::class);
+>>>>>>> c7e998b37c8b335cd0bb3a061f596ea2b610a79e
         $this->call(Address::class);
         $this->call(HousesTableSeeder::class);
         $this->call(Image::class);
         $this->call(Post::class);
+        $this->call(CalenderTableSeeder::class);
     }
 }

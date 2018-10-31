@@ -54,106 +54,8 @@
 <body>
 @include('index.layout.header')
 
-
-<div class="head-search">
-    <h4 class="title">Tìm kiếm bất động sản</h4>
-    <div class="form-search">
-        <input name="ctl00$SearchContent$HomeSearch$ProductTextSearch$txtTextSearch" type="text" maxlength="100"
-               id="txtTextSearch" class="form-control ui-autocomplete-input" autocomplete="off"
-               onfocus="if (this.value == &#39;Nhập từ khóa&#39;) (this.value=&#39;&#39;)"
-               onblur="if (this.value == &#39;&#39;) (this.value=&#39;Nhập từ khóa&#39;)" role="textbox"
-               aria-autocomplete="list" aria-haspopup="true"/>
-        <input type="hidden" name="ctl00$SearchContent$HomeSearch$ProductTextSearch$hddCateSearch" id="hddCateSearch"
-               value="38"/>
-        <a id="lbtSearchTop" class="submit" onclick="searchClick()"><i class="fafa-search"
-                                                                       style="top: 10px; position: absolute;"></i></a>
-    </div>
-    <div class="group-advance-search">
-        <ul class="tabs-search home-search clearfix">
-            <li class="active" id="ban"><a onclick="ChangeType(38);">Bất động sản bán nhà</a></li>
-        </ul>
-        <div class="search-content">
-            <ul class="filter clearfix">
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddCity" id="hddCity" value="-1"/>
-                        <select class="form-control" id="cboCity" onchange="ChangeCity($(this).val())">
-                            <option value="-1">Tỉnh/Thành Phố</option>
-                        </select>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddPrice" id="hddPrice" value="-1"/>
-                        <select id="cboPrice" class="form-control" onchange="ChangeValue('Price', $(this).val());">
-                            <option value="-1">Mức giá</option>
-                            <option value="-1">Dưới 2 triệu</option>
-                            <option value="-1">Từ 2 - 4 triệu</option>
-                            <option value="-1">Từ 4 - 7 triệu</option>
-                            <option value="-1">Từ 7 - 13 triệu</option>
-                            <option value="-1">Trên 13 triệu</option>
-                        </select>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddProject" id="hddProject"
-                               value="-1"/>
-                        <select id="cboProject" class="form-control" onchange="ChangeValue('Project', $(this).val());">
-                            <option value="-1">Thời gian</option>
-                            <option value="-1">Dưới 2 tháng</option>
-                            <option value="-1">Từ 2 - 4 tháng</option>
-                            <option value="-1">Từ 4 - 7 tháng</option>
-                            <option value="-1">Từ 7 - 12 tháng</option>
-                            <option value="-1">Trên 1 năm</option>
-                        </select>
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddRoom" id="hddRoom" value="-1"/>
-                        <select id="cboRoom" class="form-control" onchange="ChangeValue('Room', $(this).val());">
-                            <option value="-1">Phòng ngủ</option>
-                            @for($i = 1; $i <= 10; $i++)
-                                <option>{{ $i }}</option>
-                            @endfor
-                        </select>
-
-                    </div>
-                </li>
-                <li>
-                    <div class="custom-select">
-                        <input type="hidden" name="ctl00$SearchContent$HomeSearch$hddDirection" id="hddDirection"
-                               value="-1"/>
-                        <select id="cboDirection" class="form-control"
-                                onchange="ChangeValue('Direction', $(this).val());">
-                            <option value="-1">Phòng tắm</option>
-                            @for($i = 1; $i <= 10; $i++)
-                                <option>{{ $i }}</option>
-                            @endfor
-                        </select>
-
-                    </div>
-                </li>
-                <li class="dbwidth">
-                    <a id="btnSearch" class="btn bg-green full-width"
-                       href="javascript:__doPostBack(&#39;ctl00$SearchContent$HomeSearch$btnSearch&#39;,&#39;&#39;)">
-                        Tìm kiếm
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
 <div class="block-news pd-top-30 pd-bottom-30">
     <div class="main">
-        <ul class="title-tabs clearfix mg-bottom-20">
-            <li class="active" id="pr_hot"><a onclick="ChangeProduct(38);">Tin rao dành cho bạn</a></li>
-            <li class="space"></li>
-            <li id="pr_top" class=""><a onclick="ChangeProduct(49);">Tin mới nhất</a></li>
-        </ul>
         <div id="MainContent_ProductHot_pnProduct">
             <div id="prHost">
                 <div class="row sm-space clearfix">
@@ -426,7 +328,7 @@
                 </div>
 
                 <div class="text-right">
-                    <a href="/nha-dat-ban.htm">
+                    <a href="{{ route('listBockHouse') }}">
                         <span class="dark-clr text-underline">Xem thêm</span>
                         <i class="fa fa-chevron-circle-right mg-left-5 blue-clr"></i>
                     </a>
