@@ -1,4 +1,4 @@
-@extends('collection.user.layout.teamplate')
+@extends('collection.userPostHouse.layout.teamplate')
 @section('content')
     <div id="content-wrapper">
         <div class="container-fluid">

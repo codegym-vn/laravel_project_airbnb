@@ -34,7 +34,7 @@
 
 <body id="page-top">
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="{{route('dashboardUser')}}"> Xin Chào
+    <a class="navbar-brand mr-1" href="#"> Xin Chào
         {{ $user->name }}
     </a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
@@ -46,7 +46,7 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
         <li class="nav-item">
-            <a style="color: white" class="nav-link" href="{{route('editUsers', $user->id)}}">
+            <a style="color: white" class="nav-link" href="{{route('editUserBockHouses', $user->id)}}">
                 <i class="far fa-edit"></i>
                 <span>
                     Thay đổi thông tin
@@ -54,31 +54,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a style="color: white" class="nav-link" href="{{route('showUpdatedHomeStatus', $user->id)}}">
-                <i class="far fa-edit"></i>
-                <span>
-                    Thay đổi trạng thái nhà
-                </span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a style="color: white" class="nav-link" href="{{ route('showStatistics', $user->id) }}">
-                <i class="fas fa-fw fa-chart-area" style="color: white"></i>
-                <span>
-                    Thống kê thu nhập
-                </span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a style="color: white" class="nav-link" href="#">
-                <i class="fas fa-fw fa-chart-area" style="color: white"></i>
-                <span>
-                    Đăng bài
-                </span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a style="color: white" class="nav-link" href="{{ route('showCalendar', $user->id) }}">
+            <a style="color: white" class="nav-link" href="{{ route('showCalendars', $user->id) }}">
                 <i class="far fa-calendar-alt" style="color: white"></i>
                 <span>
                     Lịch
@@ -86,15 +62,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a style="color: white" class="nav-link" href="#">
-                <i class="fas fa-fw fa-chart-area" style="color: white"></i>
-                <span>
-                    lịch sử thuê nhà
-                </span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{route('forgot-pass',$user->id)}}" style="color: white; margin-left: 38px">
+            <a href="{{route('forgot-passBockHouse',$user->id)}}" style="color: white; margin-left: 38px">
                 Đổi mật khẩu
             </a>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" style="color: white">
@@ -142,5 +110,3 @@
 <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
 </body>
-</html>
-

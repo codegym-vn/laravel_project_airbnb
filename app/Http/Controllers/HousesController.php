@@ -55,16 +55,16 @@ class HousesController extends RetrievesllDataController
     {
         $houses = HousesModel::where('id_user', $id)->get();
         $user = User::find($id);
-        return view('collection.user.show-updated-home-status', compact('houses', 'user'));
+        return view('collection.userPostHouse.show-updated-home-status', compact('houses', 'user'));
     }
 
     public function updatedHomeStatus(Request $request)
     {
         $id = $request->nameHouse;
         $status = $request->status;
-
         $updateHouseStatus = HousesModel::find($id);
         $updateHouseStatus->status = $status;
         $updateHouseStatus->save();
     }
+
 }

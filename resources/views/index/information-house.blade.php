@@ -42,6 +42,8 @@
     <link href="https://tinbatdongsan.com/Styles/Responsive.css?v=2018060171" rel="stylesheet" type="text/css"/>
     <link href="https://tinbatdongsan.comMaster/css/ie8.css" rel="stylesheet" type="text/css"/>
     <link href="https://tinbatdongsan.com/Scripts/jquery.selectbox-0.2/css/jquery.selectbox.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link href="https://tinbatdongsan.com/Styles/jquery-ui/jquery-ui.min.css" rel="stylesheet"/>
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/jquery-ui-1.8.24.min.js"></script>
@@ -65,6 +67,7 @@
                 productId = '12382210';
             </script>
             <style>
+
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -76,12 +79,6 @@
                     height: 85px;
                     bottom: -5px;
                 }
-
-                /*.galleria-image img {
-                    width: 100% !important;
-                    top: 0px !important;
-                    height: 350px !important;
-                }*/
 
                 .galleria-thumbnails .galleria-image {
                     width: 129px !important;
@@ -108,8 +105,7 @@
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
 
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
-                                        class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
+                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -119,7 +115,6 @@
                     <div class="block-info">
 
                         <div class="border-gray-100 bg-gray-20 radius">
-
                             <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
                                 <h4 class="fsize-16 no-mg text-uppercase dblue-clr">Đặc điểm bất động sản
                                 </h4>
@@ -138,7 +133,7 @@
                                         <span class="fsize-13">Loại nhà</span>
                                         <br>
                                         <span class="fsize-17 green-clr fweight-700">
-                                {{ $seeDetailHouses->kindHouse->name }}
+                                         {{ $seeDetailHouses->kindHouse->name }}
                             </span>
                                     </div>
                                 </div>
@@ -146,24 +141,20 @@
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_room }}
-                                        </div>
-                                        Phòng ngủ
+                                        </div>Phòng ngủ
                                     </li>
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_bathroom }}
-                                        </div>
-                                        Phòng tắm
+                                        </div>Phòng tắm
                                     </li>
                                     <li>
                                         <div class="value line">
                                             {{ $seeDetailHouses->created_at }}
-                                        </div>
-                                        Phong
+                                        </div>Phong
                                     </li>
                                     <li>
-                                        <div class="value">
-                                            Loại nhà
+                                        <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
                                             <p>Chưa cho thuê</p>
@@ -264,7 +255,7 @@
                 </div>
 
                 <div class="mg-bottom-20 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Liên hệ
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi
                     </h4>
                 </div>
 
@@ -282,7 +273,7 @@
                                     <p class="fweight-600 text-ellipsis">
                                         <i class="fa fa-phone green-clr mg-right-5" style="margin-left: 3px"></i>
                                         <span id="toPhone">
-                                0984038817 - 0984038817
+                                {{ $user->phone }}
                             </span>
                                     </p>
                                     <p class="fweight-600 text-ellipsis">
@@ -300,75 +291,56 @@
                     <style>
 
                     </style>
-                    <div id="boxContact" class="info-contact mg-bottom-40 clearfix">
-                        <div class="col-mid" style="width: 29% !important;">
+                    <form action="{{ route('feedback', $seeDetailHouses->id) }}" method="post">
+                        {{ csrf_field() }}
+                        <div id="boxContact" class="info-contact mg-bottom-40 clearfix">
+                            <div class="col-mid" style="width: 29% !important;">
 
-                            <div class="mg-bottom-10">
-                                <input name="ctl00$MainContent$ProductDetail1$UcContact$txtName" type="text"
-                                       id="txtName" class="form-control" placeholder="Tên của bạn"/>
+                                <div class="mg-bottom-10">
+                                    <input name="name" type="text"
+                                           id="txtName" class="form-control" placeholder="Tên của bạn"/>
+                                </div>
+
+                                <div class="mg-bottom-10">
+                                    <input name="phone" type="text"
+                                           id="txtPhone" class="form-control" placeholder="Số điện thoại của bạn"/>
+                                </div>
+
+                                <div class="no-mg">
+                                    <input name="email" type="text"
+                                           id="txtEmail" class="form-control" placeholder="Email của bạn"/>
+                                </div>
+
+                            </div>
+                            <div class="col-right" style="width: 30% !important;">
+
+                                <div class="mg-bottom-10">
+                              <input name="conten" rows="2" cols="20" id="txtContent"
+                                        class="form-control" placeholder="Nhập phản hồi của bạn">
+
+                              </input>
+                                </div>
+
+                                <div class="group-tbstyle pull-left">
+                                    <div class="gr-action pd-left-5 pull-left">
+                                        <input onclick="SendContact();" type="submit" class="btn" style="background: #2384c7; padding: 0 10px;" value="Phản hồi">
+                                    </div>
+                                </div>
+
                             </div>
 
-                            <div class="mg-bottom-10">
-                                <input name="ctl00$MainContent$ProductDetail1$UcContact$txtPhone" type="text"
-                                       id="txtPhone" class="form-control" placeholder="Số điện thoại của bạn"/>
+                            <script src="/Scripts/Contact.js"></script>
+                            <div class="loading_contact" style="display: none">
+                                <img src="/Images/loading.gif"/>
                             </div>
-
-                            <div class="no-mg">
-                                <input name="ctl00$MainContent$ProductDetail1$UcContact$txtEmail" type="text"
-                                       id="txtEmail" class="form-control" placeholder="Email của bạn"/>
-                            </div>
-
                         </div>
-                        <div class="col-right" style="width: 30% !important;">
-
-                            <div class="mg-bottom-10">
-            <textarea name="ctl00$MainContent$ProductDetail1$UcContact$txtContent" rows="2" cols="20" id="txtContent"
-                      class="form-control" placeholder="Nhập nội dung">
-</textarea>
-                            </div>
-
-                            <div class="group-tbstyle pull-left">
-
-                                <div class="gr-content pull-left w--37">
-                                    <input name="ctl00$MainContent$ProductDetail1$UcContact$txtcode" type="text"
-                                           maxlength="4" id="txtcode" placeholder="Mã xác thực"
-                                           class="form-control pd-8-5"/>
-                                </div>
-                                <div class="gr-action captcha-img pull-left w-63">
-                                    <img id="img_CAPTCHA_Contact"
-                                         style="width: 100px; height: 24px; margin-top: 10px; vertical-align: middle;"
-                                         src="/Layout/Capchar/CaptchaGenerator.aspx"
-                                         alt="" noloaderror="1"/>
-                                </div>
-                                <div class="gr-action pull-left w-12" style="margin: 12px 0 0 -8px;">
-                                    <a onmouseover="this.style.cursor='pointer'"
-                                       onclick="javascript:refreshCaptcha('img_CAPTCHA_Contact');" class="dark-clr">
-                                        <i class="fa fa-refresh"></i>
-                                    </a>
-                                </div>
-
-                                <div class="gr-action pd-left-5 pull-left">
-                                    <a onclick="SendContact();" class="btn"
-                                       style="background: #2384c7; padding: 0 10px;">Gửi email</a>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <script src="/Scripts/Contact.js"></script>
-                        <div class="loading_contact" style="display: none">
-                            <img src="/Images/loading.gif"/>
-                        </div>
-                    </div>
-
+                    </form>
                     <script>
                         $(function () {
                             if ($.trim($('#toEmail').text()) == "--")
                                 $('#boxContact').addClass("none-pointer");
                         });
                     </script>
-
                 </div>
 
                 <div id="MainContent_ProductDetail1_ProductArea_product_price" class="product_other">
@@ -435,9 +407,12 @@
 
             <div class="col-gr-25per mg-top-5">
                 <div class="group-advance-search style-col-search mg-bottom-30">
+
                     <ul class="tabs-search home-search clearfix">
-                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
+                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
+                        <li id="ban"><a  href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt lịch</a></li>
                     </ul>
+
                     <form action="{{ route('search') }}" method="post">
                         {{ csrf_field() }}
                         <div class="search-content listProductSearch">

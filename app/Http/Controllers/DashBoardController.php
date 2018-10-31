@@ -19,16 +19,36 @@ class DashBoardController extends Controller
 
     public function dashBoardUser()
     {
-        return view('collection.user.layout.teamplate');
+        return view('collection.userPostHouse.layout.teamplate');
     }
 
-    public function editUser($id)
+    public function editUserBockHouse($id)
     {
         $users = User::where('id', $id)->get();
-        return view('collection.user.edit-user', compact('id', 'users'));
+        return view('collection.userBockHouse.edit-user', compact('id', 'users'));
     }
 
+<<<<<<< HEAD
     public function updateUser(InformationValation $request, $id)
+=======
+    public function updateUserBockHouse(InformationValation $request, $id)
+    {
+        $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->address = $request->input('address');
+        $user->phone = $request->input('phone');
+        $user->save();
+        return redirect()->route('editUserBockHouses', Auth::user()->id)->with(['messenger' => 'Đã đổi thành công']);
+    }
+
+    public function editUserPostHouse($id)
+    {
+        $users = User::where('id', $id)->get();
+        return view('collection.userPostHouse.edit-userPostHouse', compact('id', 'users'));
+    }
+    public function updateUserPostHouse(InformationValation $request, $id)
+>>>>>>> 4f253c0b200cb0639bff420dc0b18192ba66084f
     {
         $user = User::find($id);
         $user->name = $request->input('name');
@@ -42,7 +62,7 @@ class DashBoardController extends Controller
     public function forgotPassword($id)
     {
         $users = User::where('id', $id)->get();
-        return view('collection.user.forgot-password', compact('id', 'users'));
+        return view('collection.userPostHouse.forgot-password', compact('id', 'users'));
     }
 
     public function forgotPass(InformationValation $request)
@@ -59,9 +79,30 @@ class DashBoardController extends Controller
         }
     }
 
+<<<<<<< HEAD
     public function post()
     {
 
 
+=======
+    public function forgotPasswordBockHouse($id)
+    {
+        $users = User::where('id', $id)->get();
+        return view('collection.userPostHouse.forgot-userPostHouse', compact('id', 'users'));
+    }
+
+    public function forgotPassBockHouse(InformationValation $request)
+    {
+        $current_password = Auth::user()->password;
+        if (Hash::check($request->input('password'), $current_password)) {
+            $user = Auth::user();
+            $user->password = bcrypt($request->input('password-new'));
+            $user->save();
+
+            return redirect()->route('forgot-passBockHouse', Auth::user()->id)->with(['messenger1' => ' Đã đổi thành công']);
+        } else {
+            return redirect()->route('forgot-passBockHouse', Auth::user()->id)->with(['messenger2' => 'Mật khẩu không chính xác']);
+        }
+>>>>>>> 4f253c0b200cb0639bff420dc0b18192ba66084f
     }
 }

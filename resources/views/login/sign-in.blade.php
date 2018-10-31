@@ -19,11 +19,19 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-<<<<<<< HEAD
+
                         <form action="{{route('sign-store')}}" method="post">
-=======
+
                         <form action="{{ route('dashboard') }}" method="post">
->>>>>>> c7e998b37c8b335cd0bb3a061f596ea2b610a79e
+
+                        <form action="
+                        @if(isset($_GET['id']))
+
+                        {{ route('dashboard', ['id' => $_GET['id']]) }}
+                        @else
+
+                        {{ route('dashboard') }}
+                        @endif" method="post">
                             @csrf
 
                             @if(Session::has('errLogin'))
@@ -34,7 +42,8 @@
                                 <label class="label">Username</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Username" name="username">
-                                    <div class="input-group-append"><span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
+                                    <div class="input-group-append"><span class="input-group-text"><i
+                                                    class="mdi mdi-check-circle-outline"></i></span>
                                     </div>
                                 </div>
 
@@ -46,7 +55,8 @@
                                 <label class="label">Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" placeholder="*********" name="password">
-                                    <div class="input-group-append"><span class="input-group-text"><i class="mdi mdi-check-circle-outline"></i></span>
+                                    <div class="input-group-append"><span class="input-group-text"><i
+                                                    class="mdi mdi-check-circle-outline"></i></span>
                                     </div>
                                 </div>
 
@@ -59,7 +69,8 @@
                             </div>
                             <div class="form-group d-flex justify-content-between">
                                 <div class="form-check form-check-flat mt-0">
-                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" checked> Keep me signed in</label>
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input"
+                                                                           checked> Keep me signed in</label>
                                 </div>
                                 <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
                             </div>

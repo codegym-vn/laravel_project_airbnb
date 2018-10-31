@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginValation;
+use App\Model\HousesModel;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use phpDocumentor\Reflection\Types\Compound;
 
 class LoginController extends Controller
 {
@@ -15,10 +15,15 @@ class LoginController extends Controller
         return view('login.sign-in');
     }
 
+    /**
+     * @param LoginValation $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function login(LoginValation $request)
     {
         $use = $request->input('username');
         $pass = $request->input('password');
+
         $loginData = [
             'email' => $use,
             'password' => $pass
@@ -28,8 +33,13 @@ class LoginController extends Controller
             foreach ($login as $user) {
                 if ($user->role == 1) {
                     return redirect()->route('dashBoard');
-                } else {
-                    return view('collection.user.dashboard', compact('user'));
+                } else if ($user->role == 2) {
+                    return view('collection.userPostHouse.dashboard', compact('user'));
+                } else if ($user->role == 3) {
+                    $id = $_GET['id'];
+                    $house = HousesModel::find($id);
+                    return view('collection.userBockHouse.dashboard', compact('user', 'house'));
+
                 }
             }
         } else {
@@ -40,7 +50,7 @@ class LoginController extends Controller
     public function editUser()
     {
         $login = User::all();
-        return view('user.edit-user', [
+        return view('userPostHouse.edit-userPostHouse', [
             'login' => $login
         ]);
     }
@@ -53,10 +63,10 @@ class LoginController extends Controller
     public function register(Request $request)
     {
         $register = new User();
+        $register->role = $request->input('role');
         $register->name = $request->input('name');
         $register->email = $request->input('email');
         $register->password = bcrypt($request->input('password'));
-        $register->role = RoleInterface::user;
         $register->save();
         return redirect()->route('sign-in');
     }

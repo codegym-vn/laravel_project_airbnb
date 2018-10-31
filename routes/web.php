@@ -2,7 +2,6 @@
 
 Route::get('/', 'indexController@index')->name('index');
 
-
 Route::match(['get', 'post'], '/listBockHouse', 'HousesController@showHouses')->name('listBockHouse');
 
 Route::get('/new', 'indexController@new')->name('new');
@@ -10,7 +9,6 @@ Route::get('/new', 'indexController@new')->name('new');
 Route::get('/list-bock-house', 'HousesController@showHouses')->name('listBockHouse');
 
 Route::get('/show-updated-home-status/{id}', 'HousesController@showUpdatedHomeStatus')->name('showUpdatedHomeStatus');
-
 
 Route::get('/information-house', 'indexController@informationHouse')->name('information-house');
 //Route::get('/creagte-post', 'indexController@createPost')->name('create-post');
@@ -20,11 +18,8 @@ Route::get('/create', 'CreatePostsController@create')->name('post.create');
 
 Route::post('/create', 'CreatePostsController@store')->name('post.store');
 
-Route::get('/sign-in', 'LoginController@signIn')->name('sign-in');
-
-
 Route::post('/search', 'HousesController@search')->name('search');
-// chưa có return về view nào sáng code
+
 
 
 Route::prefix('sign-in')->group(function () {
@@ -43,6 +38,29 @@ Route::prefix('sign-in')->group(function () {
 
 });
 
+
+
+Route::prefix('userBockHouse')->group(function () {
+
+    Route::get('/edit-users/{id}', 'DashBoardController@editUserPostHouse')->name('editUsers');
+
+    Route::post('/edit-userPostHouse/{id}', 'DashBoardController@updateUserPostHouse')->name('editUser');
+
+    Route::get('/edit-users/{id}', 'DashBoardController@editUserBockHouse')->name('editUserBockHouses');
+
+    Route::post('/edit-userBockHouse/{id}', 'DashBoardController@updateUserBockHouse')->name('editUserBockHouse');
+
+    Route::get('/bockhoue', 'UserController@viewCanlendar')->name('viewCanlendar');
+
+    Route::post('/bockhoue/{idHouses}/{idUser}', 'UserController@calendar')->name('bockhoue');
+
+    Route::get('/calendar/{id}', "UserController@showCalendars")->name('showCalendars');
+
+    Route::get('/delete-calender/{id}', "UserController@deleteCalender")->name('deleteCalendars');
+
+});
+
+
 Route::prefix('user')->group(function () {
 
     Route::get('/calendar/{id}', 'UserController@showCalendar')->name('showCalendar');
@@ -60,9 +78,22 @@ Route::prefix('user')->group(function () {
     Route::post('post}', 'DashBoardController@post')->name('post');
 });
 
+Route::get('/create/{id}', 'CreatePostsController@create')->name('post.create');
 
-Route::post('/create', 'CreatePostsController@store')->name('post.store');
+Route::post('/create/{id}', 'CreatePostsController@store')->name('post.store');
+
+Route::get('/new-post/{id}', 'CreatePostsController@showNewPost')->name('showNewPost');
 
 Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails');
 
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
+
+Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
+
+
+
+
+//test
+Route::get('/11', function (){
+    return view('collection.user.viewSelectPostType');
+});
