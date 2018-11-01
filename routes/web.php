@@ -19,6 +19,7 @@ Route::post('/search', 'HousesController@search')->name('search');
 
 
 
+
 Route::prefix('sign-in')->group(function () {
 
     Route::get('/', 'LoginController@signIn')->name('sign-in');

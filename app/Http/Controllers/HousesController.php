@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\HousesModel;
+use App\Model\KindEvaluateModel;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -11,17 +12,20 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::where('id', '>', 14)->orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
     public function seeDetails($id)
     {
+        $Comments = KindEvaluateModel::where('id_house',$id)->get();
+
         $seeDetailHouses = HousesModel::find($id);
+
         $user = $this->user($seeDetailHouses->id_user);
         $priceHouses = HousesModel::where('price', $seeDetailHouses->price)->get();
         $address = $this->address();
-        return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address'));
+        return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address' , 'Comments'));
     }
 
     public function search(Request $request)
@@ -32,15 +36,15 @@ class HousesController extends RetrievesllDataController
             $price = explode('-', $request->price);
         }
 
-        if ($price) {
-            $houses = HousesModel::orWhereBetween('price', [$price[0], $price[1]])
-                ->orWhere('id_address', "like", "%$request->address")
+        if (isset($price)) {
+            $houses = HousesModel::whereBetween('price', $price)
+                ->orWhere('id_address', "like", "%$request->address%")
                 ->orWhere('number_room', 'like', "%$request->number_room%")
                 ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
                 ->orWhere('month', "like", "%$request->month%")
                 ->get();
         } else {
-            $houses = HousesModel::where('id_address', "like", "%$request->address")
+            $houses = HousesModel::where('id_address', "like", "%$request->address%")
                 ->orWhere('number_room', 'like', "%$request->number_room%")
                 ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
                 ->orWhere('month', "like", "%$request->month%")
@@ -66,7 +70,8 @@ class HousesController extends RetrievesllDataController
         $updateHouseStatus->save();
     }
 
-    public function showHouse() {
+    public function showHouse()
+    {
         $houses = HousesModel::all();
 
         return view('collection.userPostHouse.dashboard', compact('houses'));

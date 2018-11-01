@@ -51,6 +51,15 @@
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/Register.js"></script>
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 <body>
 @include('index.layout.header')
 
@@ -59,7 +68,6 @@
     <div class="main">
         <div class="row clearfix">
             <style>
-
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -112,7 +120,7 @@
                                 </h4>
                             </div>
 
-                            < class="pd-left-10 pd-right-10">
+                            <div class="pd-left-10 pd-right-10">
                                 <div class="pd-bottom-15 pd-top-15 clearfix">
                                     <div class="pull-left" style="width: 60%;">
                                         <span class="fsize-13">Giá</span>
@@ -143,6 +151,7 @@
                                         Phòng tắm
                                     </li>
                                     <li>
+
                                         <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
@@ -166,8 +175,10 @@
                         <ul id="myGallery" class="slide_show" style="height: 443px;">
                             <li>
                                 <img src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
-                                     style="width: 1000px">
+                                     style="width: 600px">
                             </li>
+
+
                         </ul>
                         <div id="imgPrint"></div>
                     </div>
@@ -224,46 +235,16 @@
                     </div>
                 </div>
 
+
                 <div class="mg-bottom-20 clearfix">
                     <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi
-                    </h4>
+                        của bạn</h4>
                 </div>
 
                 <div class="info-contact mg-bottom-40 clearfix">
-                    <div class="col-left">
-                        <div class="pd-15 bg-gray-40">
-                            <p class="fweight-bold dblue-clr">
-                                {{ $user->name }}
-                            </p>
-                            <div class="box-info clearfix">
-                                <div class="avatar size80 border-square pull-left">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="content">
-                                    <p class="fweight-600 text-ellipsis">
-                                        <i class="fa fa-phone green-clr mg-right-5" style="margin-left: 3px"></i>
-                                        <span id="toPhone">
-                                {{ $user->phone }}
-                            </span>
-                                    </p>
-                                    <p class="fweight-600 text-ellipsis">
-                                        <i class="fa fa-envelope green-clr mg-right-5"></i>
-                                        <span id="toEmail">
-                                            {{ $user->email }}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <style>
-
-                    </style>
                     <form action="{{ route('feedback', $seeDetailHouses->id) }}" method="post">
                         {{ csrf_field() }}
-                        <div id="boxContact" class="info-contact mg-bottom-40 clearfix">
+                        <div id="boxContact" class="info-contact mg-bottom-40 clearfix" style="margin-left: 5px">
                             <div class="col-mid" style="width: 29% !important;">
 
                                 <div class="mg-bottom-10">
@@ -283,12 +264,10 @@
 
                             </div>
                             <div class="col-right" style="width: 30% !important;">
-
-                                <div class="mg-bottom-10">
-                                    <input name="conten" rows="2" cols="20" id="txtContent"
-                                           class="form-control" placeholder="Nhập phản hồi của bạn">
-
-                                    </input>
+                                <div class="mg-bottom-10" style="margin-left: 5px">
+                                    <input style="height: 85px !important;" name="conten" rows="2" cols="20"
+                                           id="txtContent" class="form-control"
+                                           placeholder="Nhập phản hồi của bạn">
                                 </div>
 
                                 <div class="group-tbstyle pull-left">
@@ -314,11 +293,20 @@
                     </script>
                 </div>
 
-                <div id="MainContent_ProductDetail1_ProductArea_product_price" class="product_other">
-                    <div class="title-line-through mg-bottom-20">
-                        <h4 class="title">Tin rao cùng khoảng giá
-                        </h4>
+                <div class="phan hoi ">
+                    <h2 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg"
+                        style="text-transform: uppercase">Phản hồi của khách hàng </h2></br></br>
+
+                    <div class="alert alert-secondary" role="alert">
+                        @foreach($Comments as $Comment)
+                            <p>Tên: {{$Comment->name}} | Nội Dung: {{$Comment->conten}}</p>
+                            <hr>
+                        @endforeach
                     </div>
+                </div>
+
+                <div id="MainContent_ProductDetail1_ProductArea_product_price" class="product_other">
+                    <h4 class="title" style="padding-top: 20px; padding-bottom: 30px">Tin rao cùng khoảng giá </h4>
                     <ul class="group-prd group-3cl mg-bottom-20 clearfix">
                         @foreach($priceHouses as $house)
                             <li>
@@ -326,9 +314,10 @@
                                     <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                                        title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
                                        href="{{ route('seeDetails', $house->id) }}"><img
-                                                src="{{ asset('storage/images/' . $house->image) }}" alt=""
-                                                style="width: 255px">
-                                    </a>
+                                                id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
+                                                class="img-list-product"
+                                                src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                                style="width: 600px"></a>
                                 </div>
 
                                 <div class="content">

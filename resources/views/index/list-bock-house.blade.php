@@ -103,7 +103,7 @@
                                          style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr">
-                                    {{ number_format($house->price) }} Triệu
+                                    {{ number_format($house->price) }} VND
                                 </span>
                                     </div>
                                     <div class="pull-left w--100">
@@ -122,14 +122,17 @@
                                         thêm</a>
                                 </div>
                             </div>
+
                         </li>
                     @endforeach
                 @endif
             </ul>
 
             <div class="mg-bottom-30 clearfix">
+
                 {{ $houses->appends(request()->query()) }}
             </div>
+
         </div>
         <div class="col-gr-25per">
             <div class="group-advance-search style-col-search mg-bottom-30">

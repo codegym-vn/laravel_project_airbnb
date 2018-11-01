@@ -110,7 +110,8 @@
                                    href="{{ route('seeDetails', $house->id) }}"><img
                                             id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
                                             class="img-list-product"
-                                            src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
+                                            src="{{ asset('storage/images/' . $house->image) }}" alt=""
+                                            style="width: 600px"></a>
                             </div>
 
                             <div class="content">
@@ -131,7 +132,7 @@
                                          style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
                                         <i class='fa fa-tag hint mg-right-5'></i>
                                         <span class="fweight-700 green-clr">
-                                    {{ number_format($house->price) }} Triệu
+                                    {{ number_format($house->price) }}
                                 </span>
                                     </div>
                                     <div class="pull-left w--100">

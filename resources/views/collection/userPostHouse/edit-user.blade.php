@@ -1,7 +1,7 @@
 @extends('collection.userPostHouse.layout.teamplate')
 @section('content')
     <div class="col-12">
-        <form method="post" action="{{route('editUser', $id)}}">
+        <form method="post" action="{{route('forgot-password', $id)}}">
             @csrf
 
             @if(Session::has('messenger'))
