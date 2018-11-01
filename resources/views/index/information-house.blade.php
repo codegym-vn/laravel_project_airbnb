@@ -58,15 +58,8 @@
 <div id="wrapper">
     <div class="main">
         <div class="row clearfix">
-
-            <link href="/Styles/print.css" rel="stylesheet"/>
-            <script src="/Scripts/ProductDetail.js" type="text/javascript"></script>
-            <script src="/Scripts/SlideShow_Galleria/galleria-1.3.5.min.js"></script>
-            <script src="/Scripts/SlideShow_Galleria/galleria.flickr.min.js"></script>
-            <script type="text/javascript">
-                productId = '12382210';
-            </script>
             <style>
+
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -78,12 +71,6 @@
                     height: 85px;
                     bottom: -5px;
                 }
-
-                /*.galleria-image img {
-                    width: 100% !important;
-                    top: 0px !important;
-                    height: 350px !important;
-                }*/
 
                 .galleria-thumbnails .galleria-image {
                     width: 129px !important;
@@ -109,9 +96,7 @@
                     <div class="lh-28 clearfix">
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
-
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
-                                        class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
+                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +106,6 @@
                     <div class="block-info">
 
                         <div class="border-gray-100 bg-gray-20 radius">
-
                             <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
                                 <h4 class="fsize-16 no-mg text-uppercase dblue-clr">Đặc điểm bất động sản
                                 </h4>
@@ -140,7 +124,7 @@
                                         <span class="fsize-13">Loại nhà</span>
                                         <br>
                                         <span class="fsize-17 green-clr fweight-700">
-                                {{ $seeDetailHouses->kindHouse->name }}
+                                         {{ $seeDetailHouses->kindHouse->name }}
                             </span>
                                     </div>
                                 </div>
@@ -148,24 +132,20 @@
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_room }}
-                                        </div>
-                                        Phòng ngủ
+                                        </div>Phòng ngủ
                                     </li>
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_bathroom }}
-                                        </div>
-                                        Phòng tắm
+                                        </div>Phòng tắm
                                     </li>
                                     <li>
                                         <div class="value line">
                                             {{ $seeDetailHouses->created_at }}
-                                        </div>
-                                        Phong
+                                        </div>Phong
                                     </li>
                                     <li>
-                                        <div class="value">
-                                            Loại nhà
+                                        <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
                                             <p>Chưa cho thuê</p>
@@ -186,7 +166,6 @@
 
                     <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
                         <ul id="myGallery" class="slide_show" style="height: 443px;">
-
                             <li>
                                 <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
                                      alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
@@ -204,25 +183,12 @@
                 </div>
 
                 <div class="mg-bottom-10 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin
-                        chi tiết
-                    </h4>
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin chi tiết</h4>
                 </div>
 
                 <div id="infoDetail" class="lh-24 mg-bottom-10">
                     {{ $seeDetailHouses->describe }}
                 </div>
-
-
-                {{--<div class="mg-bottom-20 clearfix">--}}
-                {{--<h4 onclick="ShowMaps()"--}}
-                {{--class="pull-left pointer lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">--}}
-                {{--Xem bản đồ--}}
-                {{--</h4>--}}
-                {{--<div class="box-maps">--}}
-                {{--<img onclick="ShowMaps()" class="img-maps" src="{{ asset('maps.png') }}"/>--}}
-                {{--</div>--}}
-                {{--</div>--}}
                 <div class="mg-bottom-20">
                     <div id="maps" class="spanMap box">
                         <input type="hidden" name="ctl00$MainContent$ProductDetail1$hddLatitude" id="hddLatitude"
@@ -284,7 +250,7 @@
                                     <p class="fweight-600 text-ellipsis">
                                         <i class="fa fa-phone green-clr mg-right-5" style="margin-left: 3px"></i>
                                         <span id="toPhone">
-                                0984038817 - 0984038817
+                                {{ $user->phone }}
                             </span>
                                     </p>
                                     <p class="fweight-600 text-ellipsis">
@@ -418,9 +384,12 @@
 
             <div class="col-gr-25per mg-top-5">
                 <div class="group-advance-search style-col-search mg-bottom-30">
+
                     <ul class="tabs-search home-search clearfix">
-                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
+                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
+                        <li id="ban"><a  href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt lịch</a></li>
                     </ul>
+
                     <form action="{{ route('search') }}" method="post">
                         {{ csrf_field() }}
                         <div class="search-content listProductSearch">

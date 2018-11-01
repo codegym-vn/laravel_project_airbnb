@@ -1,4 +1,4 @@
-@extends('collection.user.layout.teamplate')
+@extends('collection.userPostHouse.layout.teamplate')
 @section('content')
     <div class="col-12">
         <form method="post" action="{{route('editUser', $id)}}">

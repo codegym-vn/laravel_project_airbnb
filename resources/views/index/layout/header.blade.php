@@ -22,11 +22,8 @@
 
     <div class="main-head">
         <div class="main clearfix">
-
             <ul class="main-nav pull-right">
-                <li class="#"><a href="{{route('index')}}" title="Nhà đất bán">Trang Chủ</a></li>
-                <li class="#"><a href="{{route('listBockHouse')}}" title="Nhà đất cho thuê">Nhà đất cho thuê</a></li>
-                <li><a href="{{asset('new')}}" title="Tin tức">Tin tức</a></li>
+                <li style="margin-right:990px" class="#"><a href="{{route('listBockHouse')}}" title="Nhà đất cho thuê">Nhà đất cho thuê</a></li>
             </ul>
         </div>
     </div>

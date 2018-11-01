@@ -4,10 +4,12 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static find($id)
+ */
 class HousesModel extends Model
 {
     protected $table = 'houses';
-    public $timestamps = false;
 
     public function address() {
         return $this->belongsTo('App\Model\AddressModel', 'id_address');

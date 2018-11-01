@@ -16,6 +16,8 @@
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -34,13 +36,9 @@
 
 <body id="page-top">
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="{{route('dashboardUser')}}"> Xin Chào
-        {{ $user->name }}
-    </a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
     </button>
-    <!-- Navbar Search -->
 </nav>
 <div id="wrapper">
     <!-- Sidebar -->
@@ -70,10 +68,18 @@
             </a>
         </li>
         <li class="nav-item">
-            <a style="color: white" class="nav-link" href="#">
+            <a style="color: white" class="nav-link" href="{{route('post.create', $user->id)}}">
                 <i class="fas fa-fw fa-chart-area" style="color: white"></i>
                 <span>
                     Đăng bài
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a style="color: white" class="nav-link" href="{{route('showNewPost', $user->id)}}">
+                <i class="fas fa-edit" style="color: white"></i>
+                <span>
+                    Bài đăng mới
                 </span>
             </a>
         </li>
@@ -142,5 +148,3 @@
 <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
 </body>
-</html>
-
