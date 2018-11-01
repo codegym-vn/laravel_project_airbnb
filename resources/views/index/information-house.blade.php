@@ -51,6 +51,15 @@
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/Register.js"></script>
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 <body>
 @include('index.layout.header')
 
@@ -59,7 +68,6 @@
     <div class="main">
         <div class="row clearfix">
             <style>
-
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -96,7 +104,8 @@
                     <div class="lh-28 clearfix">
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
+                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
+                                        class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -132,14 +141,17 @@
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_room }}
-                                        </div>Phòng ngủ
+                                        </div>
+                                        Phòng ngủ
                                     </li>
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_bathroom }}
-                                        </div>Phòng tắm
+                                        </div>
+                                        Phòng tắm
                                     </li>
                                     <li>
+
                                         <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
@@ -162,14 +174,10 @@
                     <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
                         <ul id="myGallery" class="slide_show" style="height: 443px;">
                             <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
+                                <img src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                     style="width: 600px">
                             </li>
 
-                            <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160246-4465.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
-                            </li>
 
                         </ul>
                         <div id="imgPrint"></div>
@@ -178,7 +186,8 @@
                 </div>
 
                 <div class="mg-bottom-10 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin chi tiết</h4>
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin
+                        chi tiết</h4>
                 </div>
 
                 <div id="infoDetail" class="lh-24 mg-bottom-10">
@@ -226,46 +235,16 @@
                     </div>
                 </div>
 
+
                 <div class="mg-bottom-20 clearfix">
                     <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi
-                    </h4>
+                        của bạn</h4>
                 </div>
 
                 <div class="info-contact mg-bottom-40 clearfix">
-                    <div class="col-left">
-                        <div class="pd-15 bg-gray-40">
-                            <p class="fweight-bold dblue-clr">
-                                {{ $user->name }}
-                            </p>
-                            <div class="box-info clearfix">
-                                <div class="avatar size80 border-square pull-left">
-                                    <i class="fa fa-user"></i>
-                                </div>
-                                <div class="content">
-                                    <p class="fweight-600 text-ellipsis">
-                                        <i class="fa fa-phone green-clr mg-right-5" style="margin-left: 3px"></i>
-                                        <span id="toPhone">
-                                {{ $user->phone }}
-                            </span>
-                                    </p>
-                                    <p class="fweight-600 text-ellipsis">
-                                        <i class="fa fa-envelope green-clr mg-right-5"></i>
-                                        <span id="toEmail">
-                                            {{ $user->email }}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <style>
-
-                    </style>
                     <form action="{{ route('feedback', $seeDetailHouses->id) }}" method="post">
                         {{ csrf_field() }}
-                        <div id="boxContact" class="info-contact mg-bottom-40 clearfix">
+                        <div id="boxContact" class="info-contact mg-bottom-40 clearfix" style="margin-left: 5px">
                             <div class="col-mid" style="width: 29% !important;">
 
                                 <div class="mg-bottom-10">
@@ -285,17 +264,16 @@
 
                             </div>
                             <div class="col-right" style="width: 30% !important;">
-
-                                <div class="mg-bottom-10">
-                              <input name="conten" rows="2" cols="20" id="txtContent"
-                                        class="form-control" placeholder="Nhập phản hồi của bạn">
-
-                              </input>
+                                <div class="mg-bottom-10" style="margin-left: 5px">
+                                    <input style="height: 85px !important;" name="conten" rows="2" cols="20"
+                                           id="txtContent" class="form-control"
+                                           placeholder="Nhập phản hồi của bạn">
                                 </div>
 
                                 <div class="group-tbstyle pull-left">
                                     <div class="gr-action pd-left-5 pull-left">
-                                        <input onclick="SendContact();" type="submit" class="btn" style="background: #2384c7; padding: 0 10px;" value="Phản hồi">
+                                        <input onclick="SendContact();" type="submit" class="btn"
+                                               style="background: #2384c7; padding: 0 10px;" value="Phản hồi">
                                     </div>
                                 </div>
 
@@ -315,11 +293,20 @@
                     </script>
                 </div>
 
-                <div id="MainContent_ProductDetail1_ProductArea_product_price" class="product_other">
-                    <div class="title-line-through mg-bottom-20">
-                        <h4 class="title">Tin rao cùng khoảng giá
-                        </h4>
+                <div class="phan hoi ">
+                    <h2 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg"
+                        style="text-transform: uppercase">Phản hồi của khách hàng </h2></br></br>
+
+                    <div class="alert alert-secondary" role="alert">
+                        @foreach($Comments as $Comment)
+                            <p>Tên: {{$Comment->name}} | Nội Dung: {{$Comment->conten}}</p>
+                            <hr>
+                        @endforeach
                     </div>
+                </div>
+
+                <div id="MainContent_ProductDetail1_ProductArea_product_price" class="product_other">
+                    <h4 class="title" style="padding-top: 20px; padding-bottom: 30px">Tin rao cùng khoảng giá </h4>
                     <ul class="group-prd group-3cl mg-bottom-20 clearfix">
                         @foreach($priceHouses as $house)
                             <li>
@@ -329,7 +316,8 @@
                                        href="{{ route('seeDetails', $house->id) }}"><img
                                                 id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
                                                 class="img-list-product"
-                                                src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
+                                                src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                                style="width: 600px"></a>
                                 </div>
 
                                 <div class="content">
@@ -382,7 +370,8 @@
 
                     <ul class="tabs-search home-search clearfix">
                         <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
-                        <li id="ban"><a  href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt lịch</a></li>
+                        <li id="ban"><a href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt
+                                lịch</a></li>
                     </ul>
 
                     <form action="{{ route('search') }}" method="post">

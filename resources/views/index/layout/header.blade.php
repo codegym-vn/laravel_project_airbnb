@@ -19,11 +19,10 @@
         </div>
     </div>
 
-
     <div class="main-head">
         <div class="main clearfix">
             <ul class="main-nav pull-right">
-                <li style="margin-right:990px" class="#"><a href="{{route('listBockHouse')}}" title="Nhà đất cho thuê">Nhà đất cho thuê</a></li>
+                <li style="margin-right:990px; width:200px !important;" class="#"><a href="{{route('listBockHouse')}}" title="Nhà đất cho thuê">Nhà đất cho thuê</a></li>
             </ul>
         </div>
     </div>

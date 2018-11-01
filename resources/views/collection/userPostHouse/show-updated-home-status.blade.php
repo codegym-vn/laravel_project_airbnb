@@ -38,5 +38,9 @@
             <button type="submit" style="background-color: #00a855; color:white"> Gửi</button>
         </form>
     </div>
-
+<script>
+    @if(session()->has('updateHouses'))
+        alert("{{ session()->get('updateHouses') }}")
+    @endif
+</script>
 @endsection

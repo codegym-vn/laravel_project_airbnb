@@ -81,7 +81,7 @@ var defineGlobal = function (id, ref) {
   define(id, [], function () { return ref; });
 };
 /*jsc
-["tinymce.plugins.image.Plugin","tinymce.core.Env","tinymce.core.PluginManager","tinymce.core.util.JSON","tinymce.core.util.Tools","tinymce.core.util.XHR","global!tinymce.util.Tools.resolve"]
+["tinymce.plugins.images.Plugin","tinymce.core.Env","tinymce.core.PluginManager","tinymce.core.util.JSON","tinymce.core.util.Tools","tinymce.core.util.XHR","global!tinymce.util.Tools.resolve"]
 jsc*/
 defineGlobal("global!tinymce.util.Tools.resolve", tinymce.util.Tools.resolve);
 /**
@@ -195,7 +195,7 @@ define(
  */
 
 /**
- * This class contains all core logic for the image plugin.
+ * This class contains all core logic for the images plugin.
  *
  * @class tinymce.image.Plugin
  * @private
@@ -735,7 +735,7 @@ define(
 
           // Advanced dialog shows general+advanced tabs
           win = editor.windowManager.open({
-            title: 'Insert/edit image',
+            title: 'Insert/edit images',
             data: data,
             bodyType: 'tabpanel',
             body: [
@@ -782,7 +782,7 @@ define(
         } else {
           // Simple default dialog
           win = editor.windowManager.open({
-            title: 'Insert/edit image',
+            title: 'Insert/edit images',
             data: data,
             body: generalFormItems,
             onSubmit: onSubmitForm
@@ -821,7 +821,7 @@ define(
 
       editor.addButton('image', {
         icon: 'image',
-        tooltip: 'Insert/edit image',
+        tooltip: 'Insert/edit images',
         onclick: createImageList(showDialog),
         stateSelector: 'img:not([data-mce-object],[data-mce-placeholder]),figure.image'
       });

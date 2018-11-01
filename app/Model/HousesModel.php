@@ -19,11 +19,10 @@ class HousesModel extends Model
         return $this->belongsTo('App\Model\KindHouseModel', 'id_kind_house');
     }
 
-    public function image() {
-        return $this->hasMany('App\Model\ImageModel');
-    }
-    
     public function user() {
         return $this->belongsTo('App\User', 'id_user');
     }
+
 }
+
+
