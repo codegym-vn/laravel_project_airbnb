@@ -28,6 +28,7 @@ class DashBoardController extends Controller
         return view('collection.userBockHouse.edit-user', compact('id', 'users'));
     }
 
+
     public function updateUserBockHouse(InformationValation $request, $id)
     {
         $user = User::find($id);
@@ -42,16 +43,19 @@ class DashBoardController extends Controller
     public function editUserPostHouse($id)
     {
         $users = User::where('id', $id)->get();
-        return view('collection.userPostHouse.edit-userPostHouse', compact('id', 'users'));
+        return view('collection.userPostHouse.edit-user', compact('id', 'users'));
     }
+
     public function updateUserPostHouse(InformationValation $request, $id)
     {
+
         $user = User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->address = $request->input('address');
         $user->phone = $request->input('phone');
         $user->save();
+
         return redirect()->route('editUsers', Auth::user()->id)->with(['messenger' => 'Đã đổi thành công']);
     }
 
@@ -75,10 +79,11 @@ class DashBoardController extends Controller
         }
     }
 
+
     public function forgotPasswordBockHouse($id)
     {
         $users = User::where('id', $id)->get();
-        return view('collection.userPostHouse.forgot-userPostHouse', compact('id', 'users'));
+        return view('collection.userBockHouse.forgot-password', compact('id', 'users'));
     }
 
     public function forgotPassBockHouse(InformationValation $request)

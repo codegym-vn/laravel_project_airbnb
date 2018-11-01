@@ -1,11 +1,11 @@
-@extends('collection.user.layout.teamplate')
+@extends('collection.userPostHouse.layout.teamplate')
 @section('content')
     <div id="content-wrapper">
         <div class="container-fluid">
             <!-- DataTables Example -->
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fas fa-table"></i> Bài viết mới
+                    <i class="fas fa-table"></i> Lịch
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -13,20 +13,20 @@
                             <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Tiêu đề</th>
+                                <th>Lịch hẹn</th>
+                                <th>Tên người hẹn</th>
+                                <th>Số điện thoại</th>
                                 <th>Nhà</th>
-                                <th>Ngày tạo</th
-                                <th>Ngày sưả</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($posts as $key => $post)
+                            @foreach($calenders as $key => $calender)
                                 <tr>
                                     <td>{{ $key++ }}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->houses->name }}</td>
-                                    <td>{{ $post->created_at }}</td>
-                                    <td>{{ $post->updated_at }}</td>
+                                    <td>{{ $calender->calender }}</td>
+                                    <td>{{ $calender->name }}</td>
+                                    <td>{{ $calender->phone }}</td>
+                                    <td>{{ $calender->houses->name }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -36,5 +36,10 @@
             </div>
         </div>
     </div>
+    <script>
+        @if(session()->has('calender'))
+            alert("{{ session()->get('calender') }}")
+        @endif
+    </script>
 @endsection
 

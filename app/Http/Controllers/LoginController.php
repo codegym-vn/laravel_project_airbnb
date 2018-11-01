@@ -21,6 +21,7 @@ class LoginController extends Controller
      */
     public function login(LoginValation $request)
     {
+
         $use = $request->input('username');
         $pass = $request->input('password');
 
@@ -28,18 +29,27 @@ class LoginController extends Controller
             'email' => $use,
             'password' => $pass
         ];
+
         if (Auth::attempt($loginData)) {
+
             $login = User::where('email', $use)->get();
             foreach ($login as $user) {
                 if ($user->role == 1) {
                     return redirect()->route('dashBoard');
                 } else if ($user->role == 2) {
                     return view('collection.userPostHouse.dashboard', compact('user'));
-                } else if ($user->role == 3) {
-                    $id = $_GET['id'];
-                    $house = HousesModel::find($id);
-                    return view('collection.userBockHouse.dashboard', compact('user', 'house'));
-
+                } else if (isset($_GET['id'])) {
+                    if ($user->role == 3) {
+                        $id = $_GET['id'];
+                        $house = HousesModel::find($id);
+                        return view('collection.userBockHouse.dashboard', compact('user', 'house'));
+                    }
+                } else {
+                    if ($user->role == 3) {
+                        $id = $_GET['id'];
+                        $house = HousesModel::find($id);
+                        return view('collection.userBockHouse.dashboard', compact('user', 'house'));
+                    }
                 }
             }
         } else {

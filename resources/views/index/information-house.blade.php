@@ -58,14 +58,6 @@
 <div id="wrapper">
     <div class="main">
         <div class="row clearfix">
-
-            <link href="/Styles/print.css" rel="stylesheet"/>
-            <script src="/Scripts/ProductDetail.js" type="text/javascript"></script>
-            <script src="/Scripts/SlideShow_Galleria/galleria-1.3.5.min.js"></script>
-            <script src="/Scripts/SlideShow_Galleria/galleria.flickr.min.js"></script>
-            <script type="text/javascript">
-                productId = '12382210';
-            </script>
             <style>
 
                 .galleria-stage {
@@ -104,7 +96,6 @@
                     <div class="lh-28 clearfix">
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
-
                             <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
@@ -149,11 +140,6 @@
                                         </div>Phòng tắm
                                     </li>
                                     <li>
-                                        <div class="value line">
-                                            {{ $seeDetailHouses->created_at }}
-                                        </div>Phong
-                                    </li>
-                                    <li>
                                         <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
@@ -175,7 +161,6 @@
 
                     <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
                         <ul id="myGallery" class="slide_show" style="height: 443px;">
-
                             <li>
                                 <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
                                      alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
@@ -193,25 +178,12 @@
                 </div>
 
                 <div class="mg-bottom-10 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin
-                        chi tiết
-                    </h4>
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin chi tiết</h4>
                 </div>
 
                 <div id="infoDetail" class="lh-24 mg-bottom-10">
                     {{ $seeDetailHouses->describe }}
                 </div>
-
-
-                {{--<div class="mg-bottom-20 clearfix">--}}
-                {{--<h4 onclick="ShowMaps()"--}}
-                {{--class="pull-left pointer lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">--}}
-                {{--Xem bản đồ--}}
-                {{--</h4>--}}
-                {{--<div class="box-maps">--}}
-                {{--<img onclick="ShowMaps()" class="img-maps" src="{{ asset('maps.png') }}"/>--}}
-                {{--</div>--}}
-                {{--</div>--}}
                 <div class="mg-bottom-20">
                     <div id="maps" class="spanMap box">
                         <input type="hidden" name="ctl00$MainContent$ProductDetail1$hddLatitude" id="hddLatitude"

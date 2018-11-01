@@ -16,6 +16,7 @@
                                 <th>Tên người thuê</th>
                                 <th>Nhà</th>
                                 <th>Gíá tiền</th>
+                                <th>Trạng thái</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -23,8 +24,15 @@
                                 <tr>
                                     <td>{{ $key++ }}</td>
                                     <td>{{ $statistic->user->name }}</td>
-                                    <td>{{ $statistic->houses->name }}</td>
-                                    <td>{{ $statistic->houses->price }}</td>
+                                    <td>{{ $statistic->name }}</td>
+                                    <td>{{ $statistic->price }}</td>
+                                    <td>
+                                        @if($statistic->status == 0 )
+                                            Chưa cho thuê
+                                        @else
+                                            Dã cho thuê
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

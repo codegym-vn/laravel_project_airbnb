@@ -71,8 +71,7 @@
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-block g-login">
-                                    <img class="mr-3" src="../../images/file-icons/icon-google.svg" alt="">Log in with
-                                    Google
+                                    <img class="mr-3" src="../../images/file-icons/icon-google.svg" alt="">Log in with Google
                                 </button>
                             </div>
                             <div class="text-block text-center my-3">
@@ -81,6 +80,7 @@
                             </div>
                         </form>
                     </div>
+                    <div class="idv">
                     <ul class="auth-footer">
                         <li>
                             <a href="#">Conditions</a>

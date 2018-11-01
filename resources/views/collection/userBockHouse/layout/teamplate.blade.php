@@ -89,7 +89,7 @@
             </div>
             <div class="modal-body"> Chọn đăng xuất" bên dưới nếu bạn muốn thoát.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát lựa chọ</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát lựa chọn</button>
                 <a class="btn btn-primary" href="{{asset('sign-in')}}">Thoát</a>
             </div>
         </div>
