@@ -104,7 +104,7 @@
                     <div class="lh-28 clearfix">
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
+                            <a class='link_cate' href="#"><span
                                         class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                                         <span class="fsize-13">Giá</span>
                                         <br>
                                         <span class="fsize-17 green-clr fweight-700">
-                                {{ number_format($seeDetailHouses->price) }} Triệu
+                                {{ number_format($seeDetailHouses->price) }} VNĐ
                             </span>
                                     </div>
                                     <div class="pull-right">
@@ -157,7 +157,7 @@
                                         @if($seeDetailHouses->status == 0 )
                                             <p>Chưa cho thuê</p>
                                         @else
-                                            <p>Dã cho thuê</p>
+                                            <p>Đã cho thuê</p>
                                         @endif
                                     </li>
 

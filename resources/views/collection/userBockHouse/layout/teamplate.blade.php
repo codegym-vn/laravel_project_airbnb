@@ -61,15 +61,19 @@
                 </span>
             </a>
         </li>
+        <div>
+            <a href="{{route('listBockHouse',$user->id)}}" style="color: white; margin-left: 38px">
+                Trang Chủ
+            </a>
+        </div>
         <li class="nav-item">
             <a href="{{route('forgot-passBockHouse',$user->id)}}" style="color: white; margin-left: 38px">
                 Đổi mật khẩu
             </a>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" style="color: white">
+            <div><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" style="color: white">
                 Thoát
-            </a>
+            </a></div>
         </li>
-
     </ul>
     <div class="container">
         @yield('content')

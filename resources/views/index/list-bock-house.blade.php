@@ -50,6 +50,7 @@
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 <body>
 @include('index.layout.header')
 <div id="wrapper">
@@ -73,8 +74,8 @@
                 </div>
             </div>
         </div>
-        <h5 style="text-transform: uppercase; color: #00a855"> Danh sách nhà đất hiện có  </h5>
-        <div class="col-gr-75per" style="margin-top: 55px" >
+        <h5 style="text-transform: uppercase; color: #00a855"> Danh sách phòng hiện có </h5>
+        <div class="col-gr-75per" style="margin-top: 55px">
             <ul class="group-prd group-3cl clearfix">
                 @if(count($houses) == "0")
                     Hiện không có nhà nào giống với yêu cầu của bạn
@@ -85,8 +86,8 @@
                                 <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                                    title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
                                    href="{{ route('seeDetails', $house->id) }}">
-                                <img src="{{ asset('storage/images/' . $house->image) }}" alt=""
-                                     style="width: 255px">
+                                    <img src="{{ asset('storage/images/' . $house->image) }}" alt=""
+                                         style="width: 255px">
                                 </a>
                             </div>
                             <div class="content">
@@ -108,7 +109,7 @@
                                             @if($house->status == 0 )
                                                 Chưa cho thuê
                                             @else
-                                                Dã cho thuê
+                                                Đã cho thuê
                                             @endif
                                         </span>
                                     </div>
@@ -124,9 +125,8 @@
                 @endif
             </ul>
 
-            <div class="mg-bottom-30 clearfix">
-
-                {{ $houses->appends(request()->query()) }}
+            <div class="pagination">
+            {!! $houses->appends(request()->query()) !!}
             </div>
 
         </div>
@@ -214,8 +214,8 @@
                                             <option value="{{ $i }}"
                                                     @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
                                                     selected
-                                                @endif
-                                                        >
+                                                    @endif
+                                            >
                                                 {{ $i }}
                                             </option>
                                         @endfor
