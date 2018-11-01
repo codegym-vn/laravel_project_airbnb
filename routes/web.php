@@ -9,7 +9,6 @@ Route::get('/list-bock-house', 'HousesController@showHouses')->name('listBockHou
 Route::get('/show-updated-home-status/{id}', 'HousesController@showUpdatedHomeStatus')->name('showUpdatedHomeStatus');
 
 Route::get('/information-house', 'indexController@informationHouse')->name('information-house');
-//Route::get('/creagte-post', 'indexController@createPost')->name('create-post');
 
 Route::get('/create', 'CreatePostsController@create')->name('post.create');
 
@@ -91,10 +90,3 @@ Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails'
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
 
 Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
-
-
-
-//test
-Route::get('/11', function (){
-    return view('collection.user.viewSelectPostType');
-});
