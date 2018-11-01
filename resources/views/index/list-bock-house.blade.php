@@ -136,7 +136,7 @@
                 <ul class="tabs-search home-search clearfix">
                     <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
                 </ul>
-                <form action="{{ route('search') }}" method="post">
+                <form action="{{ route('search') }}">
                     {{ csrf_field() }}
                     <div class="search-content listProductSearch">
                         <ul class="filter clearfix" style="height: 300px;">
@@ -187,8 +187,6 @@
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" name="address" id="hddCity"
-                                           value="0"/>
                                     <select class="form-control" name="address" id="cboCity"
                                             onchange="ChangeCity($(this).val())">
                                         <option value="-1">Thành Phố</option>
@@ -206,7 +204,6 @@
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" id="hddDistrict"/>
                                     <select id="cboDistrict" name="number_bathroom" class="form-control"
                                             onchange="ChangeQuanhuyen($(this).val())">
                                         <option value="0">Phòng tắm</option>
@@ -249,7 +246,7 @@
                                            value="-1"/>
                                     <select id="cboPrice" name="month" class="form-control"
                                             onchange="ChangeValue('Price', $(this).val());">
-                                        <option value="0-1000000000000"
+                                        <option value="0-11111111111111111"
                                                 @if(isset($_POST['month']) && $_POST['month'] == '0-1000000000000')
                                                 selected
                                                 @endif
