@@ -11,7 +11,7 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::orderBy('status', 'desc')->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::where('id', '>', 14)->orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 

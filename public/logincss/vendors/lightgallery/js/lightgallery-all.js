@@ -62,7 +62,7 @@
          * @desc number of preload slides
          * will exicute only after the current slide is fully loaded.
          *
-         * @ex you clicked on 4th image and if preload = 1 then 3rd slide and 5th
+         * @ex you clicked on 4th images and if preload = 1 then 3rd slide and 5th
          * slide will be loaded in the background after the 4th slide is fully loaded..
          * if preload is 2 then 2nd 3rd 5th 6th slides will be preloaded.. ... ...
          *
@@ -472,7 +472,7 @@
     };
 
     /**
-     *  @desc Create image counter
+     *  @desc Create images counter
      *  Ex: 1/10
      */
     Plugin.prototype.counter = function() {
@@ -689,7 +689,7 @@
                 _this.$slide.eq(index).prepend('<div class="lg-video-cont "><div class="lg-video"></div></div>');
                 _this.$el.trigger('hasVideo.lg', [index, _src, _html]);
             } else {
-                _this.$slide.eq(index).prepend('<div class="lg-img-wrap"><img class="lg-object lg-image" src="' + _src + '" /></div>');
+                _this.$slide.eq(index).prepend('<div class="lg-img-wrap"><img class="lg-object lg-images" src="' + _src + '" /></div>');
             }
 
             _this.$el.trigger('onAferAppendSlide.lg', [index]);
@@ -765,7 +765,7 @@
     <=> ** loadContent() will load slide content in to the particular slide
         ** ** It has recursion (rec) parameter. if rec === true loadContent() will call preload() function.
         ** ** preload will execute only when the previous slide is fully loaded (images iframe)
-        ** ** avoid simultaneous image load
+        ** ** avoid simultaneous images load
     <=> ** Preload() will check for s.preload value and call loadContent() again accoring to preload value
         ** loadContent()  <====> Preload();
 
@@ -2711,13 +2711,13 @@
         var scale = 1;
         /**
          * @desc Image zoom
-         * Translate the wrap and scale the image to get better userPostHouse experience
+         * Translate the wrap and scale the images to get better userPostHouse experience
          *
          * @param {String} scaleVal - Zoom decrement/increment value
          */
         var zoom = function(scaleVal) {
 
-            var $image = _this.core.$outer.find('.lg-current .lg-image');
+            var $image = _this.core.$outer.find('.lg-current .lg-images');
             var _x;
             var _y;
 
@@ -2797,7 +2797,7 @@
         _this.core.$el.on('onAferAppendSlide.lg.tm.zoom', function(event, index) {
 
             // Get the current element
-            var $image = _this.core.$slide.eq(index).find('.lg-image');
+            var $image = _this.core.$slide.eq(index).find('.lg-images');
 
             $image.on('dblclick', function(event) {
                 actualSize(event, $image, index);
@@ -2827,21 +2827,21 @@
         });
 
         $('#lg-zoom-out').on('click.lg', function() {
-            if (_this.core.$outer.find('.lg-current .lg-image').length) {
+            if (_this.core.$outer.find('.lg-current .lg-images').length) {
                 scale -= _this.core.s.scale;
                 callScale();
             }
         });
 
         $('#lg-zoom-in').on('click.lg', function() {
-            if (_this.core.$outer.find('.lg-current .lg-image').length) {
+            if (_this.core.$outer.find('.lg-current .lg-images').length) {
                 scale += _this.core.s.scale;
                 callScale();
             }
         });
 
         $('#lg-actual-size').on('click.lg', function(event) {
-            actualSize(event, _this.core.$slide.eq(_this.core.index).find('.lg-image'), _this.core.index, true);
+            actualSize(event, _this.core.$slide.eq(_this.core.index).find('.lg-images'), _this.core.index, true);
         });
 
         // Reset zoom on slide change
@@ -2861,7 +2861,7 @@
     Zoom.prototype.resetZoom = function() {
         this.core.$outer.removeClass('lg-zoomed');
         this.core.$slide.find('.lg-img-wrap').removeAttr('style data-x data-y');
-        this.core.$slide.find('.lg-image').removeAttr('style data-scale');
+        this.core.$slide.find('.lg-images').removeAttr('style data-scale');
 
         // Reset pagx pagy values to center
         this.pageX = $(window).width() / 2;

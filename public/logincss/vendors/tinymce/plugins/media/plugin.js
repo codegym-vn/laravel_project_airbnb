@@ -1420,7 +1420,7 @@ define(
       var y;
       var afterObjects = editor.dom.select('img[data-mce-object]');
 
-      // Find new image placeholder so we can select it
+      // Find new images placeholder so we can select it
       for (i = 0; i < beforeObjects.length; i++) {
         for (y = afterObjects.length - 1; y >= 0; y--) {
           if (beforeObjects[i] === afterObjects[y]) {

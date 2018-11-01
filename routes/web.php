@@ -94,7 +94,3 @@ Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
 
 
 
-//test
-Route::get('/11', function (){
-    return view('collection.user.viewSelectPostType');
-});

@@ -59,7 +59,7 @@
          * @desc number of preload slides
          * will exicute only after the current slide is fully loaded.
          *
-         * @ex you clicked on 4th image and if preload = 1 then 3rd slide and 5th
+         * @ex you clicked on 4th images and if preload = 1 then 3rd slide and 5th
          * slide will be loaded in the background after the 4th slide is fully loaded..
          * if preload is 2 then 2nd 3rd 5th 6th slides will be preloaded.. ... ...
          *
@@ -469,7 +469,7 @@
     };
 
     /**
-     *  @desc Create image counter
+     *  @desc Create images counter
      *  Ex: 1/10
      */
     Plugin.prototype.counter = function() {
@@ -686,7 +686,7 @@
                 _this.$slide.eq(index).prepend('<div class="lg-video-cont "><div class="lg-video"></div></div>');
                 _this.$el.trigger('hasVideo.lg', [index, _src, _html]);
             } else {
-                _this.$slide.eq(index).prepend('<div class="lg-img-wrap"><img class="lg-object lg-image" src="' + _src + '" /></div>');
+                _this.$slide.eq(index).prepend('<div class="lg-img-wrap"><img class="lg-object lg-images" src="' + _src + '" /></div>');
             }
 
             _this.$el.trigger('onAferAppendSlide.lg', [index]);
@@ -762,7 +762,7 @@
     <=> ** loadContent() will load slide content in to the particular slide
         ** ** It has recursion (rec) parameter. if rec === true loadContent() will call preload() function.
         ** ** preload will execute only when the previous slide is fully loaded (images iframe)
-        ** ** avoid simultaneous image load
+        ** ** avoid simultaneous images load
     <=> ** Preload() will check for s.preload value and call loadContent() again accoring to preload value
         ** loadContent()  <====> Preload();
 

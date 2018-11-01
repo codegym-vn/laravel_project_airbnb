@@ -61,7 +61,8 @@
                         <div class="col-gr-75per">
                             <div class="pull-left title-search-product" style="">
                                 <h1 class="fsize-22 fweight-700 text-uppercase blue-clr no-mg"
-                                    style="white-space: nowrap; text-overflow: ellipsis; width: 560px; overflow: hidden;">Nhà đất cho thuê tại Việt Nam
+                                    style="white-space: nowrap; text-overflow: ellipsis; width: 560px; overflow: hidden;">
+                                    Nhà đất cho thuê tại Việt Nam
                                 </h1>
                                 <div class="none">
                                 </div>
@@ -81,22 +82,17 @@
                     @foreach($houses as $house)
                         <li>
                             <div class="image h155">
+                               </a>
+                            </div>
+                            <div class="news_post_image">
                                 <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                                    title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
-                                   href="{{ route('seeDetails', $house->id) }}"><img
-                                            id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
-                                            class="img-list-product"
-                                            src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
+                                   href="{{ route('seeDetails', $house->id) }}">
+                                <img src="{{ asset('storage/images/' . $house->image) }}" alt=""
+                                     style="width: 255px">
+                                </a>
                             </div>
-
                             <div class="content">
-                                <h4 class="title lh-16 h50 mg-bottom-5">
-                                    <a id="hplTitle"
-                                       title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
-                                       href="{{ route('seeDetails', $house->id) }}">
-                                        {{ $house->name }}
-                                    </a>
-                                </h4>
 
                                 <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-6">
                                     <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
@@ -130,62 +126,7 @@
                     @endforeach
                 @endif
             </ul>
-            <ul class="group-prd group-3cl clearfix">
-                @if(count($houses) == "0")
-                    Hiện không có nhà nào giống với yêu cầu của bạn
-                @else
-                    @foreach($houses as $house)
-                        <li>
-                            <div class="image h155">
-                                <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
-                                   title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
-                                   href="{{ route('seeDetails', $house->id) }}"><img
-                                            id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
-                                            class="img-list-product"
-                                            src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
-                            </div>
 
-                            <div class="content">
-                                <h4 class="title lh-16 h50 mg-bottom-5">
-                                    <a id="hplTitle"
-                                       title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
-                                       href="{{ route('seeDetails', $house->id) }}">
-                                        {{ $house->name }}
-                                    </a>
-                                </h4>
-
-                                <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-6">
-                                    <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
-                                    {{ $house->address->address }}
-                                </p>
-                                <div class="info clearfix">
-                                    <div class="pull-left w--100 mg-bottom-5"
-                                         style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
-                                        <i class='fa fa-tag hint mg-right-5'></i>
-                                        <span class="fweight-700 green-clr">
-                                    {{ number_format($house->price) }} Triệu
-                                </span>
-                                    </div>
-                                    <div class="pull-left w--100">
-                                        <i class='fa fa-arrows-alt hint mg-right-5'></i>
-                                        <span class="fweight-700 green-clr">
-                                            @if($house->status == 0 )
-                                                Chưa cho thuê
-                                            @else
-                                                Dã cho thuê
-                                            @endif
-                                        </span>
-                                    </div>
-                                    <a id="hplView" title="Cần cho thuê căn hộ chung cư Sunrise City khu North, Quận 7"
-                                       class="none"
-                                       href="{{ route('seeDetails', $house->id) }}">Xem
-                                        thêm</a>
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach
-                @endif
-            </ul>
             <div class="mg-bottom-30 clearfix">
                 {{ $houses->appends(request()->query()) }}
             </div>
@@ -254,9 +195,9 @@
                                         <option value="-1">Thành Phố</option>
                                         @foreach($address as $address)
                                             <option value="{{ $address->id }}"
-                                                        @if(isset($_POST['address']) && $address->id == $_POST['address'])
-                                                            selected
-                                                        @endif
+                                                    @if(isset($_POST['address']) && $address->id == $_POST['address'])
+                                                    selected
+                                                    @endif
                                             >
                                                 {{ $address->address }}
                                             </option>
@@ -273,8 +214,8 @@
                                         @for($i = 1; $i <= 10; $i++)
                                             <option value="{{ $i }}"
                                                     @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
-                                                        selected>
-                                                    @endif
+                                                    selected>
+                                                @endif
                                                 {{ $i }}
                                             </option>
                                         @endfor

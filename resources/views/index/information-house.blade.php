@@ -96,7 +96,8 @@
                     <div class="lh-28 clearfix">
                         <div class="pull-left">
                             <i class="fa fa-map-marker hint mg-right-5"></i>
-                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
+                            <a class='link_cate' href="/ban-dat-nen-du-an-king-bay.htm"><span
+                                        class='green-clr'>{{ $seeDetailHouses->address->address }}</span></a>
                         </div>
                     </div>
                 </div>
@@ -132,17 +133,14 @@
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_room }}
-                                        </div>Phòng ngủ
+                                        </div>
+                                        Phòng ngủ
                                     </li>
                                     <li>
                                         <div class="value">
                                             {{ $seeDetailHouses->number_bathroom }}
-                                        </div>Phòng tắm
-                                    </li>
-                                    <li>
-                                        <div class="value line">
-                                            {{ $seeDetailHouses->created_at }}
-                                        </div>Phong
+                                        </div>
+                                        Phòng tắm
                                     </li>
                                     <li>
                                         <div class="value">Loại nhà
@@ -167,15 +165,9 @@
                     <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
                         <ul id="myGallery" class="slide_show" style="height: 443px;">
                             <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
+                                <img src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                     style="width: 1000px">
                             </li>
-
-                            <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160246-4465.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
-                            </li>
-
                         </ul>
                         <div id="imgPrint"></div>
                     </div>
@@ -183,7 +175,8 @@
                 </div>
 
                 <div class="mg-bottom-10 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin chi tiết</h4>
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin
+                        chi tiết</h4>
                 </div>
 
                 <div id="infoDetail" class="lh-24 mg-bottom-10">
@@ -292,15 +285,16 @@
                             <div class="col-right" style="width: 30% !important;">
 
                                 <div class="mg-bottom-10">
-                              <input name="conten" rows="2" cols="20" id="txtContent"
-                                        class="form-control" placeholder="Nhập phản hồi của bạn">
+                                    <input name="conten" rows="2" cols="20" id="txtContent"
+                                           class="form-control" placeholder="Nhập phản hồi của bạn">
 
-                              </input>
+                                    </input>
                                 </div>
 
                                 <div class="group-tbstyle pull-left">
                                     <div class="gr-action pd-left-5 pull-left">
-                                        <input onclick="SendContact();" type="submit" class="btn" style="background: #2384c7; padding: 0 10px;" value="Phản hồi">
+                                        <input onclick="SendContact();" type="submit" class="btn"
+                                               style="background: #2384c7; padding: 0 10px;" value="Phản hồi">
                                     </div>
                                 </div>
 
@@ -332,9 +326,9 @@
                                     <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                                        title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
                                        href="{{ route('seeDetails', $house->id) }}"><img
-                                                id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
-                                                class="img-list-product"
-                                                src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
+                                                src="{{ asset('storage/images/' . $house->image) }}" alt=""
+                                                style="width: 255px">
+                                    </a>
                                 </div>
 
                                 <div class="content">
@@ -387,7 +381,8 @@
 
                     <ul class="tabs-search home-search clearfix">
                         <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
-                        <li id="ban"><a  href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt lịch</a></li>
+                        <li id="ban"><a href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt
+                                lịch</a></li>
                     </ul>
 
                     <form action="{{ route('search') }}" method="post">
