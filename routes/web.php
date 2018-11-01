@@ -15,7 +15,7 @@ Route::get('/create', 'CreatePostsController@create')->name('post.create');
 
 Route::post('/create', 'CreatePostsController@store')->name('post.store');
 
-Route::post('/search', 'HousesController@search')->name('search');
+Route::get('/search', 'HousesController@search')->name('search');
 
 
 
