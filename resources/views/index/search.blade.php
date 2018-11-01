@@ -243,8 +243,9 @@
                                         @for($i = 1; $i <= 10; $i++)
                                             <option value="{{ $i }}"
                                                     @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
-                                                    selected>
+                                                    selected
                                                 @endif
+                                                        >
                                                 {{ $i }}
                                             </option>
                                         @endfor

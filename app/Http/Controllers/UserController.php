@@ -21,14 +21,16 @@ class UserController extends RetrievesllDataController
     public function showStatistics($id)
     {
         $price = 0;
+
         $user = $this->user($id);
+
         $statistics = HousesModel::where('id_user', $id)->get();
+
         foreach ($statistics as $statistic) {
             if ($statistic->status == '1') {
                 $price = $statistic->price + $price;
             }
         }
-
         return view('collection.userPostHouse.statistics', compact('user', 'statistics', 'price'));
     }
 

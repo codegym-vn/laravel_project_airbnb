@@ -73,17 +73,14 @@
                 </div>
             </div>
         </div>
-        <h5 style="text-transform: uppercase; color: #00a855"> Danh sách nhà đất đang được giao bán </h5>
-        <div class="col-gr-75per" style="margin-top: 55px">
+        <h5 style="text-transform: uppercase; color: #00a855"> Danh sách nhà đất hiện có  </h5>
+        <div class="col-gr-75per" style="margin-top: 55px" >
             <ul class="group-prd group-3cl clearfix">
                 @if(count($houses) == "0")
                     Hiện không có nhà nào giống với yêu cầu của bạn
                 @else
                     @foreach($houses as $house)
                         <li>
-                            <div class="image h155">
-                               </a>
-                            </div>
                             <div class="news_post_image">
                                 <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                                    title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
@@ -93,7 +90,6 @@
                                 </a>
                             </div>
                             <div class="content">
-
                                 <p class="fsize-13 dblue-clr text-ellipsis mg-bottom-6">
                                     <i class="fa fa-map-marker hint fsize-14 mg-right-5"></i>
                                     {{ $house->address->address }}
@@ -116,13 +112,13 @@
                                             @endif
                                         </span>
                                     </div>
+
                                     <a id="hplView" title="Cần cho thuê căn hộ chung cư Sunrise City khu North, Quận 7"
                                        class="none"
                                        href="{{ route('seeDetails', $house->id) }}">Xem
                                         thêm</a>
                                 </div>
                             </div>
-
                         </li>
                     @endforeach
                 @endif
@@ -217,8 +213,9 @@
                                         @for($i = 1; $i <= 10; $i++)
                                             <option value="{{ $i }}"
                                                     @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
-                                                    selected>
+                                                    selected
                                                 @endif
+                                                        >
                                                 {{ $i }}
                                             </option>
                                         @endfor
