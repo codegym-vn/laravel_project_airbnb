@@ -46,7 +46,7 @@ class DashBoardController extends Controller
         return view('collection.userPostHouse.edit-user', compact('id', 'users'));
     }
 
-    public function updateUserPostHouse( $request, $id)
+    public function updateUserPostHouse(Request $request, $id)
     {
 
         $user = User::find($id);
@@ -65,7 +65,7 @@ class DashBoardController extends Controller
         return view('collection.userPostHouse.forgot-password', compact('id', 'users'));
     }
 
-    public function forgotPass(InformationValation $request)
+    public function forgotPass(Request $request)
     {
         $current_password = Auth::user()->password;
         if (Hash::check($request->input('password'), $current_password)) {
@@ -86,7 +86,7 @@ class DashBoardController extends Controller
         return view('collection.userBockHouse.forgot-password', compact('id', 'users'));
     }
 
-    public function forgotPassBockHouse(InformationValation $request)
+    public function forgotPassBockHouse(Request $request)
     {
         $current_password = Auth::user()->password;
         if (Hash::check($request->input('password'), $current_password)) {

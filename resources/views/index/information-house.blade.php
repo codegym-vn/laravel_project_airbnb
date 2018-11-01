@@ -51,8 +51,6 @@
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/Register.js"></script>
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -70,7 +68,6 @@
     <div class="main">
         <div class="row clearfix">
             <style>
-
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -155,13 +152,6 @@
                                     </li>
                                     <li>
 
-                                        <div class="value line">
-                                            {{ $seeDetailHouses->created_at }}
-                                        </div>
-                                        Phong
-                                    </li>
-                                    <li>
-
                                         <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
@@ -184,14 +174,10 @@
                     <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
                         <ul id="myGallery" class="slide_show" style="height: 443px;">
                             <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
+                                <img src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                     style="width: 600px">
                             </li>
 
-                            <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160246-4465.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
-                            </li>
 
                         </ul>
                         <div id="imgPrint"></div>
@@ -251,7 +237,8 @@
 
 
                 <div class="mg-bottom-20 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi của bạn</h4>
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi
+                        của bạn</h4>
                 </div>
 
                 <div class="info-contact mg-bottom-40 clearfix">
@@ -280,7 +267,7 @@
                                 <div class="mg-bottom-10" style="margin-left: 5px">
                                     <input style="height: 85px !important;" name="conten" rows="2" cols="20"
                                            id="txtContent" class="form-control"
-                                           placeholder="Nhập phản hồi của bạn"></input>
+                                           placeholder="Nhập phản hồi của bạn">
                                 </div>
 
                                 <div class="group-tbstyle pull-left">
@@ -314,7 +301,7 @@
                         @foreach($Comments as $Comment)
                             <p>Tên: {{$Comment->name}} | Nội Dung: {{$Comment->conten}}</p>
                             <hr>
-                       @endforeach
+                        @endforeach
                     </div>
                 </div>
 
@@ -329,7 +316,8 @@
                                        href="{{ route('seeDetails', $house->id) }}"><img
                                                 id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
                                                 class="img-list-product"
-                                                src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
+                                                src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                                style="width: 600px"></a>
                                 </div>
 
                                 <div class="content">

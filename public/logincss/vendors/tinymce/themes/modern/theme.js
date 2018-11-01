@@ -403,7 +403,7 @@ define(
   ],
   function (Tools, Factory) {
     var defaultToolbar = "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | " +
-      "bullist numlist outdent indent | link image";
+      "bullist numlist outdent indent | link images";
 
     var createToolbar = function (editor, items, size) {
       var toolbarItems = [], buttonGroup;

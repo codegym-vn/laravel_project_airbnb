@@ -19,6 +19,7 @@ Route::post('/search', 'HousesController@search')->name('search');
 
 
 
+
 Route::prefix('sign-in')->group(function () {
 
     Route::get('/', 'LoginController@signIn')->name('sign-in');
@@ -90,3 +91,6 @@ Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails'
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
 
 Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
+
+
+
