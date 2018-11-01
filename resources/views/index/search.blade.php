@@ -166,7 +166,7 @@
                 <ul class="tabs-search home-search clearfix">
                     <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
                 </ul>
-                <form action="{{ route('search') }}" method="post">
+                <form action="{{ route('search') }}">
                     {{ csrf_field() }}
                     <div class="search-content listProductSearch">
                         <ul class="filter clearfix" style="height: 300px;">
@@ -222,7 +222,7 @@
                                     <select class="form-control" name="address" id="cboCity"
                                             onchange="ChangeCity($(this).val())">
                                         <option value="-1">Thành Phố</option>
-                                        @foreach($address as $address)
+                                        @foreach($addresss as $address)
                                             <option value="{{ $address->id }}"
                                                     @if(isset($_POST['address']) && $address->id == $_POST['address'])
                                                     selected
