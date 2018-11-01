@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\HousesModel;
+use App\Model\KindEvaluateModel;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,14 @@ class HousesController extends RetrievesllDataController
 
     public function seeDetails($id)
     {
+        $Comments = KindEvaluateModel::where('id_house',$id)->get();
+
         $seeDetailHouses = HousesModel::find($id);
+
         $user = $this->user($seeDetailHouses->id_user);
         $priceHouses = HousesModel::where('price', $seeDetailHouses->price)->get();
         $address = $this->address();
-        return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address'));
+        return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address' , 'Comments'));
     }
 
     public function search(Request $request)
@@ -66,7 +70,8 @@ class HousesController extends RetrievesllDataController
         $updateHouseStatus->save();
     }
 
-    public function showHouse() {
+    public function showHouse()
+    {
         $houses = HousesModel::all();
 
         return view('collection.userPostHouse.dashboard', compact('houses'));
