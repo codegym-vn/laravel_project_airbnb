@@ -22,6 +22,7 @@ class HousesModel extends Model
 //    public function images() {
 //        return $this->hasMany('App\Model\ImageModel', 'id_house');
 //    }
+
 }
 
 

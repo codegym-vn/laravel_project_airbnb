@@ -9,7 +9,6 @@ Route::get('/list-bock-house', 'HousesController@showHouses')->name('listBockHou
 Route::get('/show-updated-home-status/{id}', 'HousesController@showUpdatedHomeStatus')->name('showUpdatedHomeStatus');
 
 Route::get('/information-house', 'indexController@informationHouse')->name('information-house');
-//Route::get('/creagte-post', 'indexController@createPost')->name('create-post');
 
 Route::get('/create', 'CreatePostsController@create')->name('post.create');
 

@@ -112,7 +112,7 @@
                                 </h4>
                             </div>
 
-                            <div class="pd-left-10 pd-right-10">
+                            < class="pd-left-10 pd-right-10">
                                 <div class="pd-bottom-15 pd-top-15 clearfix">
                                     <div class="pull-left" style="width: 60%;">
                                         <span class="fsize-13">Giá</span>
