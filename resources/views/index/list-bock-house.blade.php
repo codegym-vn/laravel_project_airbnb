@@ -246,7 +246,7 @@
                                            value="-1"/>
                                     <select id="cboPrice" name="month" class="form-control"
                                             onchange="ChangeValue('Price', $(this).val());">
-                                        <option value="0-1"
+                                        <option value="0-11111111111111111"
                                                 @if(isset($_POST['month']) && $_POST['month'] == '0-1000000000000')
                                                 selected
                                                 @endif
