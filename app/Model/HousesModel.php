@@ -22,4 +22,8 @@ class HousesModel extends Model
     public function image() {
         return $this->hasMany('App\Model\ImageModel');
     }
+    
+    public function user() {
+        return $this->belongsTo('App\User', 'id_user');
+    }
 }

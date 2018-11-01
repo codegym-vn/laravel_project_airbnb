@@ -91,10 +91,3 @@ Route::get('/seeDetails/{id}', 'HousesController@seeDetails')->name('seeDetails'
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
 
 Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
-
-
-
-//test
-Route::get('/11', function (){
-    return view('collection.user.viewSelectPostType');
-});

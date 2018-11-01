@@ -5,7 +5,7 @@
             <!-- DataTables Example -->
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fas fa-table"></i> Thống kê
+                    <i class="fas fa-table"></i> Lịch
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -13,35 +13,33 @@
                             <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Tên người thuê</th>
+                                <th>Lịch hẹn</th>
+                                <th>Tên người hẹn</th>
+                                <th>Số điện thoại</th>
                                 <th>Nhà</th>
-                                <th>Gíá tiền</th>
-                                <th>Trạng thái</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($statistics as $key => $statistic)
+                            @foreach($calenders as $key => $calender)
                                 <tr>
                                     <td>{{ $key++ }}</td>
-                                    <td>{{ $statistic->user->name }}</td>
-                                    <td>{{ $statistic->name }}</td>
-                                    <td>{{ $statistic->price }}</td>
-                                    <td>
-                                        @if($statistic->status == 0 )
-                                            Chưa cho thuê
-                                        @else
-                                            Dã cho thuê
-                                        @endif
-                                    </td>
+                                    <td>{{ $calender->calender }}</td>
+                                    <td>{{ $calender->name }}</td>
+                                    <td>{{ $calender->phone }}</td>
+                                    <td>{{ $calender->houses->name }}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        <tr>Tổng doanh thu : {{ $price }} VND</tr>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        @if(session()->has('calender'))
+            alert("{{ session()->get('calender') }}")
+        @endif
+    </script>
 @endsection
 

@@ -13,19 +13,20 @@ class UserController extends RetrievesllDataController
 {
     public function showCalendar($id)
     {
-        $calenders = CalenderModel::orderBy('id', 'desc')->get();
+        $calenders = CalenderModel::where('id_user', $id)->orderBy('id', 'desc')->get();
         $user = $this->user($id);
-        return view('collection.admin.calendar', compact('calenders', 'user'));
+        return view('collection.userPostHouse.calendar', compact('calenders', 'user'));
     }
 
     public function showStatistics($id)
     {
         $price = 0;
         $user = $this->user($id);
-        $statistics = StatisicalModel::where('id_user', $id)->get();
-
+        $statistics = HousesModel::where('id_user', $id)->get();
         foreach ($statistics as $statistic) {
-            $price = $statistic->houses->price + $price;
+            if ($statistic->status == '1') {
+                $price = $statistic->price + $price;
+            }
         }
 
         return view('collection.userPostHouse.statistics', compact('user', 'statistics', 'price'));

@@ -140,11 +140,6 @@
                                         </div>Phòng tắm
                                     </li>
                                     <li>
-                                        <div class="value line">
-                                            {{ $seeDetailHouses->created_at }}
-                                        </div>Phong
-                                    </li>
-                                    <li>
                                         <div class="value">Loại nhà
                                         </div>
                                         @if($seeDetailHouses->status == 0 )
