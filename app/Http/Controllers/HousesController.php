@@ -29,7 +29,7 @@ class HousesController extends RetrievesllDataController
         return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address', 'Comments'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
         $addresss = $this->address();
 
@@ -45,7 +45,8 @@ class HousesController extends RetrievesllDataController
 
             if (isset($houses)) {
                 foreach ($houses as $house) {
-                    $houses = HousesModel::where('id_address', $house->id_address)
+                    $houses = HousesModel::where('id_address', 'like', "%$house->id_address%")
+                        ->whereBetween('price', [$price[0], $price[1]])
                         ->get();
                 }
             } else {
@@ -60,6 +61,7 @@ class HousesController extends RetrievesllDataController
             if (isset($houses)) {
                 foreach ($houses as $house) {
                     $houses = HousesModel::where('number_room', $house->number_room)
+                        ->whereBetween('price', [$price[0], $price[1]])
                         ->get();
                 }
             } else {
@@ -70,12 +72,12 @@ class HousesController extends RetrievesllDataController
 
         if (isset($_GET['number_bathroom'])) {
             $numberBathroom = $_GET['number_bathroom'];
-
             if (isset($houses)) {
                 foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_bathroom', $numberBathroom)
+                    $houses = HousesModel::where('number_bathroom', "<=",$numberBathroom)
                         ->where('number_room', $house->number_room)
                         ->where('id_address', $house->id_address)
+                        ->whereBetween('price', [$price[0], $price[1]])
                         ->get();
                 }
             } else {
@@ -88,9 +90,10 @@ class HousesController extends RetrievesllDataController
             $month = explode('-', $getMonth);
             if (isset($houses)) {
                 foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_bathroom', $house->number_bathroom)
-                        ->where('number_room', $house->number_room)
+                    $houses = HousesModel::where('number_bathroom',  "<=", $house->number_bathroom)
+                        ->where('number_room', "<=",$house->number_room)
                         ->where('id_address', $house->id_address)
+                        ->whereBetween('price', [$price[0], $price[1]])
                         ->whereBetween('month', [$month[0], $month[1]])
                         ->get();
                 }

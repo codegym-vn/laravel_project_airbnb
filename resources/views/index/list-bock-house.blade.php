@@ -52,6 +52,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <body>
+
 @include('index.layout.header')
 <div id="wrapper">
     <div class="main">
@@ -189,7 +190,7 @@
                                 <div class="custom-select">
                                     <select class="form-control" name="address" id="cboCity"
                                             onchange="ChangeCity($(this).val())">
-                                        <option value="-1">Thành Phố</option>
+                                        <option value="123456789">Thành Phố</option>
                                         @foreach($address as $address)
                                             <option value="{{ $address->id }}"
                                                     @if(isset($_POST['address']) && $address->id == $_POST['address'])
@@ -206,7 +207,7 @@
                                 <div class="custom-select">
                                     <select id="cboDistrict" name="number_bathroom" class="form-control"
                                             onchange="ChangeQuanhuyen($(this).val())">
-                                        <option value="0">Phòng tắm</option>
+                                        <option value="11111111111111111111">Phòng tắm</option>
                                         @for($i = 1; $i <= 10; $i++)
                                             <option value="{{ $i }}"
                                                     @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
@@ -221,11 +222,9 @@
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" id="hddArea"
-                                           value="0"/>
                                     <select id="cboArea" class="form-control" name="number_room"
                                             onchange="ChangeValue('Area', $(this).val());">
-                                        <option value="0">Phòng ngủ</option>
+                                        <option value="111111111111111111">Phòng ngủ</option>
                                         @for($i = 1; $i <= 10; $i++)
                                             <option
                                                     value="{{ $i }}"
@@ -242,8 +241,6 @@
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" id="hddPrice"
-                                           value="-1"/>
                                     <select id="cboPrice" name="month" class="form-control"
                                             onchange="ChangeValue('Price', $(this).val());">
                                         <option value="0-1"
