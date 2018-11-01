@@ -79,7 +79,7 @@
                             <div class="pull-left title-search-product" style="">
                                 <h1 class="fsize-22 fweight-700 text-uppercase blue-clr no-mg"
                                     style="white-space: nowrap; text-overflow: ellipsis; width: 560px; overflow: hidden;">
-                                    Nhà đất cho thuê tại Việt Nam
+                                    Danh sách nhà đất đang được giao bán
                                 </h1>
                                 <div class="none">
 

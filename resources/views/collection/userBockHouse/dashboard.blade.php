@@ -6,24 +6,21 @@
             @if(Session::has('messenger'))
                 <p style=" color: red">{{Session::get('messenger')}}</p>
             @endif
-
-
             <div id="MainContent_ProductDetail1_ProductArea_product_price" class="product_other">
                 <div class="title-line-through mg-bottom-20">
-                    <h4 class="title"> Nhà bạn vừa chọn :</h4>
+                    <h4 class="title"> Nhà bạn vừa chọn </h4>
                 </div>
-                <ul class="group-prd group-3cl mg-bottom-20 clearfix">
-
+                <ul class="group-prd group-3cl mg-bottom-20 clearfix" style="text-align: center ; padding-top: 40px" >
                     <div class="image h155">
                         <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                            title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
                            href="{{ route('seeDetails', $house->id) }}"><img
-                                    id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
+                                     style="width: 440px !important;" id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
                                     class="img-list-product"
                                     src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
                     </div>
 
-                    <div class="content">
+                    <div class="content" style="padding-top: 30px">
                         <h4 class="title lh-16 h50 mg-bottom-5">
                             <a id="hplTitle"
                                title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
@@ -52,17 +49,9 @@
                                     @endif
                                         </span>
                             </div>
-                            <a id="hplView"
-                               title="Cần cho thuê căn hộ chung cư Sunrise City khu North, Quận 7"
-                               class="none"
-                               href="{{ route('seeDetails', $house->id) }}">Xem thêm</a>
                         </div>
                     </div>
-
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Đặt
-                        lịch thuê nhà này
-                    </button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Đặt lịch thuê nhà này</button>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                          aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,19 +66,12 @@
                                     @csrf
                                     <div class="modal-body">
                                         <ul>
-                                            <p> Thông tin thêm<input type="text"
-                                                                     style="width: 400px; padding-bottom: 10px"
-                                                                     name="information"></p>
-                                            <p> Tên<input type="text" style="width: 400px; padding-bottom: 10px"
-                                                          name="name"></p>
-                                            <p> Số điện thoại<input type="text"
-                                                                    style="width: 400px; padding-bottom: 10px"
-                                                                    name="phone"></p>
-                                            <p><input type="date" style="width: 400px; padding-bottom: 10px"
-                                                      name="calender"></p>
+                                            <p> Thông tin thêm<input type="text" style="width: 400px; padding-bottom: 10px" name="information"></p>
+                                            <p> Tên<input type="text" style="width: 400px; padding-bottom: 10px" name="name"></p>
+                                            <p> Số điện thoại<input type="text" style="width: 400px; padding-bottom: 10px" name="phone"></p>
+                                            <p> Lich<input type="date" style="width: 400px; padding-bottom: 10px" name="calender"></p>
                                         </ul>
                                     </div>
-
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">Thoát
                                         </button>

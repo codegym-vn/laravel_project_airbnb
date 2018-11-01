@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', 'indexController@index')->name('index');
-
-Route::match(['get', 'post'], '/listBockHouse', 'HousesController@showHouses')->name('listBockHouse');
+Route::match(['get', 'post'], '/', 'HousesController@showHouses')->name('listBockHouse');
 
 Route::get('/new', 'indexController@new')->name('new');
 
@@ -53,6 +51,10 @@ Route::prefix('userBockHouse')->group(function () {
 
     Route::post('/bockhoue/{idHouses}/{idUser}', 'UserController@calendar')->name('bockhoue');
 
+    Route::get('/forgot-passBockHouse/{id}', 'DashBoardController@forgotPasswordBockHouse')->name('forgot-passBockHouse');
+
+    Route::post('forgot-passwordBockHouse/{id}', 'DashBoardController@forgotPassBockHouse')->name('forgot-password');
+
     Route::get('/calendar/{id}', "UserController@showCalendars")->name('showCalendars');
 
     Route::get('/delete-calender/{id}', "UserController@deleteCalender")->name('deleteCalendars');
@@ -66,9 +68,9 @@ Route::prefix('user')->group(function () {
 
     Route::get('/dashboarduser', 'DashBoardController@dashBoardUser')->name('dashboardUser');
 
-    Route::get('/editUsers/{id}', 'DashBoardController@editUser')->name('editUsers');
+    Route::get('/editUsers/{id}', 'DashBoardController@editUserPostHouse')->name('editUsers');
 
-    Route::post('/editUser/{id}', 'DashBoardController@updateUser')->name('editUser');
+    Route::post('/editUser/{id}', 'DashBoardController@updateUserPostHouse')->name('editUser');
 
     Route::get('/forgot-pass/{id}', 'DashBoardController@forgotPassword')->name('forgot-pass');
 
@@ -76,6 +78,7 @@ Route::prefix('user')->group(function () {
 
     Route::post('post}', 'DashBoardController@post')->name('post');
 });
+
 
 Route::get('/create/{id}', 'CreatePostsController@create')->name('post.create');
 

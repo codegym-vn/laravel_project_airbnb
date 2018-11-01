@@ -19,11 +19,6 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-
-                        <form action="{{route('sign-store')}}" method="post">
-
-                        <form action="{{ route('dashboard') }}" method="post">
-
                         <form action="
                         @if(isset($_GET['id']))
 
@@ -85,6 +80,7 @@
                             </div>
                         </form>
                     </div>
+                    <div class="idv">
                     <ul class="auth-footer">
                         <li>
                             <a href="#">Conditions</a>
