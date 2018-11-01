@@ -29,7 +29,7 @@ class DashBoardController extends Controller
     }
 
 
-    public function updateUserBockHouse(InformationValation $request, $id)
+    public function updateUserBockHouse( $request, $id)
     {
         $user = User::find($id);
         $user->name = $request->input('name');
@@ -46,7 +46,7 @@ class DashBoardController extends Controller
         return view('collection.userPostHouse.edit-user', compact('id', 'users'));
     }
 
-    public function updateUserPostHouse(InformationValation $request, $id)
+    public function updateUserPostHouse( $request, $id)
     {
 
         $user = User::find($id);
