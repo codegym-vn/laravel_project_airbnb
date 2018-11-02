@@ -52,6 +52,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <body>
 @include('index.layout.header')
+
 <div id="wrapper">
     <div class="main">
         <div class="row clearfix">
@@ -73,8 +74,8 @@
                 </div>
             </div>
         </div>
-        <h5 style="text-transform: uppercase; color: #00a855"> Danh sách nhà đất hiện có  </h5>
-        <div class="col-gr-75per" style="margin-top: 55px" >
+        <h5 style="text-transform: uppercase; color: #00a855"> Danh sách phòng hiện có </h5>
+        <div class="col-gr-75per row" style="margin-top: 55px ">
             <ul class="group-prd group-3cl clearfix">
                 @if(count($houses) == "0")
                     Hiện không có nhà nào giống với yêu cầu của bạn
@@ -85,8 +86,8 @@
                                 <a id="MainContent_ProductSearchResult_rpProductList_hplAvatar_3"
                                    title="Cho thuê nhà riêng tại Đường Nguyễn Lương Bằng, Đống Đa, Hà Nội diện tích 75m2 giá 27 Tr..."
                                    href="{{ route('seeDetails', $house->id) }}">
-                                <img src="{{ asset('storage/images/' . $house->image) }}" alt=""
-                                     style="width: 255px">
+                                    <img src="{{ asset('storage/images/' . $house->image) }}" alt=""
+                                         style="width: 255px">
                                 </a>
                             </div>
                             <div class="content">
@@ -108,7 +109,7 @@
                                             @if($house->status == 0 )
                                                 Chưa cho thuê
                                             @else
-                                                Dã cho thuê
+                                                Đã cho thuê
                                             @endif
                                         </span>
                                     </div>
@@ -123,16 +124,13 @@
                     @endforeach
                 @endif
             </ul>
-
-            <div class="mg-bottom-30 clearfix">
-
-                {{ $houses->appends(request()->query()) }}
+            <div class="paging pull-right">
+                {!! $houses->appends(request()->query()) !!}
             </div>
-
         </div>
+
         <div class="col-gr-25per">
             <div class="group-advance-search style-col-search mg-bottom-30">
-
                 <ul class="tabs-search home-search clearfix">
                     <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm</a></li>
                 </ul>
@@ -239,8 +237,6 @@
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" id="hddPrice"
-                                           value="-1"/>
                                     <select id="cboPrice" name="month" class="form-control"
                                             onchange="ChangeValue('Price', $(this).val());">
                                         <option value="0-11111111111111111"
@@ -301,9 +297,6 @@
         </div>
     </div>
 </div>
-</div>
-
-
 @include('index.layout.footer')
 </body>
 </html>

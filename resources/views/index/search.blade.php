@@ -149,7 +149,7 @@
                                             @if($house->status == 0 )
                                                 Chưa cho thuê
                                             @else
-                                                Dã cho thuê
+                                                Đã cho thuê
                                             @endif
                                         </span>
                                     </div>
@@ -278,8 +278,6 @@
                             </li>
                             <li>
                                 <div class="custom-select">
-                                    <input type="hidden" id="hddPrice"
-                                           value="-1"/>
                                     <select id="cboPrice" name="month" class="form-control"
                                             onchange="ChangeValue('Price', $(this).val());">
                                         <option value="0-11111111111111111"

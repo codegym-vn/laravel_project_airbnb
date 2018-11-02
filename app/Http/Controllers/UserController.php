@@ -32,7 +32,7 @@ class UserController extends RetrievesllDataController
                 $price = $statistic->price + $price;
             }
         }
-        return view('collection.userPostHouse.statistics', compact('user', 'statistics', 'price'));
+        return view('collection.user.statistics', compact('user', 'statistics', 'price'));
     }
 
     public function feedback(Request $request, $id)
@@ -48,7 +48,7 @@ class UserController extends RetrievesllDataController
         $kindEvaluate->email = $email;
         $kindEvaluate->name = $name;
         $kindEvaluate->save();
-        return redirect(route('listBockHouse'));
+        return redirect(route('seeDetails', $id));
     }
 
     public function calendar(Request $request, $idHouses, $idUser)

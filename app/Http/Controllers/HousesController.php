@@ -12,7 +12,7 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::orderBy('id', 'desc')->paginate(9, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
@@ -28,7 +28,7 @@ class HousesController extends RetrievesllDataController
         return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address', 'Comments'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
         $addresss = $this->address();
 
@@ -55,13 +55,12 @@ class HousesController extends RetrievesllDataController
             $houses = $query->where('number_bathroom', $numberBathroom);
         }
 
-//        if ($_GET['month'] != "0-11111111111111111") {
-//            $getMonth = $_GET['month'];
-//            $month = explode('-', $getMonth);
-//            $houses = $query->where('number_bathroom', $month);
-//        }
+        if ($_GET['month'] != "0-11111111111111111") {
+            $getMonth = $_GET['month'];
+            $month = explode('-', $getMonth);
+            $houses = $query->where('number_bathroom', $month);
+        }
         $houses = $query->get();
-//dd($houses);
         return view('index.search', compact('houses', 'addresss'));
     }
 
@@ -69,7 +68,7 @@ class HousesController extends RetrievesllDataController
     {
         $houses = HousesModel::where('id_user', $id)->get();
         $user = User::find($id);
-        return view('collection.userPostHouse.show-updated-home-status', compact('houses', 'user'));
+        return view('collection.user.show-updated-home-status', compact('houses', 'user'));
     }
 
     public function updatedHomeStatus(Request $request)
