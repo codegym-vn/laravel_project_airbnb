@@ -51,6 +51,7 @@
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/Register.js"></script>
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -64,8 +65,6 @@
             crossorigin="anonymous"></script>
 <body>
 @include('index.layout.header')
-
-
 <div id="wrapper">
     <div class="main">
         <div class="row clearfix">
@@ -112,95 +111,121 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            {{--<div class="block-detail-info mg-bottom-25 clearfix">--}}
+                <div id="slide-detail-image" class="spanImage box" style="width: 560px;">
+                    <ul id="myGallery" class="slide_show" style="height: 443px;">
+                        <li>
+                            <img
+                                 src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
+                                 alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
+                        </li>
 
-                <div class="block-detail-info mg-bottom-25 clearfix">
+                        <li>
+                            <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160246-4465.jpg"
+                                 alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
+                        </li>
 
-                    <div class="block-info">
-
-                        <div class="border-gray-100 bg-gray-20 radius">
-                            <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
-                                <h4 class="fsize-16 no-mg text-uppercase dblue-clr">Đặc điểm bất động sản
-                                </h4>
-                            </div>
-
-                            <div class="pd-left-10 pd-right-10">
-                                <div class="pd-bottom-15 pd-top-15 clearfix">
-                                    <div class="pull-left" style="width: 60%;">
-                                        <span class="fsize-13">Giá</span>
-                                        <br>
-                                        <span class="fsize-17 green-clr fweight-700">
-                                {{ number_format($seeDetailHouses->price) }} Triệu
-                            </span>
-                                    </div>
-                                    <div class="pull-right">
-                                        <span class="fsize-13">Loại nhà</span>
-                                        <br>
-                                        <span class="fsize-17 green-clr fweight-700">
-                                         {{ $seeDetailHouses->kindHouse->name }}
-                            </span>
-                                    </div>
-                                </div>
-                                <ul class="list-info clearfix">
-                                    <li>
-                                        <div class="value">
-                                            {{ $seeDetailHouses->number_room }}
-                                        </div>
-                                        Phòng ngủ
-                                    </li>
-                                    <li>
-                                        <div class="value">
-                                            {{ $seeDetailHouses->number_bathroom }}
-                                        </div>
-                                        Phòng tắm
-                                    </li>
-                                    <li>
-
-                                        <div class="value line">
-                                            {{ $seeDetailHouses->created_at }}
-                                        </div>
-                                        Phong
-                                    </li>
-                                    <li>
-
-                                        <div class="value">Loại nhà
-                                        </div>
-                                        @if($seeDetailHouses->status == 0 )
-                                            <p>Chưa cho thuê</p>
-                                        @else
-                                            <p>Dã cho thuê</p>
-                                        @endif
-                                    </li>
-
-                                </ul>
-                                <div class="none">
-
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
-                        <ul id="myGallery" class="slide_show" style="height: 443px;">
-                            <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
-                            </li>
-
-                            <li>
-                                <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160246-4465.jpg"
-                                     alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
-                            </li>
-
-                        </ul>
-                        <div id="imgPrint"></div>
-                    </div>
-
+                    </ul>
+                    <div id="imgPrint"></div>
                 </div>
 
+                    <div class="border-gray-100 bg-gray-20 radius" style="width: 300px">
+                        <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
+                            <h4 class="fsize-16 no-mg text-uppercase dblue-clr">Đặc điểm bất động sản</h4>
+                        </div>
+                        <div class="pd-left-10 pd-right-10">
+                            <div class="pd-bottom-15 pd-top-15 clearfix">
+                                <div class="pull-left" style="width: 60%;">
+                                    <span class="fsize-13">Giá</span>
+                                    <br>
+                                    <span class="fsize-17 green-clr fweight-700">
+                                {{ number_format($seeDetailHouses->price) }} Triệu</span>
+                                </div>
+                                <div class="pull-right">
+                                    <span class="fsize-13">Loại nhà</span>
+                                    <br>
+                                    <span class="fsize-17 green-clr fweight-700">
+                                         {{ $seeDetailHouses->kindHouse->name }}</span>
+                                </div>
+                            </div>
+                            <ul class="list-info clearfix">
+                                <li>
+                                    <div class="value">
+                                        {{ $seeDetailHouses->number_room }}
+                                    </div>
+                                    Phòng ngủ
+                                </li>
+                                <li>
+                                    <div class="value">
+                                        {{ $seeDetailHouses->number_bathroom }}
+                                    </div>
+                                    Phòng tắm
+                                </li>
+                                <li>
+                                    <div class="value line">
+                                        {{ $seeDetailHouses->created_at }}
+                                    </div>
+                                    Phong
+                                </li>
+                                <li>
+
+                                    <div class="value">Loại nhà
+                                    </div>
+                                    @if($seeDetailHouses->status == 0 )
+                                        <p>Chưa cho thuê</p>
+                                    @else
+                                        <p>Dã cho thuê</p>
+                                    @endif
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+            </div>
+        {{-- dat lich --}}
+                <div class="datlich" style="padding-top: 30px; padding-bottom: 30px">
+                    <p>  Đặt lịch </p>
+                    <button  style="background-color: #2384c7  !important; " type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> Đặt lịch  </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Thông tin cơ bản</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('calendar', ['id_house' => $seeDetailHouses->id, 'id_user' => Auth::user()->id])}}" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label"> Tên</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtPhone" class="col-form-label">Số điện thoại</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="phone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Email</label>
+                                            <input type="email" class="form-control" id="recipient-name" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Lịch</label>
+                                            <input type="date" class="form-control" id="recipient-name" name="date">
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                        <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 <div class="mg-bottom-10 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg " style="padding-top:15px ">Thông tin
                         chi tiết</h4>
                 </div>
 
@@ -251,7 +276,8 @@
 
 
                 <div class="mg-bottom-20 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi của bạn</h4>
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Phản hồi
+                        của bạn</h4>
                 </div>
 
                 <div class="info-contact mg-bottom-40 clearfix">
@@ -291,19 +317,11 @@
                                 </div>
 
                             </div>
-
-                            <script src="/Scripts/Contact.js"></script>
                             <div class="loading_contact" style="display: none">
                                 <img src="/Images/loading.gif"/>
                             </div>
                         </div>
                     </form>
-                    <script>
-                        $(function () {
-                            if ($.trim($('#toEmail').text()) == "--")
-                                $('#boxContact').addClass("none-pointer");
-                        });
-                    </script>
                 </div>
 
                 <div class="phan hoi ">
@@ -314,7 +332,7 @@
                         @foreach($Comments as $Comment)
                             <p>Tên: {{$Comment->name}} | Nội Dung: {{$Comment->conten}}</p>
                             <hr>
-                       @endforeach
+                        @endforeach
                     </div>
                 </div>
 
@@ -373,186 +391,6 @@
                             </li>
                         @endforeach
                     </ul>
-                </div>
-            </div>
-
-
-            <div class="col-gr-25per mg-top-5">
-                <div class="group-advance-search style-col-search mg-bottom-30">
-
-                    <ul class="tabs-search home-search clearfix">
-                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
-                        <li id="ban"><a href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt
-                                lịch</a></li>
-                    </ul>
-
-                    <form action="{{ route('search') }}" method="post">
-                        {{ csrf_field() }}
-                        <div class="search-content listProductSearch">
-                            <ul class="filter clearfix" style="height: 300px;">
-                                <li>
-                                    <div class="custom-select">
-                                        <select id="cboCate" name="price" onchange="ChangeValue('Cate', $(this).val());"
-                                                class="form-control">
-                                            <option value="0"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '0')
-                                                    selected
-                                                    @endif
-                                            >Mức giá
-                                            </option>
-                                            <option value="0-2000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '0-2000000')
-                                                    selected
-                                                    @endif
-                                            >Dưới 2 triệu
-                                            </option>
-                                            <option value="2000000-4000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '2000000-4000000')
-                                                    selected
-                                                    @endif>
-                                                Từ 2 - 4 triệu
-                                            </option>
-                                            <option value="4000000-7000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '4000000-7000000')
-                                                    selected
-                                                    @endif>
-                                                Từ 4 - 7 triệu
-                                            </option>
-
-                                            <option value="7000000-13000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '7000000-13000000')
-                                                    selected
-                                                    @endif>
-                                                Từ 7 - 13 triệu
-                                            </option>
-                                            <option value="13000000-1000000000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '13000000-1000000000000')
-                                                    selected
-                                                    @endif
-                                            >
-                                                Trên 13 triệu
-                                            </option>
-                                        </select>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-select">
-                                        <input type="hidden" name="address" id="hddCity"
-                                               value="0"/>
-                                        <select class="form-control" name="address" id="cboCity"
-                                                onchange="ChangeCity($(this).val())">
-                                            <option value="-1">Thành Phố</option>
-                                            @foreach($address as $address)
-                                                <option value="{{ $address->id }}"
-                                                        @if(isset($_POST['address']) && $address->id == $_POST['address'])
-                                                        selected
-                                                        @endif
-                                                >
-                                                    {{ $address->address }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-select">
-                                        <input type="hidden" id="hddDistrict"/>
-                                        <select id="cboDistrict" name="number_bathroom" class="form-control"
-                                                onchange="ChangeQuanhuyen($(this).val())">
-                                            <option value="0">Phòng tắm</option>
-                                            @for($i = 1; $i <= 10; $i++)
-                                                <option value="{{ $i }}"
-                                                        @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
-                                                        selected
-                                                        @endif
-                                                >
-                                                    {{ $i }}
-                                                </option>
-                                            @endfor
-                                        </select>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-select">
-                                        <input type="hidden" id="hddArea"
-                                               value="0"/>
-                                        <select id="cboArea" class="form-control" name="number_room"
-                                                onchange="ChangeValue('Area', $(this).val());">
-                                            <option value="0">Phòng ngủ</option>
-                                            @for($i = 1; $i <= 10; $i++)
-                                                <option
-                                                        value="{{ $i }}"
-                                                        @if(isset($_POST['number_room']) && $_POST['number_room'] == $i)
-                                                        selected
-                                                        @endif
-                                                >
-                                                    {{ $i }}
-                                                </option>
-                                            @endfor
-
-                                        </select>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="custom-select">
-                                        <input type="hidden" id="hddPrice"
-                                               value="-1"/>
-                                        <select id="cboPrice" name="month" class="form-control"
-                                                onchange="ChangeValue('Price', $(this).val());">
-                                            <option value="0"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '0')
-                                                    selected
-                                                    @endif
-                                            >
-                                                Thời gian
-                                            </option>
-                                            <option value="0-2"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '0-2')
-                                                    selected
-                                                    @endif
-                                            >
-                                                Dưới 2 tháng
-                                            </option>
-                                            <option value="2-4"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '2-4')
-                                                    selected
-                                                    @endif
-                                            >
-                                                Từ 2 - 4 tháng
-                                            </option>
-                                            <option value="4-7"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '4-7')
-                                                    selected
-                                                    @endif
-                                            >
-                                                Từ 4 - 7 tháng
-                                            </option>
-                                            <option value="7000000-13000000"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '7-13')
-                                                    selected
-                                                    @endif
-                                            >
-                                                Từ 7 - 12 tháng
-                                            </option>
-                                            <option value="13-1000000000000"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '13-1000000000000')
-                                                    selected
-                                                    @endif
-                                            >
-                                                Trên 1 năm
-                                            </option>
-                                        </select>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <input type="submit" id="btnSearch" class="btn bg-green full-width fweight-bold"
-                                           href="javascript:__doPostBack(&#39;ctl00$MainContent$BoxSearch$btnSearch&#39;,&#39;&#39;)"
-                                           value="Tìm kiếm">
-                                </li>
-                            </ul>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-@extends('collection.userPostHouse.layout.teamplate')
+@extends('collection.user.layout.teamplate')
 @section('content')
 
     <div class="col-12">

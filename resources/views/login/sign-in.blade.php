@@ -19,16 +19,8 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="
-                        @if(isset($_GET['id']))
-
-                        {{ route('dashboard', ['id' => $_GET['id']]) }}
-                        @else
-
-                        {{ route('dashboard') }}
-                        @endif" method="post">
+                        <form action="{{route('sign-store')}}" method="post">
                             @csrf
-
                             @if(Session::has('errLogin'))
                                 <p style="color: red;text-align: center">{{Session::get('errLogin')}}</p>
                             @endif
@@ -59,13 +51,11 @@
                                     <p style="color: red;text-align: center">{{ $errors->first('password') }}</p>
                                 @endif
                             </div>
-                            <div class="form-group">
-                                <button class="btn btn-primary submit-btn btn-block">Login</button>
-                            </div>
+                            <div class="form-group"><button class="btn btn-primary submit-btn btn-block">Login</button></div>
+
                             <div class="form-group d-flex justify-content-between">
                                 <div class="form-check form-check-flat mt-0">
-                                    <label class="form-check-label"><input type="checkbox" class="form-check-input"
-                                                                           checked> Keep me signed in</label>
+                                    <label class="form-check-label"><input type="checkbox" class="form-check-input" name="remember_me"> Keep me signed in </label>
                                 </div>
                                 <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
                             </div>
@@ -80,6 +70,8 @@
                             </div>
                         </form>
                     </div>
+
+
                     <div class="idv">
                     <ul class="auth-footer">
                         <li>
