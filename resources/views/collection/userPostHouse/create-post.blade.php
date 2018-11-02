@@ -90,14 +90,26 @@
                 <input type="file"
                        class="form-control-file"
                        id="inputFile"
-                       name="inputFile">
+                       name="inputFile[]">
+                <img id="image" height="200px" />
+
             </div>
 
             <button type="submit" style="background-color: #00a855; color:white"> Gửi</button>
         </form>
     </div>
-
-
-
-
+    <script type="text/javascript">
+        var file = document.getElementById('inputFile');
+        var img = document.getElementById('image');
+        file.addEventListener("change", function() {
+            if (this.value) {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onloadend = function () {
+                    img.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 @endsection

@@ -424,21 +424,11 @@
                                 </li>
                                 <li>
                                     <div class="custom-select">
-<<<<<<< HEAD
-                                        <select class="form-control" name="address" id="cboCity"
-                                                onchange="ChangeCity($(this).val())">
-                                            <option>Thành Phố</option>
-                                            <option value="-1">Thành Phố</option>
-                                            @foreach($address as $address)
-                                                <option value="{{ $address->id }}"
-                                                        @if(isset($_GET['address']) && $address->id == $_GET['address'])
-=======
                                         <select class="form-control" name="address" id="cboCity">
                                             <option value="">Thành Phố</option>
-                                            @foreach($addresss as $addres)
+                                            @foreach($address as $addres)
                                                 <option value="{{ $addres->id }}"
                                                         @if(isset($_GET['address']) && $addres->id == $_GET['address'])
->>>>>>> 3b2e194d35f9f4dc5825a09a40e626ddfe1c6876
                                                         selected
                                                         @endif
                                                 >
@@ -450,15 +440,9 @@
                                 </li>
                                 <li>
                                     <div class="custom-select">
-<<<<<<< HEAD
-                                        <select id="cboDistrict" name="number_bathroom" class="form-control"
-                                                onchange="ChangeQuanhuyen($(this).val())">
-                                            <option value="11111111111111111111">Phòng tắm</option>
-=======
                                         <select id="cboArea" class="form-control" name="number_room"
                                                 onchange="ChangeValue('Area', $(this).val());">
                                             <option value="">Phòng ngủ</option>
->>>>>>> 3b2e194d35f9f4dc5825a09a40e626ddfe1c6876
                                             @for($i = 1; $i <= 10; $i++)
                                                 <option
                                                         value="{{ $i }}"
@@ -475,15 +459,9 @@
                                 </li>
                                 <li>
                                     <div class="custom-select">
-<<<<<<< HEAD
-                                        <select id="cboArea" class="form-control" name="number_room"
-                                                onchange="ChangeValue('Area', $(this).val());">
-                                            <option value="111111111111111111">Phòng ngủ</option>
-=======
                                         <select id="cboDistrict" name="number_bathroom" class="form-control"
                                                 onchange="ChangeQuanhuyen($(this).val())">
                                             <option value="">Phòng tắm</option>
->>>>>>> 3b2e194d35f9f4dc5825a09a40e626ddfe1c6876
                                             @for($i = 1; $i <= 10; $i++)
                                                 <option value="{{ $i }}"
                                                         @if(isset($_GET['number_bathroom']) && $_GET['number_bathroom'] == $i)

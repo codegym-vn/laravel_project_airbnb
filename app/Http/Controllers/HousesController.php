@@ -12,7 +12,7 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::orderBy('id', 'desc')->paginate(5, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
@@ -45,39 +45,22 @@ class HousesController extends RetrievesllDataController
             $houses = $query->where('id_address', $address);
         }
 
-<<<<<<< HEAD
-        if ($_GET['number_room'] !== "111111111111111111") {
-=======
         if (!empty($_GET['number_room'])) {
->>>>>>> 3b2e194d35f9f4dc5825a09a40e626ddfe1c6876
             $numberRoom = $_GET['number_room'];
             $houses = $query->where('number_room', $numberRoom);
         }
 
-<<<<<<< HEAD
-        if ($_GET['number_bathroom'] !== "11111111111111111111") {
-            $numberBathroom = $_GET['number_bathroom'];
-            $query = HousesModel::where('number_bathroom', $numberBathroom);
-        }
-
-        if ($_GET['month'] !== "0-11111111111111111") {
-            $getMonth = $_GET['month'];
-            $month = explode('-', $getMonth);
-            $query = HousesModel::where('number_bathroom', $month);
-=======
         if (!empty($_GET['number_bathroom'])) {
             $numberBathroom = $_GET['number_bathroom'];
             $houses = $query->where('number_bathroom', $numberBathroom);
->>>>>>> 3b2e194d35f9f4dc5825a09a40e626ddfe1c6876
         }
 
-//        if ($_GET['month'] != "0-11111111111111111") {
-//            $getMonth = $_GET['month'];
-//            $month = explode('-', $getMonth);
-//            $houses = $query->where('number_bathroom', $month);
-//        }
+        if ($_GET['month'] != "0-11111111111111111") {
+            $getMonth = $_GET['month'];
+            $month = explode('-', $getMonth);
+            $houses = $query->where('number_bathroom', $month);
+        }
         $houses = $query->get();
-//dd($houses);
         return view('index.search', compact('houses', 'addresss'));
     }
 
