@@ -1,10 +1,9 @@
-@extends('collection.userPostHouse.layout.teamplate')
+@extends('collection.user.layout.teamplate')
 @section('content')
 
     <div class="col-12">
         <form method="post" action="{{route('forgot-password' , $id)}}">
             @csrf
-
             @if(Session::has('messenger1'))
                 <p style="color: red; text-align: center">{{Session::get('messenger1')}}</p>
             @endif

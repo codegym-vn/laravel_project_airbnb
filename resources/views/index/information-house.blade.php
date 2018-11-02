@@ -51,6 +51,12 @@
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/Register.js"></script>
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
+<<<<<<< HEAD
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+=======
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -62,8 +68,6 @@
             crossorigin="anonymous"></script>
 <body>
 @include('index.layout.header')
-
-
 <div id="wrapper">
     <div class="main">
         <div class="row clearfix">
@@ -109,68 +113,129 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            {{--<div class="block-detail-info mg-bottom-25 clearfix">--}}
+                <div id="slide-detail-image" class="spanImage box" style="width: 560px;">
+                    <ul id="myGallery" class="slide_show" style="height: 443px;">
+                        <li>
+                            <img
+                                 src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160238-899d.jpg"
+                                 alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
+                        </li>
 
-                <div class="block-detail-info mg-bottom-25 clearfix">
+                        <li>
+                            <img src="https://img.tinbatdongsan.com/crop/680x480/2018/09/13/20180913160246-4465.jpg"
+                                 alt="Quỹ đất vàng cho nhà đầu tư ngay mặt tiền đường Vành Đai 3, LH 0984038817"/>
+                        </li>
 
-                    <div class="block-info">
+                    </ul>
+                    <div id="imgPrint"></div>
+                </div>
 
-                        <div class="border-gray-100 bg-gray-20 radius">
-                            <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
-                                <h4 class="fsize-16 no-mg text-uppercase dblue-clr">Đặc điểm bất động sản
-                                </h4>
-                            </div>
-
-                            <div class="pd-left-10 pd-right-10">
-                                <div class="pd-bottom-15 pd-top-15 clearfix">
-                                    <div class="pull-left" style="width: 60%;">
-                                        <span class="fsize-13">Giá</span>
-                                        <br>
-                                        <span class="fsize-17 green-clr fweight-700">
-                                {{ number_format($seeDetailHouses->price) }} Triệu
-                            </span>
-                                    </div>
-                                    <div class="pull-right">
-                                        <span class="fsize-13">Loại nhà</span>
-                                        <br>
-                                        <span class="fsize-17 green-clr fweight-700">
-                                         {{ $seeDetailHouses->kindHouse->name }}
-                            </span>
-                                    </div>
+                    <div class="border-gray-100 bg-gray-20 radius" style="width: 300px">
+                        <div class="mg-left-10 mg-right-10 pd-bottom-15 pd-top-15 border-bottom-gray-100 text-center">
+                            <h4 class="fsize-16 no-mg text-uppercase dblue-clr">Đặc điểm bất động sản</h4>
+                        </div>
+                        <div class="pd-left-10 pd-right-10">
+                            <div class="pd-bottom-15 pd-top-15 clearfix">
+                                <div class="pull-left" style="width: 60%;">
+                                    <span class="fsize-13">Giá</span>
+                                    <br>
+                                    <span class="fsize-17 green-clr fweight-700">
+                                {{ number_format($seeDetailHouses->price) }} Triệu</span>
                                 </div>
-                                <ul class="list-info clearfix">
-                                    <li>
-                                        <div class="value">
-                                            {{ $seeDetailHouses->number_room }}
+                                <div class="pull-right">
+                                    <span class="fsize-13">Loại nhà</span>
+                                    <br>
+                                    <span class="fsize-17 green-clr fweight-700">
+                                         {{ $seeDetailHouses->kindHouse->name }}</span>
+                                </div>
+                            </div>
+                            <ul class="list-info clearfix">
+                                <li>
+                                    <div class="value">
+                                        {{ $seeDetailHouses->number_room }}
+                                    </div>
+                                    Phòng ngủ
+                                </li>
+                                <li>
+                                    <div class="value">
+                                        {{ $seeDetailHouses->number_bathroom }}
+                                    </div>
+                                    Phòng tắm
+                                </li>
+                                <li>
+                                    <div class="value line">
+                                        {{ $seeDetailHouses->created_at }}
+                                    </div>
+                                    Phong
+                                </li>
+                                <li>
+
+                                    <div class="value">Loại nhà
+                                    </div>
+                                    @if($seeDetailHouses->status == 0 )
+                                        <p>Chưa cho thuê</p>
+                                    @else
+                                        <p>Dã cho thuê</p>
+                                    @endif
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+            </div>
+        {{-- dat lich --}}
+                <div class="datlich" style="padding-top: 30px; padding-bottom: 30px">
+                    <p>  Đặt lịch </p>
+                    <button  style="background-color: #2384c7  !important; " type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> Đặt lịch  </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Thông tin cơ bản</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('calendar', ['id_house' => $seeDetailHouses->id, 'id_user' => Auth::user()->id])}}" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label"> Tên</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="name">
                                         </div>
-                                        Phòng ngủ
-                                    </li>
-                                    <li>
-                                        <div class="value">
-                                            {{ $seeDetailHouses->number_bathroom }}
+                                        <div class="form-group">
+                                            <label for="txtPhone" class="col-form-label">Số điện thoại</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="phone">
                                         </div>
+<<<<<<< HEAD
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Email</label>
+                                            <input type="email" class="form-control" id="recipient-name" name="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="col-form-label">Lịch</label>
+                                            <input type="date" class="form-control" id="recipient-name" name="date">
+=======
                                         Phòng tắm
                                     </li>
                                     <li>
 
                                         <div class="value">Loại nhà
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
                                         </div>
-                                        @if($seeDetailHouses->status == 0 )
-                                            <p>Chưa cho thuê</p>
-                                        @else
-                                            <p>Dã cho thuê</p>
-                                        @endif
-                                    </li>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                        <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
 
-                                </ul>
-                                <div class="none">
-
+                                    </form>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
 
+<<<<<<< HEAD
+=======
                     <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
                         <ul id="myGallery" class="slide_show" style="height: 443px;">
                             <li>
@@ -185,8 +250,9 @@
 
                 </div>
 
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
                 <div class="mg-bottom-10 clearfix">
-                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg">Thông tin
+                    <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg " style="padding-top:15px ">Thông tin
                         chi tiết</h4>
                 </div>
 
@@ -278,19 +344,11 @@
                                 </div>
 
                             </div>
-
-                            <script src="/Scripts/Contact.js"></script>
                             <div class="loading_contact" style="display: none">
                                 <img src="/Images/loading.gif"/>
                             </div>
                         </div>
                     </form>
-                    <script>
-                        $(function () {
-                            if ($.trim($('#toEmail').text()) == "--")
-                                $('#boxContact').addClass("none-pointer");
-                        });
-                    </script>
                 </div>
 
                 <div class="phan hoi ">
@@ -363,6 +421,8 @@
                     </ul>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
 
 
             <div class="col-gr-25per mg-top-5">
@@ -536,6 +596,7 @@
                     </form>
                 </div>
             </div>
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
         </div>
     </div>
 </div>
