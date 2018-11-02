@@ -228,7 +228,7 @@
                                 <div class="custom-select">
                                     <select class="form-control" name="address" id="cboCity"
                                             onchange="ChangeCity($(this).val())">
-                                        <option value="-1">Thành Phố</option>
+                                        <option>Thành Phố</option>
                                         @foreach($addresss as $address)
                                             <option value="{{ $address->id }}"
                                                     @if(isset($_GET['address']) && $address->id == $_GET['address'])
