@@ -32,35 +32,36 @@ class HousesController extends RetrievesllDataController
     {
         $addresss = $this->address();
 
+        $query = HousesModel::with('address');
+
         if (isset($_GET['price'])) {
             $getPrice = $_GET['price'];
             $price = explode('-', $getPrice);
-            $query = HousesModel::whereBetween('price', [$price[0], $price[1]]);
+            $houses = $query->whereBetween('price', [$price[0], $price[1]]);
         }
 
-        if ($_GET['address'] !== "0") {
+        if (!empty($_GET['address'])) {
             $address = $_GET['address'];
-            $query = HousesModel::where('id_address', $address);
+            $houses = $query->where('id_address', $address);
         }
 
-        if ($_GET['number_room'] !== "0") {
+        if (!empty($_GET['number_room'])) {
             $numberRoom = $_GET['number_room'];
-            $query = HousesModel::where('number_room', $numberRoom);
+            $houses = $query->where('number_room', $numberRoom);
         }
 
-        if ($_GET['number_bathroom'] !== "0") {
+        if (!empty($_GET['number_bathroom'])) {
             $numberBathroom = $_GET['number_bathroom'];
-            $houses = HousesModel::where('number_bathroom', $numberBathroom);
+            $houses = $query->where('number_bathroom', $numberBathroom);
         }
 
-        if ($_GET['month'] !== "0-11111111111111111") {
-            $getMonth = $_GET['month'];
-            $month = explode('-', $getMonth);
-            $houses = HousesModel::where('number_bathroom', $month);
-        }
-
+//        if ($_GET['month'] != "0-11111111111111111") {
+//            $getMonth = $_GET['month'];
+//            $month = explode('-', $getMonth);
+//            $houses = $query->where('number_bathroom', $month);
+//        }
         $houses = $query->get();
-
+//dd($houses);
         return view('index.search', compact('houses', 'addresss'));
     }
 
