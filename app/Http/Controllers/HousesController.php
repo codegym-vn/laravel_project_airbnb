@@ -40,7 +40,7 @@ class HousesController extends RetrievesllDataController
                 ->get();
         }
 
-        if (isset($_GET['address'])) {
+        if ($_GET['address'] != "-1") {
             $address = $_GET['address'];
 
             if (isset($houses)) {
@@ -55,7 +55,7 @@ class HousesController extends RetrievesllDataController
             }
         }
 
-        if (isset($_GET['number_room'])) {
+        if ($_GET['number_room'] != 0) {
             $numberRoom = $_GET['number_room'];
 
             if (isset($houses)) {
@@ -70,7 +70,7 @@ class HousesController extends RetrievesllDataController
             }
         }
 
-        if (isset($_GET['number_bathroom'])) {
+        if ($_GET['number_bathroom'] != 0) {
             $numberBathroom = $_GET['number_bathroom'];
             if (isset($houses)) {
                 foreach ($houses as $house) {

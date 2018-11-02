@@ -38,7 +38,7 @@
     </div>
     <script>
         @if(session()->has('calender'))
-            alert("{{ session()->get('calender') }}")
+            alert("{{ session()->get('calender') }}");
         @endif
     </script>
 @endsection

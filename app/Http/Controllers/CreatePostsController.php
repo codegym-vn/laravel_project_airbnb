@@ -15,7 +15,7 @@ class CreatePostsController extends RetrievesllDataController
 {
     public function index()
     {
-        $post = PostModel::all();
+        $post = PostModel::paginate(10);
         return view('index.list-bock-houses', compact('post'));
     }
 
