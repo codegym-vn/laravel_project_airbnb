@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,13 +21,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{{--<<<<<<< HEAD:resources/views/collection/userPostHouse/layout/teamplate.blade.php--}}
+    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--}}
+{{--=======--}}
+{{-->>>>>>> d9f95edbac3fc617a7cfad85f735649a2321c24d:resources/views/collection/user/layout/teamplate.blade.php--}}
 </head>
 <body id="page-top">
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-        <i class="fas fa-bars"></i>
-    </button>
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+    <a style="color: white" href="{{route('listBockHouse')}}"> Trang Chủ </a>
 </nav>
 <div id="wrapper">
     <!-- Sidebar -->
@@ -93,8 +94,7 @@
             <a href="{{route('forgot-pass',$user->id)}}" style="color: white; margin-left: 38px">
                 Đổi mật khẩu
             </a>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" style="color: white">
-                Thoát
+            <a class="dropdown-item" href="{{route('logout')}}" style="color: white" >Thoát
             </a>
         </li>
 

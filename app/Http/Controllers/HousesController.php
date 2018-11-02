@@ -12,7 +12,7 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::orderBy('id', 'desc')->paginate(5, ['*'], 'trang');
+        $houses = HousesModel::orderBy('id', 'desc')->paginate(9, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
@@ -68,7 +68,7 @@ class HousesController extends RetrievesllDataController
     {
         $houses = HousesModel::where('id_user', $id)->get();
         $user = User::find($id);
-        return view('collection.userPostHouse.show-updated-home-status', compact('houses', 'user'));
+        return view('collection.user.show-updated-home-status', compact('houses', 'user'));
     }
 
     public function updatedHomeStatus(Request $request)

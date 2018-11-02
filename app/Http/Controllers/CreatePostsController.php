@@ -32,7 +32,7 @@ class CreatePostsController extends RetrievesllDataController
         $kindHouses = KindHouseModel::all();
         $address = AddressModel::all();
         $user = User::find($id);
-        return view('collection.userPostHouse.create-post', compact('address', 'kindHouses', 'user'));
+        return view('collection.user.create-post', compact('address', 'kindHouses', 'user'));
 
     }
 
@@ -67,7 +67,7 @@ class CreatePostsController extends RetrievesllDataController
             //Lưu file vào thư mục storage/app/public/images với tên mới
             $request->file('inputFile')->storeAs('public/images', $newFileName);
 
-            // Gán trường images của đối tượng task với tên mới
+            // Gán trường images của đối tượng với tên mới
             $houses->image = $newFileName;
         }
         $houses->save();

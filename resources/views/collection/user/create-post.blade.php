@@ -1,4 +1,4 @@
-@extends('collection.userPostHouse.layout.teamplate');
+@extends('collection.user.layout.teamplate');
 @section('content')
 
     <div class="col-12">
@@ -90,7 +90,7 @@
                 <input type="file"
                        class="form-control-file"
                        id="inputFile"
-                       name="inputFile[]">
+                       name="inputFile">
                 <img id="image" height="200px" />
 
             </div>

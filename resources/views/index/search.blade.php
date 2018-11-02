@@ -149,7 +149,7 @@
                                             @if($house->status == 0 )
                                                 Chưa cho thuê
                                             @else
-                                                Dã cho thuê
+                                                Đã cho thuê
                                             @endif
                                         </span>
                                     </div>

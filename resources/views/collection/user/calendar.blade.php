@@ -1,4 +1,4 @@
-@extends('collection.userPostHouse.layout.teamplate')
+@extends('collection.user.layout.teamplate')
 @section('content')
     <div id="content-wrapper">
         <div class="container-fluid">
@@ -17,6 +17,7 @@
                                 <th>Tên người hẹn</th>
                                 <th>Số điện thoại</th>
                                 <th>Nhà</th>
+                                <th>Huy</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -27,6 +28,7 @@
                                     <td>{{ $calender->name }}</td>
                                     <td>{{ $calender->phone }}</td>
                                     <td>{{ $calender->houses->name }}</td>
+                                    <td><a href="{{ route('deleteCalender', $calender->id) }}">Huy</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
