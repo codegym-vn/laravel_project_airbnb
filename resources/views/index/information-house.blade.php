@@ -374,7 +374,7 @@
                                 lịch</a></li>
                     </ul>
 
-                    <form action="{{ route('search') }}" method="post">
+                    <form action="{{ route('search') }}">
                         {{ csrf_field() }}
                         <div class="search-content listProductSearch">
                             <ul class="filter clearfix" style="height: 300px;">
@@ -382,39 +382,39 @@
                                     <div class="custom-select">
                                         <select id="cboCate" name="price" onchange="ChangeValue('Cate', $(this).val());"
                                                 class="form-control">
-                                            <option value="0"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '0')
+                                            <option value="0-1000000000000"
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '0-1000000000000')
                                                     selected
                                                     @endif
                                             >Mức giá
                                             </option>
                                             <option value="0-2000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '0-2000000')
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '0-2000000')
                                                     selected
                                                     @endif
                                             >Dưới 2 triệu
                                             </option>
                                             <option value="2000000-4000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '2000000-4000000')
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '2000000-4000000')
                                                     selected
                                                     @endif>
                                                 Từ 2 - 4 triệu
                                             </option>
                                             <option value="4000000-7000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '4000000-7000000')
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '4000000-7000000')
                                                     selected
                                                     @endif>
                                                 Từ 4 - 7 triệu
                                             </option>
 
                                             <option value="7000000-13000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '7000000-13000000')
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '7000000-13000000')
                                                     selected
                                                     @endif>
                                                 Từ 7 - 13 triệu
                                             </option>
                                             <option value="13000000-1000000000000"
-                                                    @if(isset($_POST['price']) && $_POST['price'] == '13000000-1000000000000')
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '13000000-1000000000000')
                                                     selected
                                                     @endif
                                             >
@@ -425,14 +425,12 @@
                                 </li>
                                 <li>
                                     <div class="custom-select">
-                                        <input type="hidden" name="address" id="hddCity"
-                                               value="0"/>
                                         <select class="form-control" name="address" id="cboCity"
                                                 onchange="ChangeCity($(this).val())">
                                             <option value="-1">Thành Phố</option>
-                                            @foreach($address as $address)
+                                            @foreach($addresss as $address)
                                                 <option value="{{ $address->id }}"
-                                                        @if(isset($_POST['address']) && $address->id == $_POST['address'])
+                                                        @if(isset($_GET['address']) && $address->id == $_GET['address'])
                                                         selected
                                                         @endif
                                                 >
@@ -444,13 +442,12 @@
                                 </li>
                                 <li>
                                     <div class="custom-select">
-                                        <input type="hidden" id="hddDistrict"/>
                                         <select id="cboDistrict" name="number_bathroom" class="form-control"
                                                 onchange="ChangeQuanhuyen($(this).val())">
                                             <option value="0">Phòng tắm</option>
                                             @for($i = 1; $i <= 10; $i++)
                                                 <option value="{{ $i }}"
-                                                        @if(isset($_POST['number_bathroom']) && $_POST['number_bathroom'] == $i)
+                                                        @if(isset($_GET['number_bathroom']) && $_GET['number_bathroom'] == $i)
                                                         selected
                                                         @endif
                                                 >
@@ -470,7 +467,7 @@
                                             @for($i = 1; $i <= 10; $i++)
                                                 <option
                                                         value="{{ $i }}"
-                                                        @if(isset($_POST['number_room']) && $_POST['number_room'] == $i)
+                                                        @if(isset($_GET['number_room']) && $_GET['number_room'] == $i)
                                                         selected
                                                         @endif
                                                 >
@@ -487,43 +484,43 @@
                                                value="-1"/>
                                         <select id="cboPrice" name="month" class="form-control"
                                                 onchange="ChangeValue('Price', $(this).val());">
-                                            <option value="0"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '0')
+                                            <option value="0-11111111111111111"
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '0-1000000000000')
                                                     selected
                                                     @endif
                                             >
                                                 Thời gian
                                             </option>
                                             <option value="0-2"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '0-2')
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '0-2')
                                                     selected
                                                     @endif
                                             >
                                                 Dưới 2 tháng
                                             </option>
                                             <option value="2-4"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '2-4')
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '2-4')
                                                     selected
                                                     @endif
                                             >
                                                 Từ 2 - 4 tháng
                                             </option>
                                             <option value="4-7"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '4-7')
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '4-7')
                                                     selected
                                                     @endif
                                             >
                                                 Từ 4 - 7 tháng
                                             </option>
                                             <option value="7000000-13000000"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '7-13')
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '7-13')
                                                     selected
                                                     @endif
                                             >
                                                 Từ 7 - 12 tháng
                                             </option>
                                             <option value="13-1000000000000"
-                                                    @if(isset($_POST['month']) && $_POST['month'] == '13-1000000000000')
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '13-1000000000000')
                                                     selected
                                                     @endif
                                             >
