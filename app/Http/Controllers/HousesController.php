@@ -38,28 +38,29 @@ class HousesController extends RetrievesllDataController
             $query = HousesModel::whereBetween('price', [$price[0], $price[1]]);
         }
 
-
-        if (isset($_GET['address'])) {
+        if ($_GET['address'] !== "0") {
             $address = $_GET['address'];
             $query = HousesModel::where('id_address', $address);
         }
 
-        if ($_GET['number_room'] != 0) {
+        if ($_GET['number_room'] !== "0") {
             $numberRoom = $_GET['number_room'];
             $query = HousesModel::where('number_room', $numberRoom);
         }
 
-        if ($_GET['number_bathroom'] !== 0) {
+        if ($_GET['number_bathroom'] !== "0") {
             $numberBathroom = $_GET['number_bathroom'];
             $houses = HousesModel::where('number_bathroom', $numberBathroom);
         }
 
-        if (isset($_GET['month'])) {
+        if ($_GET['month'] !== "0-11111111111111111") {
             $getMonth = $_GET['month'];
             $month = explode('-', $getMonth);
             $houses = HousesModel::where('number_bathroom', $month);
         }
+
         $houses = $query->get();
+
         return view('index.search', compact('houses', 'addresss'));
     }
 
