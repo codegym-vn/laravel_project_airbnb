@@ -76,42 +76,4 @@ class CreatePostsController extends RetrievesllDataController
         return redirect(route('showNewPost', $idUser));
     }
 
-//    protected function insertHouses($request, $idUser)
-//    {
-//        //thêm nhầ
-//        $houses = new HousesModel();
-//        $houses->name = $request->input('name');
-//        $houses->number_room = $request->input('number_room');
-//        $houses->number_bathroom = $request->input('number_bathroom');
-//        $houses->price = $request->input('price');
-//        $houses->describe = $request->input('describe');
-//        $houses->id_address = $request->input('id_address');
-//        $houses->id_kind_house = $request->input('id_kind_house');
-//        $houses->id_user = $idUser;
-//        $houses->month = 0;
-//        $houses->status = 0;
-//        $file = $request->inputFile;
-//
-//        if (!$request->hasFile('inputFile')) {
-//            $houses->image = $file;
-//
-//        } else {
-//            //Lấy ra định dạng và tên mới của file từ request
-//            $fileExtension = $file->getClientOriginalExtension();
-//            $fileName = $request->inputFileName;
-//
-//            // Gán tên mới cho file trước khi lưu lên server
-//            $newFileName = "$fileName.$fileExtension";
-//
-//            //Lưu file vào thư mục storage/app/public/images với tên mới
-//            $request->file('inputFile')->storeAs('public/images', $newFileName);
-//
-//            // Gán trường images của đối tượng task với tên mới
-//            $houses->image = $newFileName;
-//        }
-//        $houses->save();
-//        $message = "Create List $request->inputName success!";
-//        Session::flash('create-success', $message);
-//
-//    }
 }

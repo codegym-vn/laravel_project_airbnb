@@ -124,10 +124,9 @@
                     @endforeach
                 @endif
             </ul>
-        </div>
-        <div class="mg-bottom-30 clearfix">
-            {!! $houses->appends(request()->query()) !!}
-
+            <div class="paging pull-right">
+                {!! $houses->appends(request()->query()) !!}
+            </div>
         </div>
 
         <div class="col-gr-25per">
@@ -188,15 +187,14 @@
                                 <div class="custom-select">
                                     <select class="form-control" name="address" id="cboCity"
                                             onchange="ChangeCity($(this).val())">
-                                        <option>Thành Phố</option>
-                                        <option value="-1">Thành Phố</option>
-                                        @foreach($address as $address)
-                                            <option value="{{ $address->id }}"
-                                                    @if(isset($_GET['address']) && $address->id == $_GET['address'])
+                                        <option value="0">Thành Phố</option>
+                                        @foreach($address as $addres)
+                                            <option value="{{ $addres->id }}"
+                                                    @if(isset($_GET['address']) && $addres->id == $_GET['address'])
                                                     selected
                                                     @endif
                                             >
-                                                {{ $address->address }}
+                                                {{ $addres->address }}
                                             </option>
                                         @endforeach
                                     </select>

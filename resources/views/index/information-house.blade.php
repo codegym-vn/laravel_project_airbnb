@@ -429,7 +429,7 @@
                                                 onchange="ChangeCity($(this).val())">
                                             <option>Thành Phố</option>
                                             <option value="-1">Thành Phố</option>
-                                            @foreach($addresss as $address)
+                                            @foreach($address as $address)
                                                 <option value="{{ $address->id }}"
                                                         @if(isset($_GET['address']) && $address->id == $_GET['address'])
                                                         selected

@@ -228,15 +228,14 @@
                                 <div class="custom-select">
                                     <select class="form-control" name="address" id="cboCity"
                                             onchange="ChangeCity($(this).val())">
-                                        <option>Thành Phố</option>
-                                        <option value="-1">Thành Phố</option>
-                                        @foreach($addresss as $address)
-                                            <option value="{{ $address->id }}"
-                                                    @if(isset($_GET['address']) && $address->id == $_GET['address'])
+                                        <option value="0">Thành Phố</option>
+                                        @foreach($addresss as $addres)
+                                            <option value="{{ $addres->id }}"
+                                                    @if(isset($_GET['address']) && $addres->id == $_GET['address'])
                                                     selected
                                                     @endif
                                             >
-                                                {{ $address->address }}
+                                                {{ $addres->address }}
                                             </option>
                                         @endforeach
                                     </select>
