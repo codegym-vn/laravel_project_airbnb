@@ -667,8 +667,8 @@ define(
 
 /**
  * Tries to be smart depending on what the userPostHouse pastes if it looks like an url
- * it will make a link out of the current selection. If it's an image url that looks
- * like an image it will check if it's an image and insert it as an image.
+ * it will make a link out of the current selection. If it's an images url that looks
+ * like an images it will check if it's an images and insert it as an images.
  *
  * @class tinymce.pasteplugin.SmartPaste
  * @private
@@ -1130,12 +1130,12 @@ define(
       }
 
       /**
-       * Checks if the clipboard contains image data if it does it will take that data
-       * and convert it into a data url image and paste that image at the caret location.
+       * Checks if the clipboard contains images data if it does it will take that data
+       * and convert it into a data url images and paste that images at the caret location.
        *
        * @param  {ClipboardEvent} e Paste/drop event object.
        * @param  {DOMRange} rng Rng object to move selection to.
-       * @return {Boolean} true/false if the image data was found or not.
+       * @return {Boolean} true/false if the images data was found or not.
        */
       function pasteImageData(e, rng) {
         var dataTransfer = e.clipboardData || e.dataTransfer;

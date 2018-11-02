@@ -1137,8 +1137,8 @@ define(
      * @method scale
      * @static
      * @param image {Image|Canvas}
-     * @param dW {Number} Width that the image should be scaled to
-     * @param dH {Number} Height that the image should be scaled to
+     * @param dW {Number} Width that the images should be scaled to
+     * @param dH {Number} Height that the images should be scaled to
      * @returns {Promise}
      */
     function scale(image, dW, dH) {
@@ -3610,7 +3610,7 @@ define(
         align: 'stretch',
         minWidth: Math.min(DOMUtils.DOM.getViewPort().w, 800),
         minHeight: Math.min(DOMUtils.DOM.getViewPort().h, 650),
-        title: 'Edit image',
+        title: 'Edit images',
         items: panels.concat([mainViewContainer]),
         buttons: [
           { text: 'Save', name: 'save', subtype: 'primary', onclick: save },
@@ -3914,7 +3914,7 @@ define(
         });
 
         editor.addButton('editimage', {
-          title: 'Edit image',
+          title: 'Edit images',
           cmd: 'mceEditImage'
         });
 
@@ -3934,7 +3934,7 @@ define(
 
       function addEvents() {
         editor.on('NodeChange', function (e) {
-          // If the last node we selected was an image
+          // If the last node we selected was an images
           // And had a source that doesn't match the current blob url
           // We need to attempt to upload it
           if (lastSelectedImage && lastSelectedImage.src != e.element.src) {

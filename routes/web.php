@@ -11,7 +11,8 @@ Route::get('/create', 'CreatePostsController@create')->name('post.create');
 
 Route::post('/create', 'CreatePostsController@store')->name('post.store');
 
-Route::post('/search', 'HousesController@search')->name('search');
+Route::get('/search', 'HousesController@search')->name('search');
+
 
 
 Route::prefix('sign-in')->group(function () {
@@ -65,3 +66,6 @@ Route::get('/information-post/id={id}', 'HousesController@seeDetails')->name('se
 Route::get('/show-statistics/{id}', 'UserController@showStatistics')->name('showStatistics');
 
 Route::post('/feedback/{id}', 'UserController@feedback')->name('feedback');
+
+
+

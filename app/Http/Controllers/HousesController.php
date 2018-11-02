@@ -12,46 +12,57 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::orderBy('status', 'desc')->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
     public function seeDetails($id)
     {
-        $Comments = KindEvaluateModel::where('id_house',$id)->get();
+        $Comments = KindEvaluateModel::where('id_house', $id)->get();
 
         $seeDetailHouses = HousesModel::find($id);
 
         $user = $this->user($seeDetailHouses->id_user);
         $priceHouses = HousesModel::where('price', $seeDetailHouses->price)->get();
         $address = $this->address();
-        return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address' , 'Comments'));
+        return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address', 'Comments'));
     }
 
     public function search(Request $request)
     {
-        $address = $this->address();
+        $addresss = $this->address();
 
-        if ($request->price != 0 | $request->price != null) {
-            $price = explode('-', $request->price);
+        $query = HousesModel::with('address');
+
+        if (isset($_GET['price'])) {
+            $getPrice = $_GET['price'];
+            $price = explode('-', $getPrice);
+            $houses = $query->whereBetween('price', [$price[0], $price[1]]);
         }
 
-        if ($price) {
-            $houses = HousesModel::orWhereBetween('price', [$price[0], $price[1]])
-                ->orWhere('id_address', "like", "%$request->address")
-                ->orWhere('number_room', 'like', "%$request->number_room%")
-                ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
-                ->orWhere('month', "like", "%$request->month%")
-                ->get();
-        } else {
-            $houses = HousesModel::where('id_address', "like", "%$request->address")
-                ->orWhere('number_room', 'like', "%$request->number_room%")
-                ->orWhere('number_bathroom', 'like', "%$request->number_bathroom%")
-                ->orWhere('month', "like", "%$request->month%")
-                ->get();
+        if (!empty($_GET['address'])) {
+            $address = $_GET['address'];
+            $houses = $query->where('id_address', $address);
         }
-        return view('index.search', compact('houses', 'address'));
 
+        if (!empty($_GET['number_room'])) {
+            $numberRoom = $_GET['number_room'];
+            $houses = $query->where('number_room', $numberRoom);
+        }
+
+        if (!empty($_GET['number_bathroom'])) {
+            $numberBathroom = $_GET['number_bathroom'];
+            $houses = $query->where('number_bathroom', $numberBathroom);
+        }
+
+//        if ($_GET['month'] != "0-11111111111111111") {
+//            $getMonth = $_GET['month'];
+//            $month = explode('-', $getMonth);
+//            $houses = $query->where('number_bathroom', $month);
+//        }
+        $houses = $query->get();
+//dd($houses);
+        return view('index.search', compact('houses', 'addresss'));
     }
 
     public function showUpdatedHomeStatus($id)
@@ -68,6 +79,10 @@ class HousesController extends RetrievesllDataController
         $updateHouseStatus = HousesModel::find($id);
         $updateHouseStatus->status = $status;
         $updateHouseStatus->save();
+
+        $user = User::find($updateHouseStatus->id_user);
+        $request->session()->flash('updateHouses', 'Bạn dã cập nhật trạng thái nhà thành công');
+        return redirect(route('showUpdatedHomeStatus', "$user->id"));
     }
 
     public function showHouse()

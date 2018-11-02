@@ -877,7 +877,7 @@ define(
         }
 
         e.preventDefault();
-        contextmenu = editor.settings.contextmenu || 'link openlink image inserttable | cell row column deletetable';
+        contextmenu = editor.settings.contextmenu || 'link openlink images inserttable | cell row column deletetable';
 
         // Render menu
         if (!menu) {

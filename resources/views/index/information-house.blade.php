@@ -51,9 +51,12 @@
     <script type="text/javascript" href="https://tinbatdongsan.com/Scripts/Register.js"></script>
     <script href="https://tinbatdongsan.com/Styles/Scrollbar/scrollbar.min.js"></script>
     <script type="text/javascript" src="https://tinbatdongsan.com/Scripts/Common.js?v=123"></script>
+<<<<<<< HEAD
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+=======
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -69,7 +72,6 @@
     <div class="main">
         <div class="row clearfix">
             <style>
-
                 .galleria-stage {
                     height: 350px;
                     border: 0px solid white;
@@ -207,6 +209,7 @@
                                             <label for="txtPhone" class="col-form-label">Số điện thoại</label>
                                             <input type="text" class="form-control" id="recipient-name" name="phone">
                                         </div>
+<<<<<<< HEAD
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label">Email</label>
                                             <input type="email" class="form-control" id="recipient-name" name="email">
@@ -214,6 +217,13 @@
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label">Lịch</label>
                                             <input type="date" class="form-control" id="recipient-name" name="date">
+=======
+                                        Phòng tắm
+                                    </li>
+                                    <li>
+
+                                        <div class="value">Loại nhà
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
                                         </div>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
                                         <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
@@ -224,6 +234,23 @@
                         </div>
                     </div>
 
+<<<<<<< HEAD
+=======
+                    <div id="slide-detail-image" class="spanImage box" style="width: 557px;">
+                        <ul id="myGallery" class="slide_show" style="height: 443px;">
+                            <li>
+                                <img src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                     style="width: 600px">
+                            </li>
+
+
+                        </ul>
+                        <div id="imgPrint"></div>
+                    </div>
+
+                </div>
+
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
                 <div class="mg-bottom-10 clearfix">
                     <h4 class="pull-left lh-24 fsize-16 text-uppercase dblue-clr border-bottom-gray-100 no-mg " style="padding-top:15px ">Thông tin
                         chi tiết</h4>
@@ -306,7 +333,7 @@
                                 <div class="mg-bottom-10" style="margin-left: 5px">
                                     <input style="height: 85px !important;" name="conten" rows="2" cols="20"
                                            id="txtContent" class="form-control"
-                                           placeholder="Nhập phản hồi của bạn"></input>
+                                           placeholder="Nhập phản hồi của bạn">
                                 </div>
 
                                 <div class="group-tbstyle pull-left">
@@ -347,7 +374,8 @@
                                        href="{{ route('seeDetails', $house->id) }}"><img
                                                 id="MainContent_ProductSearchResult_rpProductList_imgAvatar_3"
                                                 class="img-list-product"
-                                                src="https://img.tinbatdongsan.com/crop/263x173/2018/10/29/20181029110417-8576.jpg"/></a>
+                                                src="{{ asset('storage/images/' . $seeDetailHouses->image) }}" alt=""
+                                                style="width: 600px"></a>
                                 </div>
 
                                 <div class="content">
@@ -393,6 +421,182 @@
                     </ul>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
+
+
+            <div class="col-gr-25per mg-top-5">
+                <div class="group-advance-search style-col-search mg-bottom-30">
+
+                    <ul class="tabs-search home-search clearfix">
+                        <li id="ban"><a onclick="ChangeType(38);">Tìm kiếm </a></li>
+                        <li id="ban"><a href="{{route('sign-in', ['id' => $house->id])}}" onclick="ChangeType(38);">Đặt
+                                lịch</a></li>
+                    </ul>
+                    <form action="{{ route('search') }}">
+                        {{ csrf_field() }}
+                        <div class="search-content listProductSearch">
+                            <ul class="filter clearfix" style="height: 300px;">
+                                <li>
+                                    <div class="custom-select">
+                                        <select id="cboCate" name="price" onchange="ChangeValue('Cate', $(this).val());"
+                                                class="form-control">
+                                            <option value="0-1000000000000"
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '0-1000000000000')
+                                                    selected
+                                                    @endif
+                                            >Mức giá
+                                            </option>
+                                            <option value="0-2000000"
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '0-2000000')
+                                                    selected
+                                                    @endif
+                                            >Dưới 2 triệu
+                                            </option>
+                                            <option value="2000000-4000000"
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '2000000-4000000')
+                                                    selected
+                                                    @endif>
+                                                Từ 2 - 4 triệu
+                                            </option>
+                                            <option value="4000000-7000000"
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '4000000-7000000')
+                                                    selected
+                                                    @endif>
+                                                Từ 4 - 7 triệu
+                                            </option>
+
+                                            <option value="7000000-13000000"
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '7000000-13000000')
+                                                    selected
+                                                    @endif>
+                                                Từ 7 - 13 triệu
+                                            </option>
+                                            <option value="13000000-1000000000000"
+                                                    @if(isset($_GET['price']) && $_GET['price'] == '13000000-1000000000000')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Trên 13 triệu
+                                            </option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <select class="form-control" name="address" id="cboCity">
+                                            <option value="">Thành Phố</option>
+                                            @foreach($address as $addres)
+                                                <option value="{{ $addres->id }}"
+                                                        @if(isset($_GET['address']) && $addres->id == $_GET['address'])
+                                                        selected
+                                                        @endif
+                                                >
+                                                    {{ $addres->address }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <select id="cboArea" class="form-control" name="number_room"
+                                                onchange="ChangeValue('Area', $(this).val());">
+                                            <option value="">Phòng ngủ</option>
+                                            @for($i = 1; $i <= 10; $i++)
+                                                <option
+                                                        value="{{ $i }}"
+                                                        @if(isset($_GET['number_room']) && $_GET['number_room'] == $i)
+                                                        selected
+                                                        @endif
+                                                >
+                                                    {{ $i }}
+                                                </option>
+                                            @endfor
+
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <select id="cboDistrict" name="number_bathroom" class="form-control"
+                                                onchange="ChangeQuanhuyen($(this).val())">
+                                            <option value="">Phòng tắm</option>
+                                            @for($i = 1; $i <= 10; $i++)
+                                                <option value="{{ $i }}"
+                                                        @if(isset($_GET['number_bathroom']) && $_GET['number_bathroom'] == $i)
+                                                        selected
+                                                        @endif
+                                                >
+                                                    {{ $i }}
+                                                </option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="custom-select">
+                                        <input type="hidden" id="hddPrice"
+                                               value="-1"/>
+                                        <select id="cboPrice" name="month" class="form-control"
+                                                onchange="ChangeValue('Price', $(this).val());">
+                                            <option value="0-11111111111111111"
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '0-1000000000000')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Thời gian
+                                            </option>
+                                            <option value="0-2"
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '0-2')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Dưới 2 tháng
+                                            </option>
+                                            <option value="2-4"
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '2-4')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Từ 2 - 4 tháng
+                                            </option>
+                                            <option value="4-7"
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '4-7')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Từ 4 - 7 tháng
+                                            </option>
+                                            <option value="7000000-13000000"
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '7-13')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Từ 7 - 12 tháng
+                                            </option>
+                                            <option value="13-1000000000000"
+                                                    @if(isset($_GET['month']) && $_GET['month'] == '13-1000000000000')
+                                                    selected
+                                                    @endif
+                                            >
+                                                Trên 1 năm
+                                            </option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <input type="submit" id="btnSearch" class="btn bg-green full-width fweight-bold"
+                                           href="javascript:__doPostBack(&#39;ctl00$MainContent$BoxSearch$btnSearch&#39;,&#39;&#39;)"
+                                           value="Tìm kiếm">
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+>>>>>>> c27aa343457408c5307f036e292b2124f45b7b1e
         </div>
     </div>
 </div>

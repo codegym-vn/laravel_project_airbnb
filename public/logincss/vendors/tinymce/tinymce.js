@@ -836,16 +836,16 @@ define(
       contentEditable: contentEditable,
 
       /**
-       * Transparent image data url.
+       * Transparent images data url.
        *
        * @property transparentSrc
        * @type Boolean
        * @final
        */
-      transparentSrc: "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+      transparentSrc: "data:images/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
 
       /**
-       * Returns true/false if the browser can or can't place the caret after a inline block like an image.
+       * Returns true/false if the browser can or can't place the caret after a inline block like an images.
        *
        * @property noCaretAfter
        * @type Boolean
@@ -6076,7 +6076,7 @@ define(
               delete styles.border;
             }
 
-            // IE 11 will produce a border-image: none when getting the style attribute from <p style="border: 1px solid red"></p>
+            // IE 11 will produce a border-images: none when getting the style attribute from <p style="border: 1px solid red"></p>
             // So let us assume it shouldn't be there
             if (styles['border-image'] === 'none') {
               delete styles['border-image'];
@@ -6396,7 +6396,7 @@ define(
       't9,Omega,th,alpha,ti,beta,tj,gamma,tk,delta,tl,epsilon,tm,zeta,tn,eta,to,theta,tp,iota,' +
       'tq,kappa,tr,lambda,ts,mu,tt,nu,tu,xi,tv,omicron,u0,pi,u1,rho,u2,sigmaf,u3,sigma,u4,tau,' +
       'u5,upsilon,u6,phi,u7,chi,u8,psi,u9,omega,uh,thetasym,ui,upsih,um,piv,812,bull,816,hellip,' +
-      '81i,prime,81j,Prime,81u,oline,824,frasl,88o,weierp,88h,image,88s,real,892,trade,89l,alefsym,' +
+      '81i,prime,81j,Prime,81u,oline,824,frasl,88o,weierp,88h,images,88s,real,892,trade,89l,alefsym,' +
       '8cg,larr,8ch,uarr,8ci,rarr,8cj,darr,8ck,harr,8dl,crarr,8eg,lArr,8eh,uArr,8ei,rArr,8ej,dArr,' +
       '8ek,hArr,8g0,forall,8g2,part,8g3,exist,8g5,empty,8g7,nabla,8g8,isin,8g9,notin,8gb,ni,8gf,prod,' +
       '8gh,sum,8gi,minus,8gn,lowast,8gq,radic,8gt,prop,8gu,infin,8h0,ang,8h7,and,8h8,or,8h9,cap,8ha,cup,' +
@@ -12830,7 +12830,7 @@ define(
 
           // If the container is body try move it into the closest text node or position
           if (container === body) {
-            // If start is before/after a image, table etc
+            // If start is before/after a images, table etc
             if (directionLeft) {
               node = container.childNodes[offset > 0 ? offset - 1 : 0];
               if (node) {
@@ -12884,7 +12884,7 @@ define(
                     offset = dom.nodeIndex(node);
                     container = node.parentNode;
 
-                    // Put caret after image when moving the end point
+                    // Put caret after images when moving the end point
                     if (node.nodeName == "IMG" && !directionLeft) {
                       offset++;
                     }
@@ -13823,7 +13823,7 @@ define(
             }
           }
 
-          // Block any javascript: urls or non image data uris
+          // Block any javascript: urls or non images data uris
           if (filteredUrlAttrs[name] && !settings.allow_script_urls) {
             var uri = value.replace(trimRegExp, '');
 
@@ -16359,7 +16359,7 @@ define(
         targetWidth = rect.width || (rect.right - rect.left);
         targetHeight = rect.height || (rect.bottom - rect.top);
 
-        // Reset width/height if userPostHouse selects a new image/table
+        // Reset width/height if userPostHouse selects a new images/table
         if (selectedElm != targetElm) {
           detachResizeStartListener();
           selectedElm = targetElm;
@@ -16650,7 +16650,7 @@ define(
 
       editor.on('init', function () {
         if (isIE) {
-          // Hide the resize rect on resize and reselect the image
+          // Hide the resize rect on resize and reselect the images
           editor.on('ObjectResized', function (e) {
             if (e.target.nodeName != 'TABLE') {
               hideResizeRect();
@@ -21600,7 +21600,7 @@ define(
             self.selectedRange = sel.rangeCount > 0 ? sel.getRangeAt(0) : null;
           }
 
-          // WebKit egde case selecting images works better using setBaseAndExtent when the image is floated
+          // WebKit egde case selecting images works better using setBaseAndExtent when the images is floated
           if (!rng.collapsed && rng.startContainer === rng.endContainer && sel.setBaseAndExtent && !Env.ie) {
             if (rng.endOffset - rng.startOffset < 2) {
               if (rng.startContainer.hasChildNodes()) {
@@ -21692,7 +21692,7 @@ define(
         if (rng.setStart) {
           elm = rng.commonAncestorContainer;
 
-          // Handle selection a image or other control like element such as anchors
+          // Handle selection a images or other control like element such as anchors
           if (!rng.collapsed) {
             if (startContainer == endContainer) {
               if (endOffset - startOffset < 2) {
@@ -38378,7 +38378,7 @@ define(
     };
 
     var uploadError = function (editor, message) {
-      displayError(editor, 'Failed to upload image: ' + message);
+      displayError(editor, 'Failed to upload images: ' + message);
     };
 
     var pluginLoadError = function (editor, url) {
@@ -38943,8 +38943,8 @@ define(
           var newPromise;
 
           if (cachedPromises[img.src]) {
-            // Since the cached promise will return the cached image
-            // We need to wrap it and resolve with the actual image
+            // Since the cached promise will return the cached images
+            // We need to wrap it and resolve with the actual images
             return new Promise(function (resolve) {
               cachedPromises[img.src].then(function (imageInfo) {
                 if (typeof imageInfo === 'string') { // error apparently
@@ -39077,7 +39077,7 @@ define(
         var id, name;
 
         if (!o.blob || !o.base64) {
-          throw "blob and base64 representations of the image are required for BlobInfo to be created";
+          throw "blob and base64 representations of the images are required for BlobInfo to be created";
         }
 
         id = o.id || Uuid.uuid('blobid');
@@ -39237,7 +39237,7 @@ define(
  */
 
 /**
- * Handles image uploads, updates undo stack and patches over various internal functions.
+ * Handles images uploads, updates undo stack and patches over various internal functions.
  *
  * @private
  * @class tinymce.EditorUpload
@@ -39384,8 +39384,8 @@ define(
 
         return imageScanner.findAll(editor.getBody(), isValidDataUriImage).then(aliveGuard(function (result) {
           result = Arr.filter(result, function (resultItem) {
-            // ImageScanner internally converts images that it finds, but it may fail to do so if image source is inaccessible.
-            // In such case resultItem will contain appropriate text error message, instead of image data.
+            // ImageScanner internally converts images that it finds, but it may fail to do so if images source is inaccessible.
+            // In such case resultItem will contain appropriate text error message, instead of images data.
             if (typeof resultItem === 'string') {
               ErrorReporter.displayError(editor, resultItem);
               return false;
@@ -40739,7 +40739,7 @@ define(
           newBlock, fragment, containerBlock, parentBlockName, containerBlockName, newBlockName, isAfterLastNodeInContainer;
 
         // Moves the caret to a suitable position within the root for example in the first non
-        // pure whitespace text node or before an image
+        // pure whitespace text node or before an images
         function moveToCaretPosition(root) {
           var walker, node, rng, lastNode = root, tempElm;
 
@@ -41583,7 +41583,7 @@ define(
       editor.on('MouseUp', function (e) {
         if (!e.isDefaultPrevented()) {
           // Delay nodeChanged call for WebKit edge case issue where the range
-          // isn't updated until after you click outside a selected image
+          // isn't updated until after you click outside a selected images
           if (editor.selection.getNode().nodeName == 'IMG') {
             Delay.setEditorTimeout(editor, function () {
               editor.nodeChanged();
@@ -43378,7 +43378,7 @@ define(
       }
 
       /**
-       * WebKit has a bug where it isn't possible to select image, hr or anchor elements
+       * WebKit has a bug where it isn't possible to select images, hr or anchor elements
        * by clicking on them so we need to fake that.
        */
       function selectControlElements() {
@@ -43386,7 +43386,7 @@ define(
           var target = e.target;
 
           // Workaround for bug, http://bugs.webkit.org/show_bug.cgi?id=12250
-          // WebKit can't even do simple things like selecting an image
+          // WebKit can't even do simple things like selecting an images
           // Needs to be the setBaseAndExtend or it will fail to select floated images
           if (/^(IMG|HR)$/.test(target.nodeName) && dom.getContentEditableParent(target) !== "false") {
             e.preventDefault();
@@ -43541,7 +43541,7 @@ define(
       }
 
       /**
-       * Moves style width/height to attribute width/height when the userPostHouse resizes an image on IE.
+       * Moves style width/height to attribute width/height when the userPostHouse resizes an images on IE.
        */
       function removePreSerializedStylesWhenSelectingControls() {
         dom.bind(editor.getBody(), 'mouseup', function () {
@@ -43679,7 +43679,7 @@ define(
       }
 
       /**
-       * Deletes the selected image on IE instead of navigating to previous page.
+       * Deletes the selected images on IE instead of navigating to previous page.
        */
       function deleteControlItemOnBackSpace() {
         editor.on('keydown', function (e) {
@@ -43863,12 +43863,12 @@ define(
       }
 
       /**
-       * Forces Gecko to render a broken image icon if it fails to load an image.
+       * Forces Gecko to render a broken images icon if it fails to load an images.
        */
       function showBrokenImageIcon() {
         editor.contentStyles.push(
           'img:-moz-broken {' +
-          '-moz-force-broken-image-icon:1;' +
+          '-moz-force-broken-images-icon:1;' +
           'min-width:24px;' +
           'min-height:24px' +
           '}'
@@ -43951,7 +43951,7 @@ define(
       /**
        * iOS 7.1 introduced two new bugs:
        * 1) It's possible to open links within a contentEditable area by clicking on them.
-       * 2) If you hold down the finger it will display the link/image touch callout menu.
+       * 2) If you hold down the finger it will display the link/images touch callout menu.
        */
       function tapLinksAndImages() {
         editor.on('click', function (e) {
@@ -45473,7 +45473,7 @@ define(
           }
 
           // Restore selected control element
-          // This is needed when for example an image is selected within a
+          // This is needed when for example an images is selected within a
           // layer a call to focus will then remove the control selection
           if (controlElm && controlElm.ownerDocument == doc) {
             rng = doc.body.createControlRange();
@@ -45619,7 +45619,7 @@ define(
        *    setup: function(ed) {
        *       ed.addButton('example', {
        *          title: 'My title',
-       *          image: '../js/tinymce/plugins/example/img/example.gif',
+       *          images: '../js/tinymce/plugins/example/img/example.gif',
        *          onclick: function() {
        *             ed.insertContent('Hello world!!');
        *          }
@@ -46552,7 +46552,7 @@ define(
        * Uploads all data uri/blob uri images in the editor contents to server.
        *
        * @method uploadImages
-       * @param {function} callback Optional callback with images and status for each image.
+       * @param {function} callback Optional callback with images and status for each images.
        * @return {tinymce.util.Promise} Promise instance.
        */
       uploadImages: function (callback) {
@@ -49030,7 +49030,7 @@ define(
        * @constructor
        * @param {Object} settings Name/value object with settings.
        * @setting {String} size Size of the button small|medium|large.
-       * @setting {String} image Image to use for icon.
+       * @setting {String} images Image to use for icon.
        * @setting {String} icon Icon to use for button.
        */
       init: function (settings) {
@@ -49111,12 +49111,12 @@ define(
         if (image) {
           icon = 'none';
 
-          // Support for [high dpi, low dpi] image sources
+          // Support for [high dpi, low dpi] images sources
           if (typeof image != "string") {
             image = window.getSelection ? image[0] : image[1];
           }
 
-          image = ' style="background-image: url(\'' + image + '\')"';
+          image = ' style="background-images: url(\'' + image + '\')"';
         } else {
           image = '';
         }
@@ -50173,7 +50173,7 @@ define(
       renderHtml: function () {
         var self = this, id = self._id, prefix = self.classPrefix, text = self.state.get('text');
         var icon = self.settings.icon ? prefix + 'ico ' + prefix + 'i-' + self.settings.icon : '';
-        var image = self.settings.image ? ' style="background-image: url(\'' + self.settings.image + '\')"' : '',
+        var image = self.settings.image ? ' style="background-images: url(\'' + self.settings.image + '\')"' : '',
           textHtml = '';
 
         if (text) {
@@ -53403,12 +53403,12 @@ define(
         if (image) {
           icon = 'none';
 
-          // Support for [high dpi, low dpi] image sources
+          // Support for [high dpi, low dpi] images sources
           if (typeof image != "string") {
             image = window.getSelection ? image[0] : image[1];
           }
 
-          image = ' style="background-image: url(\'' + image + '\')"';
+          image = ' style="background-images: url(\'' + image + '\')"';
         } else {
           image = '';
         }
@@ -53771,7 +53771,7 @@ define(
         }
 
         if (settings.image) {
-          image = ' style="background-image: url(\'' + settings.image + '\')"';
+          image = ' style="background-images: url(\'' + settings.image + '\')"';
         }
 
         if (shortcut) {
@@ -54920,12 +54920,12 @@ define(
         if (image) {
           icon = 'none';
 
-          // Support for [high dpi, low dpi] image sources
+          // Support for [high dpi, low dpi] images sources
           if (typeof image != "string") {
             image = window.getSelection ? image[0] : image[1];
           }
 
-          image = ' style="background-image: url(\'' + image + '\')"';
+          image = ' style="background-images: url(\'' + image + '\')"';
         } else {
           image = '';
         }

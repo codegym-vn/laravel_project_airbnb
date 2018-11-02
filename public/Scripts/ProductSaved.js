@@ -63,7 +63,7 @@ function GetProductlist() {
                     image = '/Images/no-photo.png';
                 else
                     image = "https://img.tinbatdongsan.com/crop/100x75/" + image;
-                html += '<tr><td>' + i + '</td><td>' + value.ProductId + '<br>Hiển thị</td><td><div class="image-prdtable"><a href="' + value.SourceNews + '"><img src="' + image + '" alt=""></a></div><div class="content-prdtable"><h4 class="title"><a href="' + value.SourceNews + '">' + value.Title + '</a></h4></div></td><td><a onclick="deleteProduct(this,' + value.ProductId + ');" class="dark-clr"><i class="fa fa-trash SavedDelete"></i>&nbsp;&nbsp;Xóa</a></td></tr>';
+                html += '<tr><td>' + i + '</td><td>' + value.ProductId + '<br>Hiển thị</td><td><div class="images-prdtable"><a href="' + value.SourceNews + '"><img src="' + image + '" alt=""></a></div><div class="content-prdtable"><h4 class="title"><a href="' + value.SourceNews + '">' + value.Title + '</a></h4></div></td><td><a onclick="deleteProduct(this,' + value.ProductId + ');" class="dark-clr"><i class="fa fa-trash SavedDelete"></i>&nbsp;&nbsp;Xóa</a></td></tr>';
             });
 
             if (html != '') {
@@ -91,7 +91,7 @@ function GetProductlist() {
                                 image = '/Images/no-photo.png';
                             else
                                 image = "https://img.tinbatdongsan.com/crop/100x75/" + image;
-                            html += '<tr><td>' + i + '</td><td>' + value.ProductId + '<br>Hiển thị</td><td><div class="image-prdtable"><a href="' + value.SourceNews + '"><img src="' + image + '" alt=""></a></div><div class="content-prdtable"><h4 class="title"><a href="' + value.SourceNews + '">' + value.Title + '</a></h4></div></td><td><a onclick="deleteProduct(this,' + value.ProductId + ');" class="dark-clr"><i class="fa fa-trash SavedDelete"></i>&nbsp;&nbsp;Xóa</a></td></tr>';
+                            html += '<tr><td>' + i + '</td><td>' + value.ProductId + '<br>Hiển thị</td><td><div class="images-prdtable"><a href="' + value.SourceNews + '"><img src="' + image + '" alt=""></a></div><div class="content-prdtable"><h4 class="title"><a href="' + value.SourceNews + '">' + value.Title + '</a></h4></div></td><td><a onclick="deleteProduct(this,' + value.ProductId + ');" class="dark-clr"><i class="fa fa-trash SavedDelete"></i>&nbsp;&nbsp;Xóa</a></td></tr>';
                         });
                         if (html != '') {
                             $("#boxProductSaved table tbody").html(html);
@@ -124,7 +124,7 @@ function GetProductlist() {
                             image = '/Images/no-photo.png';
                         else
                             image = "https://img.tinbatdongsan.com/crop/100x75/" + image;
-                        html += '<tr><td>' + i + '</td><td>' + value.ProductId + '<br>Hiển thị</td><td><div class="image-prdtable"><a href="' + value.SourceNews + '"><img src="' + image + '" alt=""></a></div><div class="content-prdtable"><h4 class="title"><a href="' + value.SourceNews + '">' + value.Title + '</a></h4></div></td><td><a onclick="deleteProduct(this,' + value.ProductId + ');" class="dark-clr"><i class="fa fa-trash SavedDelete"></i>&nbsp;&nbsp;Xóa</a></td></tr>';
+                        html += '<tr><td>' + i + '</td><td>' + value.ProductId + '<br>Hiển thị</td><td><div class="images-prdtable"><a href="' + value.SourceNews + '"><img src="' + image + '" alt=""></a></div><div class="content-prdtable"><h4 class="title"><a href="' + value.SourceNews + '">' + value.Title + '</a></h4></div></td><td><a onclick="deleteProduct(this,' + value.ProductId + ');" class="dark-clr"><i class="fa fa-trash SavedDelete"></i>&nbsp;&nbsp;Xóa</a></td></tr>';
                         listProductId += value.ProductId + ',';
                     });
                     if (listProductId != '') {
