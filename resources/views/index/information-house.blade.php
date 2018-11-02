@@ -426,7 +426,7 @@
                                     <div class="custom-select">
                                         <select class="form-control" name="address" id="cboCity">
                                             <option value="">Thành Phố</option>
-                                            @foreach($addresss as $addres)
+                                            @foreach($address as $addres)
                                                 <option value="{{ $addres->id }}"
                                                         @if(isset($_GET['address']) && $addres->id == $_GET['address'])
                                                         selected
