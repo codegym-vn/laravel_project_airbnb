@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\AddressModel;
 use App\Model\HousesModel;
 use App\Model\KindEvaluateModel;
 use App\User;
@@ -36,73 +35,32 @@ class HousesController extends RetrievesllDataController
         if (isset($_GET['price'])) {
             $getPrice = $_GET['price'];
             $price = explode('-', $getPrice);
-            $houses = HousesModel::whereBetween('price', [$price[0], $price[1]])
-                ->get();
+            $query = HousesModel::whereBetween('price', [$price[0], $price[1]]);
         }
 
-        if ($_GET['address'] != "-1") {
-            $address = $_GET['address'];
 
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('id_address', 'like', "%$house->id_address%")
-                        ->whereBetween('price', [$price[0], $price[1]])
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('id_address', $address)
-                    ->get();
-            }
+        if (isset($_GET['address'])) {
+            $address = $_GET['address'];
+            $query = HousesModel::where('id_address', $address);
         }
 
         if ($_GET['number_room'] != 0) {
             $numberRoom = $_GET['number_room'];
-
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_room', $house->number_room)
-                        ->whereBetween('price', [$price[0], $price[1]])
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('number_room', $numberRoom)
-                    ->get();
-            }
+            $query = HousesModel::where('number_room', $numberRoom);
         }
 
-        if ($_GET['number_bathroom'] != 0) {
+        if ($_GET['number_bathroom'] !== 0) {
             $numberBathroom = $_GET['number_bathroom'];
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_bathroom', "<=",$numberBathroom)
-                        ->where('number_room', $house->number_room)
-                        ->where('id_address', $house->id_address)
-                        ->whereBetween('price', [$price[0], $price[1]])
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('number_bathroom', $numberBathroom)->get();
-            }
+            $houses = HousesModel::where('number_bathroom', $numberBathroom);
         }
 
         if (isset($_GET['month'])) {
             $getMonth = $_GET['month'];
             $month = explode('-', $getMonth);
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_bathroom',  "<=", $house->number_bathroom)
-                        ->where('number_room', "<=",$house->number_room)
-                        ->where('id_address', $house->id_address)
-                        ->whereBetween('price', [$price[0], $price[1]])
-                        ->whereBetween('month', [$month[0], $month[1]])
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('number_bathroom', $numberBathroom)->get();
-            }
+            $houses = HousesModel::where('number_bathroom', $month);
         }
+        $houses = $query->get();
         return view('index.search', compact('houses', 'addresss'));
-
     }
 
     public function showUpdatedHomeStatus($id)
