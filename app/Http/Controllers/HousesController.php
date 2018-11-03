@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\HistoryModel;
 use App\Model\HousesModel;
 use App\Model\KindEvaluateModel;
 use App\User;
@@ -12,7 +13,7 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::orderBy('id', 'desc')->paginate(9, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
@@ -28,7 +29,7 @@ class HousesController extends RetrievesllDataController
         return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address', 'Comments'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
         $addresss = $this->address();
 
@@ -61,7 +62,6 @@ class HousesController extends RetrievesllDataController
             $houses = $query->where('number_bathroom', $month);
         }
         $houses = $query->get();
-//dd($houses);
         return view('index.search', compact('houses', 'addresss'));
     }
 
@@ -69,7 +69,7 @@ class HousesController extends RetrievesllDataController
     {
         $houses = HousesModel::where('id_user', $id)->get();
         $user = User::find($id);
-        return view('collection.userPostHouse.show-updated-home-status', compact('houses', 'user'));
+        return view('collection.user.show-updated-home-status', compact('houses', 'user'));
     }
 
     public function updatedHomeStatus(Request $request)
@@ -79,6 +79,13 @@ class HousesController extends RetrievesllDataController
         $updateHouseStatus = HousesModel::find($id);
         $updateHouseStatus->status = $status;
         $updateHouseStatus->save();
+
+        $insertHistory = new HistoryModel();
+        $insertHistory->id_house = $updateHouseStatus->id;
+        $insertHistory->name = $request->name;
+        $insertHistory->phone = $request->phone;
+        $insertHistory->email = $request->email;
+        $insertHistory->save();
 
         $user = User::find($updateHouseStatus->id_user);
         $request->session()->flash('updateHouses', 'Bạn dã cập nhật trạng thái nhà thành công');

@@ -1,4 +1,4 @@
-@extends('collection.userPostHouse.layout.teamplate')
+@extends('collection.user.layout.teamplate')
 @section('content')
 
     <div class="col-12">
@@ -13,9 +13,6 @@
             @endif
 
             <div class="form-group">
-                @if($errors->has('password'))
-                    <p style="color: red">{{ $errors->first('password') }}</p>
-                @endif
                 <label for="exampleFormControlInput1">Chọn nhà bạn muốn thay đổi: </label>
                 <select class="form-control" name="nameHouse">
                     <option>Chọn nhà</option>
@@ -23,6 +20,18 @@
                         <option value="{{ $house->id }}">{{ $house->name }}</option>
                     @endforeach
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Tên người thuê: </label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Số điện thoại người thuê: </label>
+                <input type="text" name="phone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email người thuê: </label>
+                <input type="email" name="email" class="form-control">
             </div>
             <div class="form-group">
                 @if($errors->has('password'))
