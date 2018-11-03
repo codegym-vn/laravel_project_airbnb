@@ -55,11 +55,11 @@ class HousesController extends RetrievesllDataController
             $houses = $query->where('number_bathroom', $numberBathroom);
         }
 
-//        if ($_GET['month'] != "0-11111111111111111") {
-//            $getMonth = $_GET['month'];
-//            $month = explode('-', $getMonth);
-//            $houses = $query->where('number_bathroom', $month);
-//        }
+        if ($_GET['month'] != "0-11111111111111111") {
+            $getMonth = $_GET['month'];
+            $month = explode('-', $getMonth);
+            $houses = $query->where('number_bathroom', $month);
+        }
         $houses = $query->get();
 //dd($houses);
         return view('index.search', compact('houses', 'addresss'));
