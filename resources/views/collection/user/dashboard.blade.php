@@ -1,11 +1,11 @@
-@extends('collection.userPostHouse.layout.teamplate')
+@extends('collection.user.layout.teamplate')
 @section('content')
     <div id="content-wrapper">
         <div class="container-fluid">
             <!-- DataTables Example -->
             <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fas fa-table"></i> Danh sách nhà mới đăng
+                    <i class="fas fa-table"></i> Danh sách nhà bạn đăng
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

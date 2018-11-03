@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\AddressModel;
+use App\Model\HistoryModel;
 use App\Model\HousesModel;
 use App\Model\KindEvaluateModel;
 use App\User;
@@ -13,7 +13,7 @@ class HousesController extends RetrievesllDataController
     public function showHouses(Request $request)
     {
         $address = $this->address();
-        $houses = HousesModel::orderBy('id', 'desc')->paginate(10, ['*'], 'trang');
+        $houses = HousesModel::orderBy('id', 'desc')->paginate(9, ['*'], 'trang');
         return view('index.list-bock-house', compact('houses', 'address'));
     }
 
@@ -29,84 +29,47 @@ class HousesController extends RetrievesllDataController
         return view('index.information-house', compact('seeDetailHouses', 'user', 'priceHouses', 'address', 'Comments'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
         $addresss = $this->address();
+
+        $query = HousesModel::with('address');
 
         if (isset($_GET['price'])) {
             $getPrice = $_GET['price'];
             $price = explode('-', $getPrice);
-            $houses = HousesModel::whereBetween('price', [$price[0], $price[1]])
-                ->get();
+            $houses = $query->whereBetween('price', [$price[0], $price[1]]);
         }
 
-        if ($_GET['address'] != "-1") {
+        if (!empty($_GET['address'])) {
             $address = $_GET['address'];
-
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('id_address', $house->id_address)
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('id_address', $address)
-                    ->get();
-            }
+            $houses = $query->where('id_address', $address);
         }
 
-        if ($_GET['number_room'] != 0) {
+        if (!empty($_GET['number_room'])) {
             $numberRoom = $_GET['number_room'];
-
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_room', $house->number_room)
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('number_room', $numberRoom)
-                    ->get();
-            }
+            $houses = $query->where('number_room', $numberRoom);
         }
 
-        if ($_GET['number_bathroom'] != 0) {
+        if (!empty($_GET['number_bathroom'])) {
             $numberBathroom = $_GET['number_bathroom'];
-
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_bathroom', $numberBathroom)
-                        ->where('number_room', $house->number_room)
-                        ->where('id_address', $house->id_address)
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('number_bathroom', $numberBathroom)->get();
-            }
+            $houses = $query->where('number_bathroom', $numberBathroom);
         }
 
-        if (isset($_GET['month'])) {
+        if ($_GET['month'] != "0-11111111111111111") {
             $getMonth = $_GET['month'];
             $month = explode('-', $getMonth);
-            if (isset($houses)) {
-                foreach ($houses as $house) {
-                    $houses = HousesModel::where('number_bathroom', $house->number_bathroom)
-                        ->where('number_room', $house->number_room)
-                        ->where('id_address', $house->id_address)
-                        ->whereBetween('month', [$month[0], $month[1]])
-                        ->get();
-                }
-            } else {
-                $houses = HousesModel::where('number_bathroom', $numberBathroom)->get();
-            }
+            $houses = $query->where('number_bathroom', $month);
         }
+        $houses = $query->get();
         return view('index.search', compact('houses', 'addresss'));
-
     }
 
     public function showUpdatedHomeStatus($id)
     {
         $houses = HousesModel::where('id_user', $id)->get();
         $user = User::find($id);
-        return view('collection.userPostHouse.show-updated-home-status', compact('houses', 'user'));
+        return view('collection.user.show-updated-home-status', compact('houses', 'user'));
     }
 
     public function updatedHomeStatus(Request $request)
@@ -116,6 +79,13 @@ class HousesController extends RetrievesllDataController
         $updateHouseStatus = HousesModel::find($id);
         $updateHouseStatus->status = $status;
         $updateHouseStatus->save();
+
+        $insertHistory = new HistoryModel();
+        $insertHistory->id_house = $updateHouseStatus->id;
+        $insertHistory->name = $request->name;
+        $insertHistory->phone = $request->phone;
+        $insertHistory->email = $request->email;
+        $insertHistory->save();
 
         $user = User::find($updateHouseStatus->id_user);
         $request->session()->flash('updateHouses', 'Bạn dã cập nhật trạng thái nhà thành công');

@@ -1,4 +1,4 @@
-@extends('collection.userPostHouse.layout.teamplate');
+@extends('collection.user.layout.teamplate');
 @section('content')
 
     <div class="col-12">
@@ -12,6 +12,9 @@
             <div class="form-group">
                 <label for="exampleFormControlInput1"> Tên</label>
                 <input class="form-control" name="name" placeholder="Tên">
+                @if($errors->has('name'))
+                    <p style="color: red">{{ $errors->first('name') }}</p>
+                @endif
             </div>
 
             <div class="form-group">
@@ -37,11 +40,17 @@
             <div class="form-group">
                 <label for="exampleFormControlInput1">Giá </label>
                 <input class="form-control" name="price" placeholder="Giá">
+                @if($errors->has('price'))
+                    <p style="color: red">{{ $errors->first('price') }}</p>
+                @endif
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlInput1">Địa chỉ</label>
                 <input class="form-control" name="address" placeholder="Địa chỉ">
+                @if($errors->has('address'))
+                    <p style="color: red">{{ $errors->first('address') }}</p>
+                @endif
             </div>
 
             <div class="form-group">
@@ -51,9 +60,15 @@
                 <div class="post-field-option">
                     <input name="number_room" type="text" maxlength="3"
                            class="form-control w-230"/>
+                    @if($errors->has('number_room'))
+                        <p style="color: red">{{ $errors->first('number_room') }}</p>
+                    @endif
                     <label class="mg-left-40 mg-right-77">Số phòng tắm</label>
                     <input name="number_bathroom" type="text" maxlength="3"
                            class="form-control w-230"/>
+                    @if($errors->has('number_bathroom'))
+                        <p style="color: red">{{ $errors->first('number_bathroom') }}</p>
+                    @endif
                 </div>
             </div>
 
@@ -66,6 +81,9 @@
                 <div class="post-field-option">
                     <input name="title" type="text" maxlength="150"
                            class="form-control"/>
+                    @if($errors->has('title'))
+                        <p style="color: red">{{ $errors->first('title') }}</p>
+                    @endif
                 </div>
             </div>
 
@@ -78,6 +96,9 @@
                 <div id="boxarea" class="post-field-option">
                             <textarea name="describe" cols="60" rows="5"
                                       maxlength="3000" class="form-control" style="padding: 8px 15px 25px;"></textarea>
+                    @if($errors->has('describe'))
+                        <p style="color: red">{{ $errors->first('describe') }}</p>
+                    @endif
                 </div>
             </div>
 
@@ -91,13 +112,28 @@
                        class="form-control-file"
                        id="inputFile"
                        name="inputFile">
+                @if($errors->has('inputFile'))
+                    <p style="color: red">{{ $errors->first('inputFile') }}</p>
+                @endif
+                <img id="image" height="200px"/>
+
             </div>
 
             <button type="submit" style="background-color: #00a855; color:white"> Gửi</button>
         </form>
     </div>
-
-
-
-
+    <script type="text/javascript">
+        var file = document.getElementById('inputFile');
+        var img = document.getElementById('image');
+        file.addEventListener("change", function () {
+            if (this.value) {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onloadend = function () {
+                    img.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 @endsection
