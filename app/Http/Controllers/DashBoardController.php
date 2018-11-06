@@ -15,7 +15,7 @@ class DashBoardController extends Controller
     public function dashBoard()
     {
         $user = Auth::user();
-        if (Auth::check()) {setcookie('remember_token', $user->getRememberToken(), time() + 600, '/');
+        if (Auth::check()) {setcookie('remember_token', $user->getRememberToken(), time() + 60, '/');
         }
         if ($user->role == 1) {
             return redirect()->route('dashBoard');
