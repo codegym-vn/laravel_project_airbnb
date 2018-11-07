@@ -28,19 +28,28 @@
                 @if($errors->has('password'))
                     <p style="color: red">{{ $errors->first('password') }}</p>
                 @endif
-                <label for="exampleFormControlInput1">Thay đổi tạng thái: </label>
+                <label for="exampleFormControlInput1">Thay đổi trạng thái: </label>
                 <select class="form-control" name="status">
-                    <option value="0">Trạng thái </option>
+                    <option value="0">Trạng thái</option>
                     <option value="1">Đã cho thuê</option>
                     <option value="0">Chưa cho thuê</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1"> Tên</label>
+                <input class="form-control" name="name" placeholder="Tên">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1"> Tên</label>
+                <input class="form-control" type="number" name="phone" placeholder="Số điện thoại">
+            </div>
+
             <button type="submit" style="background-color: #00a855; color:white"> Gửi</button>
         </form>
     </div>
-<script>
-    @if(session()->has('updateHouses'))
+    <script>
+        @if(session()->has('updateHouses'))
         alert("{{ session()->get('updateHouses') }}")
-    @endif
-</script>
+        @endif
+    </script>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\HistoryModel;
 use App\Model\HousesModel;
 use App\Model\KindEvaluateModel;
 use App\User;
@@ -79,6 +80,15 @@ class HousesController extends RetrievesllDataController
         $updateHouseStatus->status = $status;
         $updateHouseStatus->save();
 
+        if ($status == 1) {
+
+            $history = new HistoryModel();
+            $history->id_house = $id;
+            $history->name = $request->name;
+            $history->phone = $request->phone;
+            $history->save();
+
+        }
         $user = User::find($updateHouseStatus->id_user);
         $request->session()->flash('updateHouses', 'Bạn dã cập nhật trạng thái nhà thành công');
         return redirect(route('showUpdatedHomeStatus', "$user->id"));

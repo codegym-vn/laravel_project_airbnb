@@ -1,6 +1,5 @@
-@extends('collection.user.layout.teamplate');
+@extends('collection.user.layout.teamplate')
 @section('content')
-
     <div class="col-12">
         <form method="post" action="{{ route('post.store', $user->id)}}" enctype="multipart/form-data">
             @csrf
@@ -91,7 +90,7 @@
                        class="form-control-file"
                        id="inputFile"
                        name="inputFile">
-                <img id="image" height="200px" />
+                <img id="image" height="300px" />
 
             </div>
 

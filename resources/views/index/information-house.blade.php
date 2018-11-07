@@ -165,7 +165,7 @@
                         </li>
                         <li>
                             <div class="value line">
-                              Ngày đặt:  {{ $seeDetailHouses->created_at }}
+                                Ngày đăng:  {{ $seeDetailHouses->created_at }}
                             </div>
                         </li>
                         <li>
@@ -186,47 +186,77 @@
         {{-- dat lich --}}
         <div class="datlich" style="padding-top: 30px; padding-bottom: 30px">
             @if($seeDetailHouses->status == 0 )
-            <button style="background-color: #2384c7  !important; " type="button" class="btn btn-primary"
-                    data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> Đặt lịch
-            </button>
+                <button style="background-color: #2384c7  !important; " type="button" class="btn btn-primary"
+                        data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> Đặt lịch
+                </button>
             @endif
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Thông tin cơ bản</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="{{route('calendar', ['id_house' => $seeDetailHouses->id, 'id_user' => Auth::user()->id])}}"
-                                  method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label"> Tên</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="txtPhone" class="col-form-label">Số điện thoại</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="phone">
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Email</label>
-                                    <input type="email" class="form-control" id="recipient-name" name="email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Lịch</label>
-                                    <input type="date" class="form-control" id="recipient-name" name="date">
+                        @if(Auth::check())
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Thông tin cơ bản</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{route('calendar', ['id_house' => $seeDetailHouses->id, 'id_user' => Auth::user()->id])}}"
+                                      method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"> Tên</label>
+                                        <input type="text" class="form-control" id="recipient-name" name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtPhone" class="col-form-label">Số điện thoại</label>
+                                        <input type="text" class="form-control" id="recipient-name" name="phone">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Email</label>
+                                        <input type="email" class="form-control" id="recipient-name" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Lịch</label>
+                                        <input type="date" class="form-control" id="recipient-name" name="date">
                                         <div class="value">
                                         </div>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát
                                         </button>
                                         <button type="submit" class="btn btn-primary">Gửi Thông Tin</button>
 
-                            </form>
-                        </div>
+                                </form>
+                            </div>
+                        @else
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Bạn phải đăng nhập mới được đạt lịch</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                                <ul class="toplink pull-right">
+                                    <div class="form-group">
+                                        <li style="cursor:pointer;width:130px;">
+                                            <input type="hidden" name="name" id="hdUserId" value="0" class="hddUserId"/>
+                                        </li>
+                                    </div>
+                                    <div class="form-group">
+                                        <li style="width:100px; margin-left:920px !important;">
+                                            <a rel="nofollow" id="BtnRegister" href="{{route('sign-up')}}"
+                                               class="fancybox.ajax"><i class="fafa-plus-circle"></i>Đăng ký
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <div class="form-group">
+                                        <li style="width:110px;">
+                                            <a rel="nofollow" id="BtnLogin" href="{{route('sign-in')}}"
+                                               class="fancybox.ajax"><i class="fafa-unlock"></i>Đăng nhập
+                                            </a>
+                                        </li>
+                                    </div>
+                                </ul>
+                        @endif
                     </div>
                 </div>
             </div>

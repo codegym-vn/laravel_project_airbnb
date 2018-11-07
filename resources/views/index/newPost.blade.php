@@ -34,4 +34,9 @@
             </div>
         </div>
     </div>
+    <script>
+        @if(session()->has('create-success'))
+            alert("{{ session()->get('create-success') }}");
+        @endif
+    </script>
 @endsection
