@@ -71,7 +71,7 @@ class CreatePostsController extends RetrievesllDataController
             $houses->image = $newFileName;
         }
         $houses->save();
-        $message = "Create List $request->inputName success!";
+        $message = "Bạn đã đăng nhà thành công";
         Session::flash('create-success', $message);
         return redirect(route('showNewPost', $idUser));
     }

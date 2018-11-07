@@ -17,8 +17,8 @@ class DashBoardController extends Controller
         $user = Auth::user();
         if (Auth::check()) {setcookie('remember_token', $user->getRememberToken(), time() + 600, '/');
         }
-        if ($user->role == 1) {
-            return redirect()->route('dashBoard');
+        if ($user->role == 3) {
+            return redirect(route('listBockHouse'));
         } else if ($user->role == 2) {
             return view('collection.user.dashboard', compact('user'));
         }
@@ -43,8 +43,6 @@ class DashBoardController extends Controller
         $user = User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->address = $request->input('address');
-        $user->phone = $request->input('phone');
         $user->save();
         return redirect()->route('editUsers', Auth::user()->id)->with(['messenger' => 'Đã đổi thành công']);
     }

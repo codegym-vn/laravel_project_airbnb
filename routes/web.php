@@ -50,7 +50,7 @@ Route::prefix('user')->group(function () {
 
     Route::post('forgot-password/{id}', 'DashBoardController@forgotPass')->name('forgot-password');
 
-    Route::post('post}', 'DashBoardController@post')->name('post');
+    Route::post('post', 'DashBoardController@post')->name('post');
 
 });
 
